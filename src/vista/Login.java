@@ -33,6 +33,7 @@ public class Login extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,29 +42,39 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Contraseña:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 120, 34, 14);
+        jLabel2.setBounds(30, 140, 100, 17);
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setText("Usuario: ");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(60, 40, 34, 14);
+        jLabel3.setBounds(30, 60, 70, 20);
 
         jPasswordField1.setText("jPasswordField1");
         getContentPane().add(jPasswordField1);
         jPasswordField1.setBounds(30, 160, 112, 20);
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Entrar");
         getContentPane().add(jButton2);
-        jButton2.setBounds(90, 270, 73, 23);
+        jButton2.setBounds(30, 230, 63, 23);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Nuevo Hotel");
         getContentPane().add(jButton1);
-        jButton1.setBounds(290, 270, 73, 23);
+        jButton1.setBounds(330, 70, 120, 23);
 
-        jTextField1.setText("jTextField1");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField1);
         jTextField1.setBounds(30, 80, 112, 20);
+
+        jButton3.setText("Nuevo Usuario");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(330, 160, 120, 23);
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/main_font.jpg"))); // NOI18N
         getContentPane().add(fondo);
@@ -71,6 +82,10 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,6 +126,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel fondo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPasswordField jPasswordField1;
