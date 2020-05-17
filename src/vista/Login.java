@@ -54,15 +54,15 @@ public class Login extends javax.swing.JFrame {
 
         jPasswordField1.setText("jPasswordField1");
         getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(30, 160, 112, 20);
+        jPasswordField1.setBounds(30, 160, 90, 22);
 
         jButton2.setText("Entrar");
         getContentPane().add(jButton2);
-        jButton2.setBounds(30, 230, 63, 23);
+        jButton2.setBounds(30, 230, 65, 32);
 
         jButton1.setText("Nuevo Hotel");
         getContentPane().add(jButton1);
-        jButton1.setBounds(330, 70, 120, 23);
+        jButton1.setBounds(330, 70, 120, 32);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,11 +70,11 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(30, 80, 112, 20);
+        jTextField1.setBounds(30, 80, 112, 24);
 
         jButton3.setText("Nuevo Usuario");
         getContentPane().add(jButton3);
-        jButton3.setBounds(330, 160, 120, 23);
+        jButton3.setBounds(330, 160, 120, 32);
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/main_font.jpg"))); // NOI18N
         getContentPane().add(fondo);
