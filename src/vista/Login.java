@@ -31,7 +31,6 @@ public class Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
@@ -60,10 +59,6 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(30, 230, 65, 32);
 
-        jButton1.setText("Nuevo Hotel");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(330, 70, 120, 32);
-
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -74,7 +69,7 @@ public class Login extends javax.swing.JFrame {
 
         jButton3.setText("Nuevo Usuario");
         getContentPane().add(jButton3);
-        jButton3.setBounds(330, 160, 120, 32);
+        jButton3.setBounds(330, 120, 120, 32);
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/main_font.jpg"))); // NOI18N
         getContentPane().add(fondo);
@@ -124,7 +119,6 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel fondo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;

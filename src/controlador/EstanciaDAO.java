@@ -9,6 +9,6 @@ package controlador;
  *
  * @author Abraham
  */
-public class DAO {
+public class EstanciaDAO {
     
 }
