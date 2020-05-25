@@ -23,13 +23,12 @@ public class EstanciaDAO {
       boolean finalizo;
         try {
             try (PreparedStatement pstm = ConexionBD.getConnection().prepareStatement
-                ("INSERT INTO [Hotel].[dbo].[ESTANCIA] VALUES ('?','?','?','?','?','?',?)")) {
-                pstm.setInt(1,es.getIdEstancia());
-                pstm.setInt(2,es.getIdCliente());
-                pstm.setString(3,es.getEntrada());
-                pstm.setString(4,es.getSalida());
-                pstm.setInt(5,es.getModoPago());
-                pstm.setDouble(6,es.getCuenta());
+                ("INSERT INTO [Hotel].[dbo].[ESTANCIA] VALUES ('?','?','?','?',?)")) {
+                pstm.setInt(1,es.getIdCliente());
+                pstm.setString(2,es.getEntrada());
+                pstm.setString(3,es.getSalida());
+                pstm.setInt(4,es.getModoPago());
+                pstm.setDouble(5,es.getCuenta());
                 pstm.executeUpdate();
                 finalizo = true;
 
@@ -43,35 +42,24 @@ public class EstanciaDAO {
         return finalizo;
     }
     
-    public boolean ModificaCliente(Cliente c){
+    public boolean ModificaEstancia(Estancia es){
           boolean actualizado;     
-                                 IdEstancia ;
-IdCliente;
-String entrada ;
-String salida;
-ModoPago;
-Cuenta;
+
           String sql = "BEGIN TRAN \n UPDATE Estancia SET " +
-                  " Nombre = ? , " +
-                  " Apellido1 = ? ,  " +
-                  " Apellido2 = ? , " +
-                  " Telefono = ? , " +
-                  " Estado = ? , " +
-                  " Genero= ? , " +
-                  " Modo_Pago = ? , " +
-                  " WHERE  Id_Cliente=?"+
+                  " Id_Cliente = ? , " +
+                  " Entrada = ? ,  " +
+                  " Salida = ? , " +
+                  " Id_Modo_Pago = ? , " +
+                  " Cuenta = ? , " +
+                  " WHERE  Id_Estancia=?"+
                   "; \n COMMIT TRAN";
           try {
               PreparedStatement pstm = ConexionBD.getConnection().prepareStatement(sql);
-                pstm.setString(1,c.getNombre());
-                pstm.setString(2,c.getAp1());
-                pstm.setString(3,c.getAp2());
-                pstm.setString(4,c.getTel());
-                pstm.setString(5,c.getNacion());
-                pstm.setString(6,c.getGenero());
-                pstm.setInt(7,c.getPago());
-                pstm.setInt(8,c.getIdCliente());
-
+                pstm.setInt(1,es.getIdCliente());
+                pstm.setString(2,es.getEntrada());
+                pstm.setString(3,es.getSalida());
+                pstm.setInt(4,es.getModoPago());
+                pstm.setDouble(5,es.getCuenta());
               pstm.executeUpdate();
               actualizado = true;
               pstm.close();
@@ -82,27 +70,22 @@ Cuenta;
           return actualizado;                   
     }
     
-         public Cliente buscaCita(String filtro, String clave){
-        Cliente c = null;
+         public Estancia buscaEstancia(String filtro, String clave){
+        Estancia c = null;
         ResultSet rs;
         sql="";
-        sql="SELECT * FROM Cliente WHERE "+filtro+" = '"+clave+"';";
+        sql="SELECT * FROM Estancia WHERE "+filtro+" = '"+clave+"';";
         try {
             PreparedStatement preparedStatement = ConexionBD.getConnection().prepareStatement(sql);
             rs = preparedStatement.executeQuery();
             rs.last();
-
-
-                c = new Cliente();
-                c.setIdCliente(rs.getInt(1));
-                c.setNombre(rs.getString(2));
-                c.setAp1(rs.getString(3));
-                c.setAp2(rs.getString(4));
-                c.setTel(rs.getString(5));
-                c.setNacion(rs.getString(6));
-                c.setGenero(rs.getString(7));
-                c.setPago(rs.getInt(8));
-
+                c = new Estancia();
+                c.setIdEstancia(rs.getInt(1));
+                c.setIdCliente(rs.getInt(2));
+                c.setEntrada(rs.getString(3));
+                c.setSalida(rs.getString(4));
+                c.setModoPago(rs.getInt(5));
+                c.setCuenta(rs.getDouble(6));    
         }
         catch (SQLException e){
             //System.out.println("Errorsito aqui   \(¬_¬)/ me lleva la verga ");
