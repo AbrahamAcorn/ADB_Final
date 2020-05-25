@@ -27,11 +27,10 @@ public class ClienteDAO {
                 pstm.setString(1,c.getNombre());
                 pstm.setString(2, c.getAp1());
                 pstm.setString(3,c.getAp2());
-                pstm.setString(4,c.getNacion());
-                pstm.setString(5, c.getTel());
-                pstm.setString(6, c.getNacion());
-                pstm.setString(7, c.getGenero());
-                pstm.setInt(8, c.getPago());
+                pstm.setString(4, c.getTel());
+                pstm.setString(5, c.getEstado());
+                pstm.setString(6, c.getGenero());
+                pstm.setInt(7, c.getPago());
                 pstm.executeUpdate();
                 finalizo = true;
             }
@@ -51,7 +50,7 @@ public class ClienteDAO {
                   " Apellido1 = ? ,  " +
                   " Apellido2 = ? , " +
                   " Telefono = ? , " +
-                  " Nacinalidad = ? , " +
+                  " Estado = ? , " +
                   " Genero= ? , " +
                   " Modo_Pago = ? , " +
                   " WHERE  Id_Cliente=?"+
@@ -62,7 +61,7 @@ public class ClienteDAO {
                 pstm.setString(2,c.getAp1());
                 pstm.setString(3,c.getAp2());
                 pstm.setString(4,c.getTel());
-                pstm.setString(5,c.getNacion());
+                pstm.setString(5,c.getEstado());
                 pstm.setString(6,c.getGenero());
                 pstm.setInt(7,c.getPago());
                 pstm.setInt(8,c.getIdCliente());
@@ -94,7 +93,7 @@ public class ClienteDAO {
                 c.setAp1(rs.getString(3));
                 c.setAp2(rs.getString(4));
                 c.setTel(rs.getString(5));
-                c.setNacion(rs.getString(6));
+                c.setEstado(rs.getString(6));
                 c.setGenero(rs.getString(7));
                 c.setPago(rs.getInt(8));
 
