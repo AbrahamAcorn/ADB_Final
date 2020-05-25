@@ -45,18 +45,18 @@ public class EstanciaDAO {
     
     public boolean ModificaCliente(Cliente c){
           boolean actualizado;     
-          String sql = "BEGIN TRAN \n UPDATE Estancia SET " +
-                   IdEstancia ;
+                                 IdEstancia ;
 IdCliente;
 String entrada ;
 String salida;
 ModoPago;
 Cuenta;
+          String sql = "BEGIN TRAN \n UPDATE Estancia SET " +
                   " Nombre = ? , " +
                   " Apellido1 = ? ,  " +
                   " Apellido2 = ? , " +
                   " Telefono = ? , " +
-                  " Nacinalidad = ? , " +
+                  " Estado = ? , " +
                   " Genero= ? , " +
                   " Modo_Pago = ? , " +
                   " WHERE  Id_Cliente=?"+
