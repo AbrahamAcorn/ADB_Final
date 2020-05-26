@@ -18,7 +18,7 @@ public class ConexionBD {
     // Constructor
     private ConexionBD(){
  
- String url = "jdbc:sqlserver://DESKTOP-27K6QM8: 1433;databaseName=HOTEL";
+ String url = "jdbc:sqlserver://DESKTOP-27K6QM8: 1433;databaseName=Hospital";
  String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
  String usuario = "pepe";
  String password = "pepe";

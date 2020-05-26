@@ -193,6 +193,10 @@ ForGraphics fg=new ForGraphics();
         setPreferredSize(new java.awt.Dimension(1200, 630));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        jTabbedPane1.setFont(new java.awt.Font("Eras Demi ITC", 1, 18)); // NOI18N
+
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel20.setBackground(new java.awt.Color(0, 0, 0));
@@ -398,6 +402,7 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel1.add(darAlta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 160, 40));
 
+        tabla_paciente.setBackground(new java.awt.Color(204, 204, 255));
         tabla_paciente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -419,6 +424,8 @@ ForGraphics fg=new ForGraphics();
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 1150, 160));
 
+        tablaInternos.setBackground(new java.awt.Color(204, 204, 255));
+        tablaInternos.setForeground(new java.awt.Color(0, 0, 0));
         tablaInternos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -602,7 +609,7 @@ ForGraphics fg=new ForGraphics();
         jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
         jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, -1, -1));
 
-        jTabbedPane1.addTab("+Doctores+", jPanel2);
+        jTabbedPane1.addTab("+Medicos+", jPanel2);
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -870,7 +877,7 @@ ForGraphics fg=new ForGraphics();
 
         jTabbedPane1.addTab("+Estadistica+", jPanel4);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 710));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

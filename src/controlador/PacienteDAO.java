@@ -195,7 +195,7 @@ public class PacienteDAO {
         public static void main(String args[]) {
             PacienteDAO p = new PacienteDAO();
             
-            Paciente n = new Paciente(1, "Juan", "perez", "Almaza", "tias", "abuelo", 24, "123-345-3456", "De Alta", 0, "Mujer");
+            Paciente n = new Paciente(1,"Juan", "perez", "Almaza", "tias", "abuelo", 24, "123-345-3456", "De Alta", 0, "Mujer");
             System.out.println(p.ModificaPaciente(n));
             //int idPaciente, String Nombre, String PrimAp, String SegAp, String Colonia, String Calle, int num, String telefono, String Estado, int habitacion, String genero
         }
