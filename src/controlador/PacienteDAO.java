@@ -25,20 +25,20 @@ public class PacienteDAO {
     
     public boolean agregaPaciente(Paciente p){
         boolean finalizo;
+        String sql2=" INSERT INTO [dbo].[Paciente] ([Nombre] ,[PrimAP]  ,[SegAp], [Genero],[Calle] ,[Num] ,[Colonia]"+
+           ",[Tel] ,[Estado],[Id_Habitacion]) VALUES (?,?,?,?,?,?,?,?,?,?)";
         try {
-            try (PreparedStatement pstm = ConexionBD.getConnection().prepareStatement
-                ("INSERT INTO Paciente (`Nombre`, `PrimAp`, `SegAp`, `Colonia`, "
-                        + "`Calle`, `num`, `Telefono`, `Estado`, `Habitacion`, `Genero`) VALUES (?,?,?,?,?,?,?,?,?,?)")) {
+            try (PreparedStatement pstm = ConexionBD.getConnection().prepareStatement(sql2)) {
                 pstm.setString( 1, p.getNombre());
                 pstm.setString(2, p.getPrimAp());
                 pstm.setString(3, p.getSegAp());
-                pstm.setString(4, p.getColonia());
-                pstm.setString(5, p.getColonia());
+                pstm.setString(4, p.getGenero());
+                pstm.setString(5, p.getCalle());
                 pstm.setInt(6, p.getNum());
-                pstm.setString(7, p.getTelefono());
-                pstm.setString(8,p.getEstado());
-                pstm.setInt(9, p.getHabitacion());
-                pstm.setString(10, p.getGenero());
+                pstm.setString(7, p.getColonia());
+                pstm.setString(8,p.getTelefono());
+                pstm.setString(9, p.getEstado());
+                pstm.setInt(10, p.getHabitacion());
                 pstm.executeUpdate();
                 finalizo = true;
             }
@@ -51,30 +51,30 @@ public class PacienteDAO {
     
      public boolean ModificaPaciente(Paciente p){
           boolean actualizado;
-          String sql = "UPDATE Paciente SET" +
-                  " Nombre = ? , " +
-                  " PrimAp = ? , " +
-                  " SegAp = ? , " +
-                  " Colonia = ? , " +
-                  " Calle = ? , " +
-                  " num = ? , " +
-                  " Telefono = ? , " +
-                  " Estado = ? , " +
-                  " Habitacion = ? , " +
-                  " Genero = ?  " +
-                  " WHERE idPaciente = ? ; ";
+        String sql=  "UPDATE [dbo].[Paciente]"+
+                "SET [Nombre] = ?"+
+                " ,[PrimAP] =?"+ 
+                ",[SegAp] =?"+
+                ",[Genero] =?"+
+                ",[Calle] =?"+
+                ",[Num] =?"+
+                ",[Colonia]=?"+
+                ",[Tel] = ?"+
+                ",[Estado] =? "+
+                ",[Id_Habitacion] =?"+ 
+                " WHERE Id_Pac = ?";
           try {
               PreparedStatement pstm = ConexionBD.getConnection().prepareStatement(sql);
               pstm.setString( 1, p.getNombre());
               pstm.setString(2,p.getPrimAp());
               pstm.setString(3, p.getSegAp());
-              pstm.setString(4,p.getColonia());
-              pstm.setString(5, p.getCalle());
+              pstm.setString(4,p.getGenero());
+              pstm.setString(5,p.getCalle());
               pstm.setInt(6, p.getNum());
-              pstm.setString(7, p.getTelefono());
-              pstm.setString(8, p.getEstado());
-              pstm.setInt(9, p.getHabitacion());
-              pstm.setString(10,p.getGenero());
+              pstm.setString(7, p.getColonia());
+              pstm.setString(8, p.getTelefono());
+              pstm.setString(9, p.getEstado());
+              pstm.setInt(10, p.getHabitacion());
               pstm.setInt(11, p.getIdPaciente());
               pstm.executeUpdate();
               pstm.execute();
@@ -122,13 +122,14 @@ public class PacienteDAO {
                 p.setNombre(rs.getString(2));
                 p.setPrimAp(rs.getString(3));
                 p.setSegAp(rs.getString(4));
-                p.setColonia(rs.getString(5));
+                p.setGenero(rs.getString(5));
                 p.setCalle(rs.getString(6));
                 p.setNum(rs.getInt(7));
+                p.setColonia(rs.getString(8)); 
                 p.setTelefono(rs.getString(8));
                 p.setEstado(rs.getString(9));
                 p.setHabitacion(rs.getInt(10));
-                p.setGenero(rs.getString(11));
+                
                 preparedStatement.close();
         }
         catch (SQLException e){

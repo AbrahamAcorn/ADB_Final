@@ -33,28 +33,28 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         setResizable(false);
-        setIconImage(Toolkit.getDefaultToolkit().getImage(InicioSesion.class.getResource("/Paciente.png")));
+        //setIconImage(Toolkit.getDefaultToolkit().getImage(InicioSesion.class.getResource("/Paciente.png")));
         initComponents();
         DefaultPieDataset data = new DefaultPieDataset();
 ForGraphics fg=new ForGraphics();
-        data.setValue("Internado", fg.Cuenta("select count(idPaciente) from paciente where Estado = 'Internado';"));
-        data.setValue("De Alta", fg.Cuenta("select count(idPaciente) from paciente where Estado = 'De Alta';"));
-        data.setValue("Citado", fg.Cuenta("select count(idPaciente) from paciente where Estado= 'Citado';"));
+        data.setValue("Internado", fg.Cuenta("select count(id_Pac) from paciente where Estado = 'Internado';"));
+        data.setValue("De Alta", fg.Cuenta("select count(id_Pac) from paciente where Estado = 'De Alta';"));
+        data.setValue("Citado", fg.Cuenta("select count(id_Pac) from paciente where Estado= 'Citado';"));
 
  JFreeChart chart = ChartFactory.createPieChart(
          "Pacientes Registrados", 
          data, true, true, false);
         // Crear el Panel del Grafico con ChartPanel
         ChartPanel chartPanel = new ChartPanel(chart);
-        jPanel8.add(chartPanel);
+ 
     }
     public void actualizarTabla(String sql, javax.swing.JTable tab){
 
         //final String tab = "Proveedor";//esto pede ser parametro
 
-        String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/hospital?useTimezone=true&serverTimezone=UTC";
-        String user = "root";
+        String url = "jdbc:sqlserver://DESKTOP-27K6QM8: 1433;databaseName=Hospital";
+        String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+        String user = "pepe";
         String password = "pepe";
         String query = sql;//"SELECT * FROM " + tab;
 
@@ -175,17 +175,10 @@ ForGraphics fg=new ForGraphics();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        TablaPacientes = new javax.swing.JTable();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         fecha = new com.toedter.calendar.JDateChooser();
-        jPanel4 = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(196, 226, 247));
@@ -196,6 +189,7 @@ ForGraphics fg=new ForGraphics();
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         jTabbedPane1.setFont(new java.awt.Font("Eras Demi ITC", 1, 18)); // NOI18N
+        jTabbedPane1.setMinimumSize(new java.awt.Dimension(2230, 644));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -619,7 +613,7 @@ ForGraphics fg=new ForGraphics();
                 crearCitaActionPerformed(evt);
             }
         });
-        jPanel3.add(crearCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 170, -1));
+        jPanel3.add(crearCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 170, -1));
 
         ap12citas.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -665,7 +659,7 @@ ForGraphics fg=new ForGraphics();
                 guardarCitaActionPerformed(evt);
             }
         });
-        jPanel3.add(guardarCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 170, -1));
+        jPanel3.add(guardarCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, 170, -1));
 
         restablece.setText("Cancelar");
         restablece.addActionListener(new java.awt.event.ActionListener() {
@@ -673,7 +667,7 @@ ForGraphics fg=new ForGraphics();
                 restableceActionPerformed(evt);
             }
         });
-        jPanel3.add(restablece, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 170, -1));
+        jPanel3.add(restablece, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, 170, -1));
 
         eliminaCita.setText("Eliminar");
         eliminaCita.addActionListener(new java.awt.event.ActionListener() {
@@ -681,7 +675,7 @@ ForGraphics fg=new ForGraphics();
                 eliminaCitaActionPerformed(evt);
             }
         });
-        jPanel3.add(eliminaCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 260, 170, -1));
+        jPanel3.add(eliminaCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 170, -1));
 
         cajaAp2D1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -728,15 +722,16 @@ ForGraphics fg=new ForGraphics();
         jLabel28.setText("Apellidos:");
         jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 80, 20));
 
+        jTable1.setBackground(new java.awt.Color(204, 204, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Fecha", "Hora", "Consultorio", "ID Dept", "Nombre Dept", "IdDocotor", "Doctor", "apeido Pat", "apeido Mat", "IdPaciente", "Paciente", "PrimAp", "SegAp"
+                "Fecha", "Hora", "Consultorio", "IdDoctor", "Doctor", "Apellido", "Apellido Mat", "IdPaciente", "Paciente", "Apellido", "Apellido Mat"
             }
         ));
         actualizarTabla("Select*from citas_full;",jTable1);
@@ -796,7 +791,7 @@ ForGraphics fg=new ForGraphics();
                 "ID Doctor", "Doctor", "Apeido Paterno", "Apeido Materno"
             }
         ));
-        actualizarTabla("Select IdDoctor, Nombre, Ap1 ,Ap2 from doctor;",jTable3);
+        actualizarTabla("Select Id_Doc, Nombre, Apellido1 ,Apellido2 from doctor;",jTable3);
         jTable3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 jTable3MouseReleased(evt);
@@ -804,9 +799,9 @@ ForGraphics fg=new ForGraphics();
         });
         jScrollPane5.setViewportView(jTable3);
 
-        jPanel3.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 270, -1, 90));
+        jPanel3.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 270, -1, 90));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        TablaPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -817,67 +812,22 @@ ForGraphics fg=new ForGraphics();
                 "ID Paciente", "Nombre", "Apeido", "Apeido Materno"
             }
         ));
-        actualizarTabla("SELECT idPaciente, nombre, primAp, segAp from paciente;",jTable4);
-        jTable4.addMouseListener(new java.awt.event.MouseAdapter() {
+        actualizarTabla("SELECT id_Pac, Nombre, PrimAp, SegAp from paciente",TablaPacientes);
+        TablaPacientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTable4MouseReleased(evt);
+                TablaPacientesMouseReleased(evt);
             }
         });
-        jScrollPane6.setViewportView(jTable4);
+        jScrollPane6.setViewportView(TablaPacientes);
 
-        jPanel3.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, -1, 90));
+        jPanel3.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, -1, 90));
         jPanel3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
         jPanel3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, -1, -1));
         jPanel3.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, -1, -1));
 
         jTabbedPane1.addTab("+Citas+", jPanel3);
 
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton7.setText("Reporte Citas");
-        jPanel4.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 170, -1));
-
-        jButton10.setText("Reporte Doctores");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 170, -1));
-
-        jButton11.setText("Reporte Pacientes");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 170, -1));
-
-        jButton2.setText("Reporte Internos");
-        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 170, -1));
-
-        jPanel5.setBackground(new java.awt.Color(204, 255, 255));
-
-        DefaultPieDataset data2 = new DefaultPieDataset();
-        ForGraphics fg=new ForGraphics();
-        data2.setValue("Libre", fg.Cuenta(" select count(idHabitacion) from habitacion where Estado= 'Libre';"));
-        data2.setValue("Ocupado", fg.Cuenta("select count(idHabitacion) from habitacion where Estado='Ocupada';"));
-
-        JFreeChart chart2 = ChartFactory.createPieChart(
-            "Ocupacion",
-            data2, true, true, false);
-        // Crear el Panel del Grafico con ChartPanel
-        ChartPanel chartPanel2 = new ChartPanel(chart2);
-        jPanel5.add(chartPanel2);
-
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 500, 370));
-
-        jPanel8.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 500, 370));
-
-        jTabbedPane1.addTab("+Estadistica+", jPanel4);
-
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 710));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -916,10 +866,6 @@ if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()!=pac && d.
         // TODO add your handling code here:
     }//GEN-LAST:event_cajaIDActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
-
     private void tel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tel1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tel1ActionPerformed
@@ -927,10 +873,6 @@ if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()!=pac && d.
     private void cajaID2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaID2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cajaID2ActionPerformed
-
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
 
     private void crearCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCitaActionPerformed
         // TODO add your handling code here:
@@ -1189,7 +1131,7 @@ if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()==pac){
             evt.consume();
         }
          actualizarTabla("Select*From citas_full where paciente like '%"+citasNamePac.getText()+"%'",jTable1);
-         actualizarTabla("SELECT idPaciente, nombre, primAp, segAp from paciente where nombre like '%"+citasNamePac.getText()+"%'",jTable4);
+         actualizarTabla("SELECT idPaciente, nombre, primAp, segAp from paciente where nombre like '%"+citasNamePac.getText()+"%'",TablaPacientes);
     }//GEN-LAST:event_citasNamePacKeyTyped
 
     private void ap12citasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ap12citasKeyTyped
@@ -1200,7 +1142,7 @@ if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()==pac){
             evt.consume();
         }
          actualizarTabla("Select*From citas_full where SegAp like '%"+ap12citas.getText()+"%'",jTable1);
-         actualizarTabla("SELECT idPaciente, nombre, primAp, segAp from paciente where primAp like '%"+ap12citas.getText()+"%'",jTable4);
+         actualizarTabla("SELECT idPaciente, nombre, primAp, segAp from paciente where primAp like '%"+ap12citas.getText()+"%'",TablaPacientes);
     }//GEN-LAST:event_ap12citasKeyTyped
 
     private void restableceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restableceActionPerformed
@@ -1224,7 +1166,7 @@ citasidDoc.setText("");
             evt.consume();
         }
         actualizarTabla("Select*From citas_full where primaAp like '%"+ap11citas2.getText()+"%'",jTable1);
-        actualizarTabla("SELECT idPaciente, nombre, primAp, segAp from paciente where paciente like '%"+ap11citas2.getText()+"%'",jTable4);
+        actualizarTabla("SELECT idPaciente, nombre, primAp, segAp from paciente where paciente like '%"+ap11citas2.getText()+"%'",TablaPacientes);
         
     }//GEN-LAST:event_ap11citas2KeyTyped
 
@@ -1304,15 +1246,15 @@ citasidDoc.setText("");
         
     }//GEN-LAST:event_jTable1MouseReleased
 
-    private void jTable4MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable4MouseReleased
+    private void TablaPacientesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaPacientesMouseReleased
         // TODO add your handling code here:
-        int t= jTable4.getSelectedRow();
-        citasNamePac.setText(jTable4.getModel().getValueAt(t, 1).toString());
-        cajaID4.setText(jTable4.getModel().getValueAt(t, 0).toString());
-        ap11citas2.setText(jTable4.getModel().getValueAt(t, 2).toString());
-        ap12citas.setText(jTable4.getModel().getValueAt(t, 3).toString());
+        int t= TablaPacientes.getSelectedRow();
+        citasNamePac.setText(TablaPacientes.getModel().getValueAt(t, 1).toString());
+        cajaID4.setText(TablaPacientes.getModel().getValueAt(t, 0).toString());
+        ap11citas2.setText(TablaPacientes.getModel().getValueAt(t, 2).toString());
+        ap12citas.setText(TablaPacientes.getModel().getValueAt(t, 3).toString());
         
-    }//GEN-LAST:event_jTable4MouseReleased
+    }//GEN-LAST:event_TablaPacientesMouseReleased
 
     private void jTable3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseReleased
         // TODO add your handling code here:
@@ -1636,6 +1578,7 @@ citasidDoc.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TablaPacientes;
     private javax.swing.JButton addMedico;
     private javax.swing.JButton addPaciente;
     private javax.swing.JComboBox<String> ampm;
@@ -1671,10 +1614,6 @@ citasidDoc.setText("");
     private javax.swing.JButton guardarCita;
     private javax.swing.JTextField habitbox;
     private javax.swing.JComboBox<String> horas;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
@@ -1720,9 +1659,6 @@ citasidDoc.setText("");
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1733,7 +1669,6 @@ citasidDoc.setText("");
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox<String> minutos;
     private javax.swing.JTextField nombreDoc;

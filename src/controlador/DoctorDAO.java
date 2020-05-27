@@ -48,10 +48,10 @@ public class DoctorDAO {
                   " Nombre = ? , " +
                   " Ap1 = ? , " +
                   " Ap2 = ? , " +
+                  " Genero = ?, " +
                   " Especializacion= ? , " +
                   " Consultorio = ? , " +
-                  " Departamento = ? , " +
-                  " Genero = ? " +
+                  " Departamento = ? " +
                   "WHERE IdDoctor = ? ;";
           try {
               PreparedStatement pstm = ConexionBD.getConnection().prepareStatement(sql);
