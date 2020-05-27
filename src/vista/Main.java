@@ -37,9 +37,9 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         DefaultPieDataset data = new DefaultPieDataset();
 ForGraphics fg=new ForGraphics();
-        data.setValue("Internado", fg.Cuenta("select count(id_Pac) from paciente where Estado = 'Internado';"));
-        data.setValue("De Alta", fg.Cuenta("select count(id_Pac) from paciente where Estado = 'De Alta';"));
-        data.setValue("Citado", fg.Cuenta("select count(id_Pac) from paciente where Estado= 'Citado';"));
+//        data.setValue("Internado", fg.Cuenta("select count(id_Pac) from paciente where Estado = 'Internado';"));
+    //    data.setValue("De Alta", fg.Cuenta("select count(id_Pac) from paciente where Estado = 'De Alta';"));
+        //data.setValue("Citado", fg.Cuenta("select count(id_Pac) from paciente where Estado= 'Citado';"));
 
  JFreeChart chart = ChartFactory.createPieChart(
          "Pacientes Registrados", 
@@ -1337,7 +1337,7 @@ citasidDoc.setText("");
         int dep = jComboBox6.getSelectedIndex()+1;
          String gen = jComboBox5.getSelectedItem().toString();
             DoctorDAO d = new DoctorDAO();
-            if(d.buscaDoctor("IdDoctor", String.valueOf(id)) == null && d.buscaDoctor("nombre", name)==null){
+            if(d.buscaDoctor("Id_Doc", String.valueOf(id)) == null && d.buscaDoctor("nombre", name)==null){
                 Doctor p = new Doctor(id,name,ap,ap2,esp,con,dep,gen);
                 if(d.agregaDoctor(p)){
                     JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
@@ -1376,7 +1376,7 @@ citasidDoc.setText("");
         dep=dep+1;
          String gen = jComboBox5.getSelectedItem().toString();
             DoctorDAO d = new DoctorDAO();
-            if(d.buscaDoctor("IdDoctor", String.valueOf(id)) == null && d.buscaDoctor("nombre", name)==null){
+            if(d.buscaDoctor("Id_Doc", String.valueOf(id)) == null && d.buscaDoctor("nombre", name)==null){
                 Doctor p = new Doctor(id,name,ap,ap2,esp,con,dep,gen);
                 if(d.ModificaDoctor(p)){
                     JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
