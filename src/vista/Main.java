@@ -32,8 +32,9 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
-        setResizable(false);
+        //setResizable(false);
         //setIconImage(Toolkit.getDefaultToolkit().getImage(InicioSesion.class.getResource("/Paciente.png")));
+      this.setSize(1300, 650);
         initComponents();
         DefaultPieDataset data = new DefaultPieDataset();
 ForGraphics fg=new ForGraphics();
@@ -183,14 +184,19 @@ ForGraphics fg=new ForGraphics();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(196, 226, 247));
         setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        setPreferredSize(new java.awt.Dimension(1200, 630));
+        setMinimumSize(new java.awt.Dimension(1300, 650));
+        setPreferredSize(new java.awt.Dimension(1300, 630));
+        setSize(new java.awt.Dimension(1200, 650));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         jTabbedPane1.setFont(new java.awt.Font("Eras Demi ITC", 1, 18)); // NOI18N
         jTabbedPane1.setMinimumSize(new java.awt.Dimension(2230, 644));
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(1400, 644));
 
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel20.setBackground(new java.awt.Color(0, 0, 0));
@@ -416,7 +422,7 @@ ForGraphics fg=new ForGraphics();
         jScrollPane2.setViewportView(tabla_paciente);
         actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 1150, 160));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 1200, 160));
 
         tablaInternos.setBackground(new java.awt.Color(204, 204, 255));
         tablaInternos.setForeground(new java.awt.Color(0, 0, 0));
@@ -432,9 +438,9 @@ ForGraphics fg=new ForGraphics();
             }
         ));
         jScrollPane3.setViewportView(tablaInternos);
-        actualizarTabla("SELECT*FROM internos;",tablaInternos);
+        actualizarTabla("SELECT*FROM internos",tablaInternos);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 550, 140));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 610, 140));
 
         jLabel30.setBackground(new java.awt.Color(0, 0, 0));
         jLabel30.setFont(new java.awt.Font("MS UI Gothic", 1, 36)); // NOI18N
@@ -827,7 +833,7 @@ ForGraphics fg=new ForGraphics();
 
         jTabbedPane1.addTab("+Citas+", jPanel3);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 710));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 2170, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
