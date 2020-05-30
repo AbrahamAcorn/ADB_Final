@@ -112,7 +112,7 @@ public class PacienteDAO {
         Paciente p = null;
         ResultSet rs;
         sql="";
-        sql="SELECT * FROM PACIENTE WHERE "+columna+" = '"+clave+"';";
+        sql="SELECT * FROM Paciente WHERE  "+columna+" = "+""+clave+"";
         try {
             PreparedStatement preparedStatement = ConexionBD.getConnection().prepareStatement(sql);
             rs = preparedStatement.executeQuery();
@@ -126,14 +126,15 @@ public class PacienteDAO {
                 p.setCalle(rs.getString(6));
                 p.setNum(rs.getInt(7));
                 p.setColonia(rs.getString(8)); 
-                p.setTelefono(rs.getString(8));
-                p.setEstado(rs.getString(9));
-                p.setHabitacion(rs.getInt(10));
+                p.setTelefono(rs.getString(9));
+                p.setEstado(rs.getString(10));
+                p.setHabitacion(rs.getInt(11));
                 
                 preparedStatement.close();
         }
         catch (SQLException e){
             e.printStackTrace();
+            System.out.print("No encontro ni vergas");
 
         }
         
@@ -179,7 +180,7 @@ public class PacienteDAO {
           boolean actualizado;
           String sql = "UPDATE Paciente SET " +
                   " Estado = 'De Alta' " +
-                  " WHERE idPaciente = ? ;";
+                  " WHERE id_Pac = ? ;";
           try {
               PreparedStatement pstm = ConexionBD.getConnection().prepareStatement(sql);
               pstm.setInt(1,id);
@@ -196,8 +197,8 @@ public class PacienteDAO {
         public static void main(String args[]) {
             PacienteDAO p = new PacienteDAO();
             
-            Paciente n = new Paciente(1,"Juan", "perez", "Almaza", "tias", "abuelo", 24, "123-345-3456", "De Alta", 0, "Mujer");
-            System.out.println(p.ModificaPaciente(n));
+            Paciente n = new Paciente(1,"Juan", "perez", "Almaza", "tias", "abuelo", 24, "123-345-3456", "De Alta", 3, "Mujer");
+            System.out.println(p.buscaPaciente("Nombre", "Juan"));
             //int idPaciente, String Nombre, String PrimAp, String SegAp, String Colonia, String Calle, int num, String telefono, String Estado, int habitacion, String genero
         }
 }

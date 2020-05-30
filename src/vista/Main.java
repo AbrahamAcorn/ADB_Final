@@ -82,7 +82,7 @@ ForGraphics fg=new ForGraphics();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
-        combo1 = new javax.swing.JComboBox<>();
+        comboEstad = new javax.swing.JComboBox<>();
         addPaciente = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -104,7 +104,7 @@ ForGraphics fg=new ForGraphics();
         cajanum = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        combo2 = new javax.swing.JComboBox<>();
+        comboGen = new javax.swing.JComboBox<>();
         cajaID = new javax.swing.JTextField();
         ap2p = new javax.swing.JTextField();
         ap1p = new javax.swing.JTextField();
@@ -204,8 +204,8 @@ ForGraphics fg=new ForGraphics();
         jLabel20.setText("Pacientes Internos");
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 250, 330, -1));
 
-        combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "De Alta", "Internado", "Revision", "Citado" }));
-        jPanel1.add(combo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 130, -1));
+        comboEstad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "De Alta", "Internado", "Revision", "Citado" }));
+        jPanel1.add(comboEstad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 130, -1));
 
         addPaciente.setText("Añade Paciente");
         addPaciente.addActionListener(new java.awt.event.ActionListener() {
@@ -352,13 +352,13 @@ ForGraphics fg=new ForGraphics();
         jLabel9.setText("Sala:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 60, 20));
 
-        combo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hombre", "Mujer" }));
-        combo2.addItemListener(new java.awt.event.ItemListener() {
+        comboGen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hombre", "Mujer" }));
+        comboGen.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                combo2ItemStateChanged(evt);
+                comboGenItemStateChanged(evt);
             }
         });
-        jPanel1.add(combo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 130, -1));
+        jPanel1.add(comboGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 130, -1));
 
         cajaID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -844,9 +844,9 @@ try{
 int habit,pac, num;
 PacienteDAO d = new PacienteDAO();
 nomb=cajaNp.getText();ap1=ap1p.getText();ap2=ap2p.getText();calle=cajacalle.getText();col=cajacol.getText();
-tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado=combo1.getSelectedItem().toString();gen=combo2.getSelectedItem().toString();
+tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado=comboEstad.getSelectedItem().toString();gen=comboGen.getSelectedItem().toString();
 pac=Integer.parseInt(cajaID.getText()); habit=Integer.parseInt(habitbox.getText());num=Integer.parseInt(cajanum.getText());
-if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()!=pac && d.buscaPaciente("nombre", cajaNp.getText()).getNombre()!=cajaNp.getText()){
+if(d.buscaPaciente("id_Pac", String.valueOf(pac)).getIdPaciente()!=pac && d.buscaPaciente("nombre", cajaNp.getText()).getNombre()!=cajaNp.getText()){
   Paciente p = new Paciente(pac,nomb,ap1,ap2,col,calle,num,tel,estado,habit,gen);
   if(d.agregaPaciente(p)){
       JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
@@ -856,7 +856,7 @@ if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()!=pac && d.
   actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
   actualizarTabla("SELECT*FROM internos;",tablaInternos);
  cajaNp.setText("");ap1p.setText("");ap2p.setText("");cajacalle.setText("");cajacol.setText("");
- tel1.setText(""); tel2.setText("");tel3.setText("");combo1.setSelectedIndex(0);combo2.setSelectedIndex(0);
+ tel1.setText(""); tel2.setText("");tel3.setText("");comboEstad.setSelectedIndex(0);comboGen.setSelectedIndex(0);
  cajaID.setText("");habitbox.setText("");cajanum.setText("");
 }else{
      JOptionPane.showMessageDialog(rootPane, "Ya existe un registro con esos datos", "INFO", JOptionPane.INFORMATION_MESSAGE);
@@ -962,9 +962,9 @@ int habit,pac, num;
 PacienteDAO d = new PacienteDAO();
 try{
 nomb=cajaNp.getText();ap1=ap1p.getText();ap2=ap2p.getText();calle=cajacalle.getText();col=cajacol.getText();
-tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado=combo1.getSelectedItem().toString();gen=combo2.getSelectedItem().toString();
+tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado=comboEstad.getSelectedItem().toString();gen=comboGen.getSelectedItem().toString();
 pac=Integer.parseInt(cajaID.getText()); habit=Integer.parseInt(habitbox.getText());num=Integer.parseInt(cajanum.getText());
-if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()==pac){
+if(d.buscaPaciente("id_Pac", String.valueOf(pac)).getIdPaciente()==pac){
   Paciente p = new Paciente(pac,nomb,ap1,ap2,col,calle,num,tel,estado,habit,gen);
   if(d.ModificaPaciente(p)){
       JOptionPane.showMessageDialog(rootPane, "El registro se modifico correctamente", null, JOptionPane.INFORMATION_MESSAGE);
@@ -974,7 +974,7 @@ if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()==pac){
   actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
   actualizarTabla("SELECT*FROM internos;",tablaInternos);
  cajaNp.setText("");ap1p.setText("");ap2p.setText("");cajacalle.setText("");cajacol.setText("");
- tel1.setText(""); tel2.setText("");tel3.setText("");combo1.setSelectedIndex(0);combo2.setSelectedIndex(0);
+ tel1.setText(""); tel2.setText("");tel3.setText("");comboEstad.setSelectedIndex(0);comboGen.setSelectedIndex(0);
  cajaID.setText("");habitbox.setText("");cajanum.setText("");
 }else{
      JOptionPane.showMessageDialog(rootPane, "El paciente no existe", "INFO", JOptionPane.INFORMATION_MESSAGE);
@@ -991,17 +991,17 @@ if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()==pac){
         cajaNp.setText(tabla_paciente.getModel().getValueAt(t, 1).toString());
         ap1p.setText(tabla_paciente.getModel().getValueAt(t, 2).toString());
         ap2p.setText(tabla_paciente.getModel().getValueAt(t, 3).toString());
-        cajacalle.setText(tabla_paciente.getModel().getValueAt(t, 4).toString());
-        cajacol.setText(tabla_paciente.getModel().getValueAt(t, 5).toString());
+        cajacalle.setText(tabla_paciente.getModel().getValueAt(t, 5).toString());
+        cajacol.setText(tabla_paciente.getModel().getValueAt(t, 7).toString());
         cajanum.setText(tabla_paciente.getModel().getValueAt(t,6).toString());
-        tel1.setText(tabla_paciente.getModel().getValueAt(t, 7).toString().substring(0, 3));
-        tel2.setText(tabla_paciente.getModel().getValueAt(t, 7).toString().substring(4, 7));
-        tel3.setText(tabla_paciente.getModel().getValueAt(t, 7).toString().substring(8, 12));
-        String s=tabla_paciente.getModel().getValueAt(t, 8).toString();
-        combo1.setSelectedItem(s);
-        habitbox.setText(tabla_paciente.getModel().getValueAt(t,9).toString());
-        String s2=tabla_paciente.getModel().getValueAt(t, 10).toString();
-        combo2.setSelectedItem(s2);
+        tel1.setText(tabla_paciente.getModel().getValueAt(t, 8).toString().substring(0, 3));
+        tel2.setText(tabla_paciente.getModel().getValueAt(t, 8).toString().substring(4, 7));
+        tel3.setText(tabla_paciente.getModel().getValueAt(t, 8).toString().substring(8, 12));
+        String s=tabla_paciente.getModel().getValueAt(t, 9).toString();
+        comboEstad.setSelectedItem(s);
+        habitbox.setText(tabla_paciente.getModel().getValueAt(t,10).toString());
+        String s2=tabla_paciente.getModel().getValueAt(t, 4).toString();
+        comboGen.setSelectedItem(s2);
        
     }//GEN-LAST:event_tabla_pacienteMouseReleased
 
@@ -1089,7 +1089,7 @@ PacienteDAO d = new PacienteDAO();
 HabitacionDAO hab= new HabitacionDAO();
 try{
 nomb=cajaNp.getText();ap1=ap1p.getText();ap2=ap2p.getText();calle=cajacalle.getText();col=cajacol.getText();
-tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado="De Alta";gen=combo2.getSelectedItem().toString();
+tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado="De Alta";gen=comboGen.getSelectedItem().toString();
 pac=Integer.parseInt(cajaID.getText()); habit=Integer.parseInt(habitbox.getText());num=Integer.parseInt(cajanum.getText());
 if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()==pac){
   Paciente p = new Paciente(pac,nomb,ap1,ap2,col,calle,num,tel,estado,habit,gen);
@@ -1102,7 +1102,7 @@ if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()==pac){
   actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
   actualizarTabla("SELECT*FROM internos;",tablaInternos);
  cajaNp.setText("");ap1p.setText("");ap2p.setText("");cajacalle.setText("");cajacol.setText("");
- tel1.setText(""); tel2.setText("");tel3.setText("");combo1.setSelectedIndex(0);combo2.setSelectedIndex(0);
+ tel1.setText(""); tel2.setText("");tel3.setText("");comboEstad.setSelectedIndex(0);comboGen.setSelectedIndex(0);
  cajaID.setText("");habitbox.setText("");cajanum.setText("");
 }else{
      JOptionPane.showMessageDialog(rootPane, "El paciente no existe", "INFO", JOptionPane.INFORMATION_MESSAGE);
@@ -1112,18 +1112,18 @@ if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()==pac){
 }  
     }//GEN-LAST:event_darAltaActionPerformed
 
-    private void combo2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_combo2ItemStateChanged
+    private void comboGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboGenItemStateChanged
         // TODO add your handling code here:
-        if("De Alta".equals(combo1.getSelectedItem().toString())){
+        if("De Alta".equals(comboEstad.getSelectedItem().toString())){
              actualizarTabla("SELECT*FROM Paciente where estado = 'De Alta';",tabla_paciente);
-        }else if ("Citado".equals(combo1.getSelectedItem().toString())){
+        }else if ("Citado".equals(comboEstad.getSelectedItem().toString())){
             actualizarTabla("SELECT*FROM Paciente where estado = 'Citado';",tabla_paciente);
-        }else if("Revision".equals(combo1.getSelectedItem().toString())){
+        }else if("Revision".equals(comboEstad.getSelectedItem().toString())){
             actualizarTabla("SELECT*FROM Paciente where estado = 'Revision';",tabla_paciente);
-        }else if("Internado".equals(combo1.getSelectedItem().toString())){
+        }else if("Internado".equals(comboEstad.getSelectedItem().toString())){
             actualizarTabla("SELECT*FROM Paciente where estado = 'Internado';",tabla_paciente);
         }
-    }//GEN-LAST:event_combo2ItemStateChanged
+    }//GEN-LAST:event_comboGenItemStateChanged
 
     private void jComboBox6MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox6MouseReleased
         // TODO add your handling code here:
@@ -1607,8 +1607,8 @@ citasidDoc.setText("");
     private javax.swing.JTextField citasNameDoc;
     private javax.swing.JTextField citasNamePac;
     private javax.swing.JTextField citasidDoc;
-    private javax.swing.JComboBox<String> combo1;
-    private javax.swing.JComboBox<String> combo2;
+    private javax.swing.JComboBox<String> comboEstad;
+    private javax.swing.JComboBox<String> comboGen;
     private javax.swing.JTextField consultorio;
     private javax.swing.JButton crearCita;
     private javax.swing.JButton darAlta;

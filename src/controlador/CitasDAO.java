@@ -91,16 +91,21 @@ public class CitasDAO {
         Citas c = null;
         ResultSet rs;
         sql="";
-        sql="SELECT * FROM Cita WHERE "+filtro+" = '"+clave+"';";
+        sql="SELECT * FROM Citas WHERE ? = ?";
         try {
-            PreparedStatement preparedStatement = ConexionBD.getConnection().prepareStatement(sql);
-            rs = preparedStatement.executeQuery();
-            rs.last();
+            PreparedStatement ps = ConexionBD.getConnection().prepareStatement(sql);
+            ps.setString(1, filtro);
+            ps.setInt(2, Integer.parseInt(clave));
+            rs = ps.executeQuery();
+            rs.afterLast();
+           System.out.println(rs.getInt(1));
+            while(rs.next()){
                 c = new Citas();
                 c.setPaciente(rs.getInt(1));
                 c.setDoctor(rs.getInt(2));
                 c.setFecha(rs.getDate(3).toString());
                 c.setHora(rs.getString(4));
+            }
         }
         catch (SQLException e){
             //System.out.println("Errorsito aqui n.n  (¬_¬) / me lleva la verga ");
@@ -108,10 +113,10 @@ public class CitasDAO {
         }
         return c;
     }
-      /* public static void main(String args[]) {
+       public static void main(String args[]) {
             CitasDAO p = new CitasDAO();
             
             Citas c = new Citas(5,5,"2019-12-12","11:45:AM");
-            System.out.println(p.ModificaCita(c));
-        }*/
+            System.out.println(p.buscaCita("Id_Cita", "1"));
+        }
 }
