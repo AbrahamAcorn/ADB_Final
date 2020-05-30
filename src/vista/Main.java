@@ -17,6 +17,7 @@ import java.awt.Toolkit;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -132,7 +133,7 @@ ForGraphics fg=new ForGraphics();
         consultorio = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        comoGne = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         jComboBox6 = new javax.swing.JComboBox<>();
         jLabel19 = new javax.swing.JLabel();
@@ -142,13 +143,13 @@ ForGraphics fg=new ForGraphics();
         addMedico = new javax.swing.JButton();
         deleteMedico = new javax.swing.JButton();
         updateMedico = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        cajaEspeciali = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         crearCita = new javax.swing.JButton();
-        ap12citas = new javax.swing.JTextField();
+        apac2 = new javax.swing.JTextField();
         citasNamePac = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -157,8 +158,8 @@ ForGraphics fg=new ForGraphics();
         guardarCita = new javax.swing.JButton();
         restablece = new javax.swing.JButton();
         eliminaCita = new javax.swing.JButton();
-        cajaAp2D1 = new javax.swing.JTextField();
-        cajaAp1D2 = new javax.swing.JTextField();
+        adoc2 = new javax.swing.JTextField();
+        adoc1 = new javax.swing.JTextField();
         citasNameDoc = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -169,7 +170,7 @@ ForGraphics fg=new ForGraphics();
         cajaID4 = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        ap11citas2 = new javax.swing.JTextField();
+        apac1 = new javax.swing.JTextField();
         ampm = new javax.swing.JComboBox<>();
         horas = new javax.swing.JComboBox<>();
         minutos = new javax.swing.JComboBox<>();
@@ -182,16 +183,21 @@ ForGraphics fg=new ForGraphics();
         fecha = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Hospital");
         setBackground(new java.awt.Color(196, 226, 247));
+        setBounds(new java.awt.Rectangle(0, 0, 100, 0));
         setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         setMinimumSize(new java.awt.Dimension(1300, 650));
         setPreferredSize(new java.awt.Dimension(1300, 630));
-        setSize(new java.awt.Dimension(1200, 650));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1300, 650));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        jTabbedPane1.setFont(new java.awt.Font("Eras Demi ITC", 1, 18)); // NOI18N
+        jTabbedPane1.setAlignmentY(10.0F);
+        jTabbedPane1.setFocusCycleRoot(true);
+        jTabbedPane1.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
         jTabbedPane1.setMinimumSize(new java.awt.Dimension(2230, 644));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(1400, 644));
 
@@ -452,7 +458,7 @@ ForGraphics fg=new ForGraphics();
         jPanel1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, -1));
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 30, -1, -1));
 
-        jTabbedPane1.addTab("+Pacientes+", jPanel1);
+        jTabbedPane1.addTab("Pacientes", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -507,14 +513,14 @@ ForGraphics fg=new ForGraphics();
         jLabel17.setText("Especializacion:");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 120, 30));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hombre", "Mujer" }));
-        jPanel2.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, 160, -1));
+        comoGne.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hombre", "Mujer" }));
+        jPanel2.add(comoGne, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, 160, -1));
 
         jLabel18.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel18.setText("Consultorio:");
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 120, 30));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Psicologia", "Nutricion", "Medicina General", "Cirugia", "Geriatria", "Ginecologia", "Pediatria" }));
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Radiolgia", "Pediatria", "Urologia", "Cirugia", "Ginecologia", "Cardilogia", "Traumatologia", "Medicina General", "Farmacologia", "Terapia fisica", "Cuidados intensivos", "Psicologia" }));
         jComboBox6.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBox6ItemStateChanged(evt);
@@ -554,7 +560,7 @@ ForGraphics fg=new ForGraphics();
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "IdDoctor", "Nombre", "Ap1", "Ap2", "Especializacion", "Consultorio", "Departamento", "Genero", "Nombre Departamento"
+                "IdDoctor", "Nombre", "Ap1", "Ap2", "Genero", "Especialidad", "Consultorio", "Cedula", "Departamento"
             }
         ));
         jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -594,22 +600,22 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel2.add(updateMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 150, -1, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        cajaEspeciali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                cajaEspecialiActionPerformed(evt);
             }
         });
-        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+        cajaEspeciali.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField1KeyTyped(evt);
+                cajaEspecialiKeyTyped(evt);
             }
         });
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 240, 30));
+        jPanel2.add(cajaEspeciali, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 240, 30));
         jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, -1));
         jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
         jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, -1, -1));
 
-        jTabbedPane1.addTab("+Medicos+", jPanel2);
+        jTabbedPane1.addTab("Medicos", jPanel2);
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -621,12 +627,12 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel3.add(crearCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 170, -1));
 
-        ap12citas.addKeyListener(new java.awt.event.KeyAdapter() {
+        apac2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                ap12citasKeyTyped(evt);
+                apac2KeyTyped(evt);
             }
         });
-        jPanel3.add(ap12citas, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 110, -1));
+        jPanel3.add(apac2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 110, -1));
 
         citasNamePac.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -683,19 +689,19 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel3.add(eliminaCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 170, -1));
 
-        cajaAp2D1.addKeyListener(new java.awt.event.KeyAdapter() {
+        adoc2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                cajaAp2D1KeyTyped(evt);
+                adoc2KeyTyped(evt);
             }
         });
-        jPanel3.add(cajaAp2D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 110, -1));
+        jPanel3.add(adoc2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 110, -1));
 
-        cajaAp1D2.addKeyListener(new java.awt.event.KeyAdapter() {
+        adoc1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                cajaAp1D2KeyTyped(evt);
+                adoc1KeyTyped(evt);
             }
         });
-        jPanel3.add(cajaAp1D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 110, -1));
+        jPanel3.add(adoc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 110, -1));
 
         citasNameDoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -770,12 +776,12 @@ ForGraphics fg=new ForGraphics();
         jLabel33.setText("Hora");
         jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 80, 20));
 
-        ap11citas2.addKeyListener(new java.awt.event.KeyAdapter() {
+        apac1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                ap11citas2KeyTyped(evt);
+                apac1KeyTyped(evt);
             }
         });
-        jPanel3.add(ap11citas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 110, -1));
+        jPanel3.add(apac1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 110, -1));
 
         ampm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PM", "AM" }));
         jPanel3.add(ampm, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
@@ -831,158 +837,451 @@ ForGraphics fg=new ForGraphics();
         jPanel3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, -1, -1));
         jPanel3.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, -1, -1));
 
-        jTabbedPane1.addTab("+Citas+", jPanel3);
+        jTabbedPane1.addTab("Citas", jPanel3);
+
+        JLabel lab = new javax.swing.JLabel("Pacientes");
+        lab.setPreferredSize(new Dimension(150, 100));
+        lab.setFont(new java.awt.Font("MS UI Gothic", 1, 24)); // NOI18N
+        jTabbedPane1.setTabComponentAt(0, lab);  // tab index, jLabel
+
+        JLabel lab1 = new javax.swing.JLabel("Medicos");
+        lab1.setPreferredSize(new Dimension(150, 100));
+        lab1.setFont(new java.awt.Font("MS UI Gothic", 1, 24)); // NOI18N
+        jTabbedPane1.setTabComponentAt(1, lab1);  // tab index, jLabel
+
+        JLabel lab2 = new javax.swing.JLabel("Citas");
+        lab2.setPreferredSize(new Dimension(150, 100));
+        lab2.setFont(new java.awt.Font("MS UI Gothic", 1, 24)); // NOI18N
+        jTabbedPane1.setTabComponentAt(2, lab2);  // tab index, jLabel
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 2170, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPacienteActionPerformed
-try{
-        String nomb, ap1, ap2, calle, col, tel,estado, gen;
-int habit,pac, num;
-PacienteDAO d = new PacienteDAO();
-nomb=cajaNp.getText();ap1=ap1p.getText();ap2=ap2p.getText();calle=cajacalle.getText();col=cajacol.getText();
-tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado=comboEstad.getSelectedItem().toString();gen=comboGen.getSelectedItem().toString();
-pac=Integer.parseInt(cajaID.getText()); habit=Integer.parseInt(habitbox.getText());num=Integer.parseInt(cajanum.getText());
-if(d.buscaPaciente("id_Pac", String.valueOf(pac)).getIdPaciente()!=pac && d.buscaPaciente("nombre", cajaNp.getText()).getNombre()!=cajaNp.getText()){
-  Paciente p = new Paciente(pac,nomb,ap1,ap2,col,calle,num,tel,estado,habit,gen);
-  if(d.agregaPaciente(p)){
-      JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
-  }else{
-      JOptionPane.showMessageDialog(rootPane, "El registro NO se añadio", "ERROR", JOptionPane.INFORMATION_MESSAGE);
-  }
-  actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
-  actualizarTabla("SELECT*FROM internos;",tablaInternos);
- cajaNp.setText("");ap1p.setText("");ap2p.setText("");cajacalle.setText("");cajacol.setText("");
- tel1.setText(""); tel2.setText("");tel3.setText("");comboEstad.setSelectedIndex(0);comboGen.setSelectedIndex(0);
- cajaID.setText("");habitbox.setText("");cajanum.setText("");
-}else{
-     JOptionPane.showMessageDialog(rootPane, "Ya existe un registro con esos datos", "INFO", JOptionPane.INFORMATION_MESSAGE);
-}
-}catch (NumberFormatException e2){
-    JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
-}  
+    private void fechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fechaMouseClicked
+     
+    }//GEN-LAST:event_fechaMouseClicked
 
+    private void TablaPacientesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaPacientesMouseReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_addPacienteActionPerformed
+        int t= TablaPacientes.getSelectedRow();
+        citasNamePac.setText(TablaPacientes.getModel().getValueAt(t, 1).toString());
+        cajaID4.setText(TablaPacientes.getModel().getValueAt(t, 0).toString());
+        apac1.setText(TablaPacientes.getModel().getValueAt(t, 2).toString());
+        apac2.setText(TablaPacientes.getModel().getValueAt(t, 3).toString());
 
-    private void cajaIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaIDActionPerformed
+    }//GEN-LAST:event_TablaPacientesMouseReleased
+
+    private void jTable3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_cajaIDActionPerformed
+        int t= jTable3.getSelectedRow();
+        citasNameDoc.setText(jTable3.getModel().getValueAt(t, 1).toString());
+        citasidDoc.setText(jTable3.getModel().getValueAt(t, 0).toString());
+        adoc1.setText(jTable3.getModel().getValueAt(t, 2).toString());
+        adoc2.setText(jTable3.getModel().getValueAt(t, 3).toString());
+    }//GEN-LAST:event_jTable3MouseReleased
 
-    private void tel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tel1ActionPerformed
+    private void apac1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_apac1KeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_tel1ActionPerformed
+        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+        actualizarTabla("Select*From citas_full where primaAp like '%"+apac1.getText()+"%'",jTable1);
+        actualizarTabla("SELECT idPaciente, nombre, primAp, segAp from paciente where paciente like '%"+apac1.getText()+"%'",TablaPacientes);
 
-    private void cajaID2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaID2ActionPerformed
+    }//GEN-LAST:event_apac1KeyTyped
+
+    private void cajaID4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaID4KeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_cajaID2ActionPerformed
+        if(Character.isDigit(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+    }//GEN-LAST:event_cajaID4KeyTyped
 
-    private void crearCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCitaActionPerformed
+    private void cajaID4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaID4ActionPerformed
         // TODO add your handling code here:
-        try{
-        String  h, fech;
-int doc,pac;
-CitasDAO c = new CitasDAO();
-PacienteDAO p=new PacienteDAO();
-h=horas.getSelectedItem().toString()+":"+minutos.getSelectedItem().toString()+":"+ampm.getSelectedItem();
-pac=Integer.parseInt(cajaID4.getText());
-doc=Integer.parseInt(citasidDoc.getText());
-  SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-fech=  format.format(fecha.getDate());
-System.out.println(fech);
-if(c.buscaCita("paciente", String.valueOf(pac)).getPaciente()!=pac){
-  Citas ci = new Citas(pac,doc,fech,h);
-  if(c.generaCita(ci)){
-      p.CitaPaciente(pac);
-      JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
-  }else{
-      JOptionPane.showMessageDialog(rootPane, "El registro NO se añadio", "ERROR", JOptionPane.INFORMATION_MESSAGE);
-  }
-  actualizarTabla("SELECT*FROM citas_full;",jTable1);
-  actualizarTabla("SELECT*FROM paciente;",tabla_paciente);
+    }//GEN-LAST:event_cajaID4ActionPerformed
 
-cajaID4.setText("");
-minutos.setSelectedIndex(0);
-horas.setSelectedIndex(0);
-ampm.setSelectedIndex(0);
-citasidDoc.setText("");
-}else{
-     JOptionPane.showMessageDialog(rootPane, "Ya existe una cita con esos datos", "INFO", JOptionPane.INFORMATION_MESSAGE);
-}
-        }catch(NumberFormatException e2){
-    JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
-        }  
-        
-    }//GEN-LAST:event_crearCitaActionPerformed
-
-    private void citasidDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_citasidDocActionPerformed
+    private void jTable1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_citasidDocActionPerformed
+        int t= jTable1.getSelectedRow();
+        citasNamePac.setText(jTable1.getModel().getValueAt(t, 7).toString());
+        //fecha.setDate(Date.valueOf(jTable1.getModel().getValueAt(t, 0).toString()));
+        cajaID4.setText(jTable1.getModel().getValueAt(t, 6).toString());
+        apac1.setText(jTable1.getModel().getValueAt(t, 8).toString());
+        apac2.setText(jTable1.getModel().getValueAt(t, 9).toString());
+        horas.setSelectedItem(jTable1.getModel().getValueAt(t, 1).toString().substring(0,2));
+        minutos.setSelectedItem(jTable1.getModel().getValueAt(t, 1).toString().substring(4,5));
+        ampm.setSelectedItem(jTable1.getModel().getValueAt(t, 1).toString().substring(7,8));
+        citasNameDoc.setText(jTable1.getModel().getValueAt(t, 3).toString());
+        citasidDoc.setText(jTable1.getModel().getValueAt(t, 2).toString());
+        adoc1.setText(jTable1.getModel().getValueAt(t, 4).toString());
+        adoc2.setText(jTable1.getModel().getValueAt(t, 5).toString());
 
-    private void citasNameDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_citasNameDocActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_citasNameDocActionPerformed
+    }//GEN-LAST:event_jTable1MouseReleased
 
     private void cajaID3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaID3ActionPerformed
         // TODO add your handling code here:
         actualizarTabla("Select*From Paciente where idPaciente= "+cajaID.getText(),tabla_paciente);
     }//GEN-LAST:event_cajaID3ActionPerformed
 
+    private void citasNameDocKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_citasNameDocKeyTyped
+        // TODO add your handling code here:
+        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+        actualizarTabla("Select*From citas_full where doctor like '%"+citasNameDoc.getText()+"%'",jTable1);
+        //actualizarTabla("like '%"+ap12citas.getText()+"%'",jTable4);
+        actualizarTabla("Select IdDoctor, Nombre, Ap1 ,Ap2 from doctor where nombre like '%+"+citasNameDoc.getText()+"%';",jTable3);
+    }//GEN-LAST:event_citasNameDocKeyTyped
+
+    private void citasNameDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_citasNameDocActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_citasNameDocActionPerformed
+
+    private void adoc1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_adoc1KeyTyped
+        // TODO add your handling code here:
+        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+        actualizarTabla("Select*From citas_full where Ap1 like '%"+adoc1.getText()+"%'",jTable1);
+        actualizarTabla("Select IdDoctor, Nombre, Ap1 ,Ap2 from doctor where Ap1 like '%+"+adoc1.getText()+"%';",jTable3);
+
+    }//GEN-LAST:event_adoc1KeyTyped
+
+    private void adoc2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_adoc2KeyTyped
+        // TODO add your handling code here:
+        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+
+    }//GEN-LAST:event_adoc2KeyTyped
+
+    private void eliminaCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminaCitaActionPerformed
+        // TODO add your handling code here:
+        PacienteDAO p = new PacienteDAO();
+        CitasDAO c=new CitasDAO();
+        try{
+            int pac= Integer.parseInt(cajaID4.getText());
+            if(c.Elimina("paciente", String.valueOf(pac), "cita")){
+                p.QuitaCita(pac);
+                JOptionPane.showMessageDialog(rootPane, "Se elimino el registro", null, JOptionPane.INFORMATION_MESSAGE);
+                actualizarTabla("SELECT*FROM citas_full;",jTable1);
+
+            }else
+            JOptionPane.showMessageDialog(rootPane, "No se pudo eliminar el registro", null, JOptionPane.INFORMATION_MESSAGE);
+
+        }catch (NumberFormatException e2){
+            JOptionPane.showMessageDialog(rootPane, "Revisa el Campo ID Paciente", null, JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    }//GEN-LAST:event_eliminaCitaActionPerformed
+
+    private void restableceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restableceActionPerformed
+        // TODO add your handling code here:
+        //java.util.Date x=fecha.getDate();
+
+        //DateFormat f=new SimpleDateFormat("dd-MM-yyyy");
+        //String fecha2=f.format(fecha);
+        cajaID4.setText("");
+        minutos.setSelectedIndex(0);
+        horas.setSelectedIndex(0);
+        ampm.setSelectedIndex(0);
+        citasidDoc.setText("");
+    }//GEN-LAST:event_restableceActionPerformed
+
+    private void guardarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarCitaActionPerformed
+        // TODO add your handling code here:
+        try{
+            String  h, fech;
+            int doc,pac;
+            CitasDAO c = new CitasDAO();
+            PacienteDAO p=new PacienteDAO();
+            h=horas.getSelectedItem().toString()+":"+minutos.getSelectedItem().toString()+":"+ampm.getSelectedItem();
+            pac=Integer.parseInt(cajaID4.getText());
+            doc=Integer.parseInt(citasidDoc.getText());
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            fech=  format.format(fecha.getDate()).toString();
+            System.out.println(fech);
+            if((c.buscaCita("paciente", String.valueOf(pac)).getPaciente()==pac && c.buscaCita("doctor", String.valueOf(doc)).getDoctor()==doc)){
+                Citas ci = new Citas(pac,doc,fech,h);
+                if(c.ModificaCita(ci)){
+                    p.CitaPaciente(pac);
+                    JOptionPane.showMessageDialog(rootPane, "El registro se Modifico correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "El registro NO se modifico", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+                }
+                actualizarTabla("SELECT*FROM citas_full;",jTable1);
+                actualizarTabla("SELECT*FROM paciente;",tabla_paciente);
+
+                cajaID4.setText("");
+                minutos.setSelectedIndex(0);
+                horas.setSelectedIndex(0);
+                ampm.setSelectedIndex(0);
+                citasidDoc.setText("");
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Ya existe una cita con esos datos", "INFO", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_guardarCitaActionPerformed
+
+    private void citasidDocKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_citasidDocKeyTyped
+        // TODO add your handling code here:
+        if(Character.isDigit(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+    }//GEN-LAST:event_citasidDocKeyTyped
+
+    private void citasidDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_citasidDocActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_citasidDocActionPerformed
+
+    private void citasNamePacKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_citasNamePacKeyTyped
+        // TODO add your handling code here:
+        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+        actualizarTabla("Select*From citas_full where paciente like '%"+citasNamePac.getText()+"%'",jTable1);
+        actualizarTabla("SELECT id_Pac, nombre, primAp, segAp from paciente where nombre like '%"+citasNamePac.getText()+"%'",TablaPacientes);
+    }//GEN-LAST:event_citasNamePacKeyTyped
+
+    private void apac2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_apac2KeyTyped
+        // TODO add your handling code here:
+        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+        actualizarTabla("Select*From citas_full where SegAp like '%"+apac2.getText()+"%'",jTable1);
+        actualizarTabla("SELECT idPaciente, nombre, primAp, segAp from paciente where primAp like '%"+apac2.getText()+"%'",TablaPacientes);
+    }//GEN-LAST:event_apac2KeyTyped
+
+    private void crearCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCitaActionPerformed
+        // TODO add your handling code here:
+        try{
+            String  h, fech;
+            int doc,pac;
+            CitasDAO c = new CitasDAO();
+            PacienteDAO p=new PacienteDAO();
+            h=horas.getSelectedItem().toString()+":"+minutos.getSelectedItem().toString()+":"+ampm.getSelectedItem();
+            pac=Integer.parseInt(cajaID4.getText());
+            doc=Integer.parseInt(citasidDoc.getText());
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            fech=  format.format(fecha.getDate());
+            System.out.println(fech);
+            if(c.buscaCita("paciente", String.valueOf(pac)).getPaciente()!=pac){
+                Citas ci = new Citas(pac,doc,fech,h);
+                if(c.generaCita(ci)){
+                    p.CitaPaciente(pac);
+                    JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "El registro NO se añadio", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+                }
+                actualizarTabla("SELECT*FROM citas_full;",jTable1);
+                actualizarTabla("SELECT*FROM paciente;",tabla_paciente);
+
+                cajaID4.setText("");
+                minutos.setSelectedIndex(0);
+                horas.setSelectedIndex(0);
+                ampm.setSelectedIndex(0);
+                citasidDoc.setText("");
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Ya existe una cita con esos datos", "INFO", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(NumberFormatException e2){
+            JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    }//GEN-LAST:event_crearCitaActionPerformed
+
+    private void cajaEspecialiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaEspecialiKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cajaEspecialiKeyTyped
+
+    private void cajaEspecialiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaEspecialiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cajaEspecialiActionPerformed
+
+    private void updateMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMedicoActionPerformed
+        // TODO add your handling code here:
+        try{
+            int id = Integer.parseInt(cajaID2.getText());
+            String name=nombreDoc.getText();
+            String  ap= cajaAp1D1.getText();
+            String ap2 = cajaAp2Dv.getText();
+            String esp = cajaEspeciali.getText();
+            int con = Integer.parseInt(consultorio.getText());
+            int dep = jComboBox6.getSelectedIndex();
+            dep=dep+1;
+            String gen = comoGne.getSelectedItem().toString();
+            DoctorDAO d = new DoctorDAO();
+            if(d.buscaDoctor("Id_Doc", String.valueOf(id)) == null && d.buscaDoctor("nombre", name)==null){
+                Doctor p = new Doctor(id,name,ap,ap2,esp,con,dep,gen);
+                if(d.ModificaDoctor(p)){
+                    JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "El registro NO se añadio", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+                }
+                actualizarTabla("SELECT*FROM docs_dept;",jTable2);
+                nombreDoc.setText("");
+                cajaAp1D1.setText("");
+                cajaAp2Dv.setText("");
+                cajaEspeciali.setText("");
+                consultorio.setText("");
+                jComboBox6.setSelectedIndex(0);
+                comoGne.setSelectedIndex(0);
+
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Ya existe un registro con esos datos", "INFO", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch (NumberFormatException e2){
+            JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    }//GEN-LAST:event_updateMedicoActionPerformed
+
     private void deleteMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMedicoActionPerformed
         // TODO add your handling code here:
-            PacienteDAO p = new PacienteDAO();
-         CitasDAO c=new CitasDAO();
+        PacienteDAO p = new PacienteDAO();
+        CitasDAO c=new CitasDAO();
         try{
             int pac= Integer.parseInt(cajaID2.getText());
             if(c.Elimina("IdDoctor", String.valueOf(pac), "Doctor")){
                 p.QuitaCita(pac);
-                            JOptionPane.showMessageDialog(rootPane, "Se elimino el registro", null, JOptionPane.INFORMATION_MESSAGE);
-                             actualizarTabla("SELECT*FROM docs_dept;",jTable2);
-                             
+                JOptionPane.showMessageDialog(rootPane, "Se elimino el registro", null, JOptionPane.INFORMATION_MESSAGE);
+                actualizarTabla("SELECT*FROM docs_dept;",jTable2);
+
             }else
-                            JOptionPane.showMessageDialog(rootPane, "No se pudo eliminar el registro", null, JOptionPane.INFORMATION_MESSAGE);
-  
+            JOptionPane.showMessageDialog(rootPane, "No se pudo eliminar el registro", null, JOptionPane.INFORMATION_MESSAGE);
+
         }catch (NumberFormatException e2){
             JOptionPane.showMessageDialog(rootPane, "Revisa el Campo ID Doctor", null, JOptionPane.INFORMATION_MESSAGE);
         }
-        
+
     }//GEN-LAST:event_deleteMedicoActionPerformed
 
-    private void cajaID4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaID4ActionPerformed
+    private void addMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMedicoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cajaID4ActionPerformed
+        try{
+            int id = Integer.parseInt(cajaID2.getText());
+            String name=nombreDoc.getText();
+            String  ap= cajaAp1D1.getText();
+            String ap2 = cajaAp2Dv.getText();
+            String esp = cajaEspeciali.getText();
+            int con = Integer.parseInt(consultorio.getText());
+            int dep = jComboBox6.getSelectedIndex()+1;
+            String gen = comoGne.getSelectedItem().toString();
+            DoctorDAO d = new DoctorDAO();
+            if(d.buscaDoctor("Id_Doc", String.valueOf(id)) == null && d.buscaDoctor("nombre", name)==null){
+                Doctor p = new Doctor(id,name,ap,ap2,esp,con,dep,gen);
+                if(d.agregaDoctor(p)){
+                    JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "El registro NO se añadio", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+                }
+                actualizarTabla("SELECT*FROM docs_dept;",jTable2);
+                nombreDoc.setText("");
+                cajaAp1D1.setText("");
+                cajaAp2Dv.setText("");
+                cajaEspeciali.setText("");
+                consultorio.setText("");
+                jComboBox6.setSelectedIndex(0);
+                comoGne.setSelectedIndex(0);
 
-    private void editPacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editPacActionPerformed
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Ya existe un registro con esos datos", "INFO", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch (NumberFormatException e2){
+            JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    }//GEN-LAST:event_addMedicoActionPerformed
+
+    private void jTable2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseReleased
         // TODO add your handling code here:
-        String nomb, ap1, ap2, calle, col, tel,estado, gen;
-int habit,pac, num;
-PacienteDAO d = new PacienteDAO();
-try{
-nomb=cajaNp.getText();ap1=ap1p.getText();ap2=ap2p.getText();calle=cajacalle.getText();col=cajacol.getText();
-tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado=comboEstad.getSelectedItem().toString();gen=comboGen.getSelectedItem().toString();
-pac=Integer.parseInt(cajaID.getText()); habit=Integer.parseInt(habitbox.getText());num=Integer.parseInt(cajanum.getText());
-if(d.buscaPaciente("id_Pac", String.valueOf(pac)).getIdPaciente()==pac){
-  Paciente p = new Paciente(pac,nomb,ap1,ap2,col,calle,num,tel,estado,habit,gen);
-  if(d.ModificaPaciente(p)){
-      JOptionPane.showMessageDialog(rootPane, "El registro se modifico correctamente", null, JOptionPane.INFORMATION_MESSAGE);
-  }else{
-      JOptionPane.showMessageDialog(rootPane, "El registro NO se Modico", "ERROR", JOptionPane.INFORMATION_MESSAGE);
-  }
-  actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
-  actualizarTabla("SELECT*FROM internos;",tablaInternos);
- cajaNp.setText("");ap1p.setText("");ap2p.setText("");cajacalle.setText("");cajacol.setText("");
- tel1.setText(""); tel2.setText("");tel3.setText("");comboEstad.setSelectedIndex(0);comboGen.setSelectedIndex(0);
- cajaID.setText("");habitbox.setText("");cajanum.setText("");
-}else{
-     JOptionPane.showMessageDialog(rootPane, "El paciente no existe", "INFO", JOptionPane.INFORMATION_MESSAGE);
-}
-}catch (NumberFormatException e2){
-    JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
-}  
-    }//GEN-LAST:event_editPacActionPerformed
+        int t= jTable2.getSelectedRow();
+        cajaID2.setText(jTable2.getModel().getValueAt(t,0).toString());
+        nombreDoc.setText(jTable2.getModel().getValueAt(t,1).toString());
+        cajaAp1D1.setText(jTable2.getModel().getValueAt(t,2).toString());
+        cajaAp2Dv.setText(jTable2.getModel().getValueAt(t,3).toString());
+        cajaEspeciali.setText(jTable2.getModel().getValueAt(t,5).toString());
+        consultorio.setText(jTable2.getModel().getValueAt(t,6).toString());
+        jComboBox6.setSelectedItem(jTable2.getModel().getValueAt(t,7).toString());
+        comoGne.setSelectedItem(jTable2.getModel().getValueAt(t,4).toString());
+
+    }//GEN-LAST:event_jTable2MouseReleased
+
+    private void nombreDocKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreDocKeyTyped
+        // TODO add your handling code here:
+        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+        actualizarTabla("Select*From docs_dept where Nombre like '%"+nombreDoc.getText()+"%'",jTable2);
+    }//GEN-LAST:event_nombreDocKeyTyped
+
+    private void nombreDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreDocActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombreDocActionPerformed
+
+    private void jComboBox6MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox6MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox6MouseReleased
+
+    private void jComboBox6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox6ItemStateChanged
+        // TODO add your handling code here:;
+    }//GEN-LAST:event_jComboBox6ItemStateChanged
+
+    private void cajaID2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaID2KeyTyped
+        // TODO add your handling code here:
+        if(Character.isDigit(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+    }//GEN-LAST:event_cajaID2KeyTyped
+
+    private void cajaID2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaID2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cajaID2ActionPerformed
+
+    private void cajaAp1D1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaAp1D1KeyTyped
+        // TODO add your handling code here:
+        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+        actualizarTabla("Select*From docs_dept where Ap1 like '%"+adoc2.getText()+"%'",jTable2);
+    }//GEN-LAST:event_cajaAp1D1KeyTyped
+
+    private void cajaAp2DvKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaAp2DvKeyTyped
+        // TODO add your handling code here:
+        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+        actualizarTabla("Select*From docs_dept where Ap2 like '%"+cajaAp2Dv.getText()+"%'",jTable2);
+    }//GEN-LAST:event_cajaAp2DvKeyTyped
 
     private void tabla_pacienteMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabla_pacienteMouseReleased
         // TODO add your handling code here:
@@ -1002,49 +1301,63 @@ if(d.buscaPaciente("id_Pac", String.valueOf(pac)).getIdPaciente()==pac){
         habitbox.setText(tabla_paciente.getModel().getValueAt(t,10).toString());
         String s2=tabla_paciente.getModel().getValueAt(t, 4).toString();
         comboGen.setSelectedItem(s2);
-       
+
     }//GEN-LAST:event_tabla_pacienteMouseReleased
 
-    private void deletePacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePacActionPerformed
+    private void darAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_darAltaActionPerformed
         // TODO add your handling code here:
-        PacienteDAO p = new PacienteDAO();
+        String nomb, ap1, ap2, calle, col, tel,estado, gen;
+        int habit,pac, num;
+        PacienteDAO d = new PacienteDAO();
+        HabitacionDAO hab= new HabitacionDAO();
         try{
-            String pac= cajaID.getText();
-            if(p.Elimina("idPaciente", pac, "paciente")){
-                            JOptionPane.showMessageDialog(rootPane, "Se elimino el registro", null, JOptionPane.INFORMATION_MESSAGE);
-                             actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
-                             actualizarTabla("SELECT*FROM internos;",tablaInternos);
-            }else
-                            JOptionPane.showMessageDialog(rootPane, "No se pudo eliminar el registro", null, JOptionPane.INFORMATION_MESSAGE);
-  
+            nomb=cajaNp.getText();ap1=ap1p.getText();ap2=ap2p.getText();calle=cajacalle.getText();col=cajacol.getText();
+            tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado="De Alta";gen=comboGen.getSelectedItem().toString();
+            pac=Integer.parseInt(cajaID.getText()); habit=Integer.parseInt(habitbox.getText());num=Integer.parseInt(cajanum.getText());
+            if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()==pac){
+                Paciente p = new Paciente(pac,nomb,ap1,ap2,col,calle,num,tel,estado,habit,gen);
+                if(d.DarAlta(pac)){
+                    hab.liberaHabitacion(habit);
+                    JOptionPane.showMessageDialog(rootPane, "Se dio de Alta al paciente", null, JOptionPane.INFORMATION_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "El registro NO se Modico", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+                }
+                actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
+                actualizarTabla("SELECT*FROM internos;",tablaInternos);
+                cajaNp.setText("");ap1p.setText("");ap2p.setText("");cajacalle.setText("");cajacol.setText("");
+                tel1.setText(""); tel2.setText("");tel3.setText("");comboEstad.setSelectedIndex(0);comboGen.setSelectedIndex(0);
+                cajaID.setText("");habitbox.setText("");cajanum.setText("");
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "El paciente no existe", "INFO", JOptionPane.INFORMATION_MESSAGE);
+            }
         }catch (NumberFormatException e2){
-            JOptionPane.showMessageDialog(rootPane, "Revisa el Campo ID Paciente", null, JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_deletePacActionPerformed
+    }//GEN-LAST:event_darAltaActionPerformed
 
-    private void cajaNpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaNpActionPerformed
-        // TODO add your handling code here:
-         actualizarTabla("Select*From Paciente where Nombre like '%"+cajaNp.getText()+"%';",tabla_paciente);
-    }//GEN-LAST:event_cajaNpActionPerformed
-
-    private void cajaNpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaNpKeyReleased
-  
-    }//GEN-LAST:event_cajaNpKeyReleased
-
-    private void cajaNpKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaNpKeyTyped
+    private void ap1pKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ap1pKeyTyped
         // TODO add your handling code here:
         if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
         }
         else{
             evt.consume();
+            actualizarTabla("Select*From Paciente where PrimAp like '%"+ap1p.getText()+"%'",tabla_paciente);
+            actualizarTabla("Select*From internos where PrimAp like '%"+ap1p.getText()+"%'",tablaInternos);
         }
-         actualizarTabla("Select*From Paciente where Nombre like '%"+cajaNp.getText()+"%'",tabla_paciente);
-         actualizarTabla("Select*From internos where Nombre like '%"+cajaNp.getText()+"%'",tablaInternos); 
-    }//GEN-LAST:event_cajaNpKeyTyped
 
-    private void cajaNpKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaNpKeyPressed
+    }//GEN-LAST:event_ap1pKeyTyped
 
-    }//GEN-LAST:event_cajaNpKeyPressed
+    private void ap2pKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ap2pKeyTyped
+        // TODO add your handling code here:
+        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+
+        }
+        actualizarTabla("Select*From Paciente where SegAp like '%"+ap2p.getText()+"%'",tabla_paciente);
+        actualizarTabla("Select*From internos where SegAp like '%"+ap2p.getText()+"%'",tablaInternos);
+    }//GEN-LAST:event_ap2pKeyTyped
 
     private void cajaIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaIDKeyTyped
         // TODO add your handling code here:
@@ -1054,68 +1367,17 @@ if(d.buscaPaciente("id_Pac", String.valueOf(pac)).getIdPaciente()==pac){
             evt.consume();
             actualizarTabla("Select*From Paciente where idPaciente like '%"+cajaID.getText()+"%'",tabla_paciente);
         }
-        
+
     }//GEN-LAST:event_cajaIDKeyTyped
 
-    private void ap1pKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ap1pKeyTyped
+    private void cajaIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaIDActionPerformed
         // TODO add your handling code here:
-        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-         actualizarTabla("Select*From Paciente where PrimAp like '%"+ap1p.getText()+"%'",tabla_paciente);
-        actualizarTabla("Select*From internos where PrimAp like '%"+ap1p.getText()+"%'",tablaInternos);
-        }
-        
-    }//GEN-LAST:event_ap1pKeyTyped
-
-    private void ap2pKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ap2pKeyTyped
-        // TODO add your handling code here:
-        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-        
-        }
-       actualizarTabla("Select*From Paciente where SegAp like '%"+ap2p.getText()+"%'",tabla_paciente);
-        actualizarTabla("Select*From internos where SegAp like '%"+ap2p.getText()+"%'",tablaInternos); 
-    }//GEN-LAST:event_ap2pKeyTyped
-
-    private void darAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_darAltaActionPerformed
-        // TODO add your handling code here:
-         String nomb, ap1, ap2, calle, col, tel,estado, gen;
-int habit,pac, num;
-PacienteDAO d = new PacienteDAO();
-HabitacionDAO hab= new HabitacionDAO();
-try{
-nomb=cajaNp.getText();ap1=ap1p.getText();ap2=ap2p.getText();calle=cajacalle.getText();col=cajacol.getText();
-tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado="De Alta";gen=comboGen.getSelectedItem().toString();
-pac=Integer.parseInt(cajaID.getText()); habit=Integer.parseInt(habitbox.getText());num=Integer.parseInt(cajanum.getText());
-if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()==pac){
-  Paciente p = new Paciente(pac,nomb,ap1,ap2,col,calle,num,tel,estado,habit,gen);
-  if(d.DarAlta(pac)){
-      hab.liberaHabitacion(habit);
-      JOptionPane.showMessageDialog(rootPane, "Se dio de Alta al paciente", null, JOptionPane.INFORMATION_MESSAGE);
-  }else{
-      JOptionPane.showMessageDialog(rootPane, "El registro NO se Modico", "ERROR", JOptionPane.INFORMATION_MESSAGE);
-  }
-  actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
-  actualizarTabla("SELECT*FROM internos;",tablaInternos);
- cajaNp.setText("");ap1p.setText("");ap2p.setText("");cajacalle.setText("");cajacol.setText("");
- tel1.setText(""); tel2.setText("");tel3.setText("");comboEstad.setSelectedIndex(0);comboGen.setSelectedIndex(0);
- cajaID.setText("");habitbox.setText("");cajanum.setText("");
-}else{
-     JOptionPane.showMessageDialog(rootPane, "El paciente no existe", "INFO", JOptionPane.INFORMATION_MESSAGE);
-}
-}catch (NumberFormatException e2){
-    JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
-}  
-    }//GEN-LAST:event_darAltaActionPerformed
+    }//GEN-LAST:event_cajaIDActionPerformed
 
     private void comboGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboGenItemStateChanged
         // TODO add your handling code here:
         if("De Alta".equals(comboEstad.getSelectedItem().toString())){
-             actualizarTabla("SELECT*FROM Paciente where estado = 'De Alta';",tabla_paciente);
+            actualizarTabla("SELECT*FROM Paciente where estado = 'De Alta';",tabla_paciente);
         }else if ("Citado".equals(comboEstad.getSelectedItem().toString())){
             actualizarTabla("SELECT*FROM Paciente where estado = 'Citado';",tabla_paciente);
         }else if("Revision".equals(comboEstad.getSelectedItem().toString())){
@@ -1124,336 +1386,6 @@ if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()==pac){
             actualizarTabla("SELECT*FROM Paciente where estado = 'Internado';",tabla_paciente);
         }
     }//GEN-LAST:event_comboGenItemStateChanged
-
-    private void jComboBox6MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox6MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox6MouseReleased
-
-    private void citasNamePacKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_citasNamePacKeyTyped
-        // TODO add your handling code here:
-        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-        }
-         actualizarTabla("Select*From citas_full where paciente like '%"+citasNamePac.getText()+"%'",jTable1);
-         actualizarTabla("SELECT idPaciente, nombre, primAp, segAp from paciente where nombre like '%"+citasNamePac.getText()+"%'",TablaPacientes);
-    }//GEN-LAST:event_citasNamePacKeyTyped
-
-    private void ap12citasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ap12citasKeyTyped
-        // TODO add your handling code here:
-        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-        }
-         actualizarTabla("Select*From citas_full where SegAp like '%"+ap12citas.getText()+"%'",jTable1);
-         actualizarTabla("SELECT idPaciente, nombre, primAp, segAp from paciente where primAp like '%"+ap12citas.getText()+"%'",TablaPacientes);
-    }//GEN-LAST:event_ap12citasKeyTyped
-
-    private void restableceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restableceActionPerformed
-        // TODO add your handling code here:
-        //java.util.Date x=fecha.getDate();
-        
-        //DateFormat f=new SimpleDateFormat("dd-MM-yyyy");
-        //String fecha2=f.format(fecha);
-        cajaID4.setText("");
-minutos.setSelectedIndex(0);
-horas.setSelectedIndex(0);
-ampm.setSelectedIndex(0);
-citasidDoc.setText("");
-    }//GEN-LAST:event_restableceActionPerformed
-
-    private void ap11citas2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ap11citas2KeyTyped
-        // TODO add your handling code here:
-        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-        }
-        actualizarTabla("Select*From citas_full where primaAp like '%"+ap11citas2.getText()+"%'",jTable1);
-        actualizarTabla("SELECT idPaciente, nombre, primAp, segAp from paciente where paciente like '%"+ap11citas2.getText()+"%'",TablaPacientes);
-        
-    }//GEN-LAST:event_ap11citas2KeyTyped
-
-    private void guardarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarCitaActionPerformed
-        // TODO add your handling code here:
-          try{
-        String  h, fech;
-int doc,pac;
-CitasDAO c = new CitasDAO();
-PacienteDAO p=new PacienteDAO();
-h=horas.getSelectedItem().toString()+":"+minutos.getSelectedItem().toString()+":"+ampm.getSelectedItem();
-pac=Integer.parseInt(cajaID4.getText());
-doc=Integer.parseInt(citasidDoc.getText());
-  SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-fech=  format.format(fecha.getDate()).toString();
-System.out.println(fech);
-if((c.buscaCita("paciente", String.valueOf(pac)).getPaciente()==pac && c.buscaCita("doctor", String.valueOf(doc)).getDoctor()==doc)){
-  Citas ci = new Citas(pac,doc,fech,h);
-  if(c.ModificaCita(ci)){
-      p.CitaPaciente(pac);
-      JOptionPane.showMessageDialog(rootPane, "El registro se Modifico correctamente", null, JOptionPane.INFORMATION_MESSAGE);
-  }else{
-      JOptionPane.showMessageDialog(rootPane, "El registro NO se modifico", "ERROR", JOptionPane.INFORMATION_MESSAGE);
-  }
-  actualizarTabla("SELECT*FROM citas_full;",jTable1);
-  actualizarTabla("SELECT*FROM paciente;",tabla_paciente);
-
-cajaID4.setText("");
-minutos.setSelectedIndex(0);
-horas.setSelectedIndex(0);
-ampm.setSelectedIndex(0);
-citasidDoc.setText("");
-}else{
-     JOptionPane.showMessageDialog(rootPane, "Ya existe una cita con esos datos", "INFO", JOptionPane.INFORMATION_MESSAGE);
-}
-        }catch(NumberFormatException e2){
-    JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
-        }  
-    }//GEN-LAST:event_guardarCitaActionPerformed
-
-    private void eliminaCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminaCitaActionPerformed
-        // TODO add your handling code here:
-         PacienteDAO p = new PacienteDAO();
-         CitasDAO c=new CitasDAO();
-        try{
-            int pac= Integer.parseInt(cajaID4.getText());
-            if(c.Elimina("paciente", String.valueOf(pac), "cita")){
-                p.QuitaCita(pac);
-                            JOptionPane.showMessageDialog(rootPane, "Se elimino el registro", null, JOptionPane.INFORMATION_MESSAGE);
-                             actualizarTabla("SELECT*FROM citas_full;",jTable1);
-                             
-            }else
-                            JOptionPane.showMessageDialog(rootPane, "No se pudo eliminar el registro", null, JOptionPane.INFORMATION_MESSAGE);
-  
-        }catch (NumberFormatException e2){
-            JOptionPane.showMessageDialog(rootPane, "Revisa el Campo ID Paciente", null, JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-    }//GEN-LAST:event_eliminaCitaActionPerformed
-
-    private void jTable1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseReleased
-        // TODO add your handling code here:
-        int t= jTable1.getSelectedRow();
-        citasNamePac.setText(jTable1.getModel().getValueAt(t, 10).toString());
-        //fecha.setDate(Date.valueOf(jTable1.getModel().getValueAt(t, 0).toString()));
-        cajaID4.setText(jTable1.getModel().getValueAt(t, 9).toString());
-        ap11citas2.setText(jTable1.getModel().getValueAt(t, 11).toString());
-        ap12citas.setText(jTable1.getModel().getValueAt(t, 12).toString());
-        horas.setSelectedItem(jTable1.getModel().getValueAt(t, 1).toString().substring(0,2));
-        minutos.setSelectedItem(jTable1.getModel().getValueAt(t, 1).toString().substring(4,5));
-        ampm.setSelectedItem(jTable1.getModel().getValueAt(t, 1).toString().substring(7,8));
-        citasNameDoc.setText(jTable1.getModel().getValueAt(t, 6).toString());
-        citasidDoc.setText(jTable1.getModel().getValueAt(t, 5).toString());
-        cajaAp1D2.setText(jTable1.getModel().getValueAt(t, 7).toString());
-        cajaAp2D1.setText(jTable1.getModel().getValueAt(t, 8).toString());
-        
-        
-    }//GEN-LAST:event_jTable1MouseReleased
-
-    private void TablaPacientesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaPacientesMouseReleased
-        // TODO add your handling code here:
-        int t= TablaPacientes.getSelectedRow();
-        citasNamePac.setText(TablaPacientes.getModel().getValueAt(t, 1).toString());
-        cajaID4.setText(TablaPacientes.getModel().getValueAt(t, 0).toString());
-        ap11citas2.setText(TablaPacientes.getModel().getValueAt(t, 2).toString());
-        ap12citas.setText(TablaPacientes.getModel().getValueAt(t, 3).toString());
-        
-    }//GEN-LAST:event_TablaPacientesMouseReleased
-
-    private void jTable3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseReleased
-        // TODO add your handling code here:
-        int t= jTable3.getSelectedRow();
-        citasNameDoc.setText(jTable3.getModel().getValueAt(t, 1).toString());
-        citasidDoc.setText(jTable3.getModel().getValueAt(t, 0).toString());
-        cajaAp1D2.setText(jTable3.getModel().getValueAt(t, 2).toString());
-        cajaAp2D1.setText(jTable3.getModel().getValueAt(t, 3).toString());
-    }//GEN-LAST:event_jTable3MouseReleased
-
-    private void tel3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tel3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tel3ActionPerformed
-
-    private void jTable2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseReleased
-        // TODO add your handling code here:
-        int t= jTable2.getSelectedRow();
-        cajaID2.setText(jTable2.getModel().getValueAt(t,0).toString());
-        nombreDoc.setText(jTable2.getModel().getValueAt(t,1).toString());
-        cajaAp1D1.setText(jTable2.getModel().getValueAt(t,2).toString());
-        cajaAp2Dv.setText(jTable2.getModel().getValueAt(t,3).toString());
-        jTextField1.setText(jTable2.getModel().getValueAt(t,4).toString());
-        consultorio.setText(jTable2.getModel().getValueAt(t,5).toString());
-        jComboBox6.setSelectedItem(jTable2.getModel().getValueAt(t,8).toString());
-         jComboBox5.setSelectedItem(jTable2.getModel().getValueAt(t,7).toString());
-        
-    }//GEN-LAST:event_jTable2MouseReleased
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void nombreDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreDocActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreDocActionPerformed
-
-    private void nombreDocKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreDocKeyTyped
-        // TODO add your handling code here:
-        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-        }
-         actualizarTabla("Select*From docs_dept where Nombre like '%"+nombreDoc.getText()+"%'",jTable2);
-    }//GEN-LAST:event_nombreDocKeyTyped
-
-    private void cajaAp1D1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaAp1D1KeyTyped
-        // TODO add your handling code here:
-        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-        }
-         actualizarTabla("Select*From docs_dept where Ap1 like '%"+cajaAp2D1.getText()+"%'",jTable2);
-    }//GEN-LAST:event_cajaAp1D1KeyTyped
-
-    private void cajaAp2DvKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaAp2DvKeyTyped
-        // TODO add your handling code here:
-        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-        }
-         actualizarTabla("Select*From docs_dept where Ap2 like '%"+cajaAp2Dv.getText()+"%'",jTable2);
-    }//GEN-LAST:event_cajaAp2DvKeyTyped
-
-    private void jComboBox6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox6ItemStateChanged
-        // TODO add your handling code here:;
-    }//GEN-LAST:event_jComboBox6ItemStateChanged
-
-    private void addMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMedicoActionPerformed
-        // TODO add your handling code here:
-        try{
-         int id = Integer.parseInt(cajaID2.getText());
-        String name=nombreDoc.getText();
-        String  ap= cajaAp1D1.getText();
-        String ap2 = cajaAp2Dv.getText();
-       String esp = jTextField1.getText();
-        int con = Integer.parseInt(consultorio.getText());
-        int dep = jComboBox6.getSelectedIndex()+1;
-         String gen = jComboBox5.getSelectedItem().toString();
-            DoctorDAO d = new DoctorDAO();
-            if(d.buscaDoctor("Id_Doc", String.valueOf(id)) == null && d.buscaDoctor("nombre", name)==null){
-                Doctor p = new Doctor(id,name,ap,ap2,esp,con,dep,gen);
-                if(d.agregaDoctor(p)){
-                    JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
-                    }else{
-                        JOptionPane.showMessageDialog(rootPane, "El registro NO se añadio", "ERROR", JOptionPane.INFORMATION_MESSAGE);
-                 }
-  actualizarTabla("SELECT*FROM docs_dept;",jTable2);
-   nombreDoc.setText("");
-        cajaAp1D1.setText("");
-       cajaAp2Dv.setText("");
-       jTextField1.setText("");
-       consultorio.setText("");
-        jComboBox6.setSelectedIndex(0);
-        jComboBox5.setSelectedIndex(0);
-
-}else{
-     JOptionPane.showMessageDialog(rootPane, "Ya existe un registro con esos datos", "INFO", JOptionPane.INFORMATION_MESSAGE);
-}
-}catch (NumberFormatException e2){
-    JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
-}  
-         
-        
-    }//GEN-LAST:event_addMedicoActionPerformed
-
-    private void updateMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMedicoActionPerformed
-        // TODO add your handling code here:
-               try{
-         int id = Integer.parseInt(cajaID2.getText());
-        String name=nombreDoc.getText();
-        String  ap= cajaAp1D1.getText();
-        String ap2 = cajaAp2Dv.getText();
-       String esp = jTextField1.getText();
-        int con = Integer.parseInt(consultorio.getText());
-        int dep = jComboBox6.getSelectedIndex();
-        dep=dep+1;
-         String gen = jComboBox5.getSelectedItem().toString();
-            DoctorDAO d = new DoctorDAO();
-            if(d.buscaDoctor("Id_Doc", String.valueOf(id)) == null && d.buscaDoctor("nombre", name)==null){
-                Doctor p = new Doctor(id,name,ap,ap2,esp,con,dep,gen);
-                if(d.ModificaDoctor(p)){
-                    JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
-                    }else{
-                        JOptionPane.showMessageDialog(rootPane, "El registro NO se añadio", "ERROR", JOptionPane.INFORMATION_MESSAGE);
-                 }
-  actualizarTabla("SELECT*FROM docs_dept;",jTable2);
-   nombreDoc.setText("");
-        cajaAp1D1.setText("");
-       cajaAp2Dv.setText("");
-       jTextField1.setText("");
-       consultorio.setText("");
-        jComboBox6.setSelectedIndex(0);
-        jComboBox5.setSelectedIndex(0);
-
-}else{
-     JOptionPane.showMessageDialog(rootPane, "Ya existe un registro con esos datos", "INFO", JOptionPane.INFORMATION_MESSAGE);
-}
-}catch (NumberFormatException e2){
-    JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
-}  
-         
-    }//GEN-LAST:event_updateMedicoActionPerformed
-
-    private void citasNameDocKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_citasNameDocKeyTyped
-        // TODO add your handling code here:
-        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-        }
-        actualizarTabla("Select*From citas_full where doctor like '%"+citasNameDoc.getText()+"%'",jTable1);
-        //actualizarTabla("like '%"+ap12citas.getText()+"%'",jTable4);
-        actualizarTabla("Select IdDoctor, Nombre, Ap1 ,Ap2 from doctor where nombre like '%+"+citasNameDoc.getText()+"%';",jTable3);
-
-    }//GEN-LAST:event_citasNameDocKeyTyped
-
-    private void fechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fechaMouseClicked
-     
-    }//GEN-LAST:event_fechaMouseClicked
-
-    private void cajaAp1D2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaAp1D2KeyTyped
-        // TODO add your handling code here:
-        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-        }
-        actualizarTabla("Select*From citas_full where Ap1 like '%"+cajaAp1D2.getText()+"%'",jTable1);
-        actualizarTabla("Select IdDoctor, Nombre, Ap1 ,Ap2 from doctor where Ap1 like '%+"+cajaAp1D2.getText()+"%';",jTable3);
-        
-    }//GEN-LAST:event_cajaAp1D2KeyTyped
-
-    private void cajaAp2D1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaAp2D1KeyTyped
-        // TODO add your handling code here:
-        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-        }
-        
-    }//GEN-LAST:event_cajaAp2D1KeyTyped
-
-    private void cajacalleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajacalleKeyTyped
-        // TODO add your handling code here:
-        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-        }
-    }//GEN-LAST:event_cajacalleKeyTyped
 
     private void cajanumKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajanumKeyTyped
         // TODO add your handling code here:
@@ -1464,19 +1396,32 @@ citasidDoc.setText("");
         }
     }//GEN-LAST:event_cajanumKeyTyped
 
-    private void cajacolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajacolActionPerformed
+    private void deletePacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePacActionPerformed
         // TODO add your handling code here:
-      
-    }//GEN-LAST:event_cajacolActionPerformed
+        PacienteDAO p = new PacienteDAO();
+        try{
+            String pac= cajaID.getText();
+            if(p.Elimina("idPaciente", pac, "paciente")){
+                JOptionPane.showMessageDialog(rootPane, "Se elimino el registro", null, JOptionPane.INFORMATION_MESSAGE);
+                actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
+                actualizarTabla("SELECT*FROM internos;",tablaInternos);
+            }else
+            JOptionPane.showMessageDialog(rootPane, "No se pudo eliminar el registro", null, JOptionPane.INFORMATION_MESSAGE);
 
-    private void cajacolKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajacolKeyTyped
+        }catch (NumberFormatException e2){
+            JOptionPane.showMessageDialog(rootPane, "Revisa el Campo ID Paciente", null, JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_deletePacActionPerformed
+
+    private void habitboxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_habitboxKeyTyped
         // TODO add your handling code here:
-        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        if(Character.isDigit(evt.getKeyChar()) || evt.getKeyChar() == '-'){
         }
         else{
             evt.consume();
         }
-    }//GEN-LAST:event_cajacolKeyTyped
+
+    }//GEN-LAST:event_habitboxKeyTyped
 
     private void tel1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tel1KeyTyped
         // TODO add your handling code here:
@@ -1487,6 +1432,10 @@ citasidDoc.setText("");
         }
     }//GEN-LAST:event_tel1KeyTyped
 
+    private void tel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tel1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tel1ActionPerformed
+
     private void tel2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tel2KeyTyped
         // TODO add your handling code here:
         if(Character.isDigit(evt.getKeyChar()) || evt.getKeyChar() == '-'){
@@ -1495,6 +1444,53 @@ citasidDoc.setText("");
             evt.consume();
         }
     }//GEN-LAST:event_tel2KeyTyped
+
+    private void cajacolKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajacolKeyTyped
+        // TODO add your handling code here:
+        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+    }//GEN-LAST:event_cajacolKeyTyped
+
+    private void cajacolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajacolActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_cajacolActionPerformed
+
+    private void cajaNpKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaNpKeyTyped
+        // TODO add your handling code here:
+        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+        actualizarTabla("Select*From Paciente where Nombre like '%"+cajaNp.getText()+"%'",tabla_paciente);
+        actualizarTabla("Select*From internos where Nombre like '%"+cajaNp.getText()+"%'",tablaInternos);
+    }//GEN-LAST:event_cajaNpKeyTyped
+
+    private void cajaNpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaNpKeyReleased
+
+    }//GEN-LAST:event_cajaNpKeyReleased
+
+    private void cajaNpKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaNpKeyPressed
+
+    }//GEN-LAST:event_cajaNpKeyPressed
+
+    private void cajaNpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaNpActionPerformed
+        // TODO add your handling code here:
+        actualizarTabla("Select*From Paciente where Nombre like '%"+cajaNp.getText()+"%';",tabla_paciente);
+    }//GEN-LAST:event_cajaNpActionPerformed
+
+    private void cajacalleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajacalleKeyTyped
+        // TODO add your handling code here:
+        if(Character.isLetter(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        }
+        else{
+            evt.consume();
+        }
+    }//GEN-LAST:event_cajacalleKeyTyped
 
     private void tel3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tel3KeyTyped
         // TODO add your handling code here:
@@ -1505,46 +1501,68 @@ citasidDoc.setText("");
         }
     }//GEN-LAST:event_tel3KeyTyped
 
-    private void habitboxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_habitboxKeyTyped
+    private void tel3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tel3ActionPerformed
         // TODO add your handling code here:
-        if(Character.isDigit(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-        }
-        
-    }//GEN-LAST:event_habitboxKeyTyped
+    }//GEN-LAST:event_tel3ActionPerformed
 
-    private void cajaID4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaID4KeyTyped
+    private void editPacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editPacActionPerformed
         // TODO add your handling code here:
-        if(Character.isDigit(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+        String nomb, ap1, ap2, calle, col, tel,estado, gen;
+        int habit,pac, num;
+        PacienteDAO d = new PacienteDAO();
+        try{
+            nomb=cajaNp.getText();ap1=ap1p.getText();ap2=ap2p.getText();calle=cajacalle.getText();col=cajacol.getText();
+            tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado=comboEstad.getSelectedItem().toString();gen=comboGen.getSelectedItem().toString();
+            pac=Integer.parseInt(cajaID.getText()); habit=Integer.parseInt(habitbox.getText());num=Integer.parseInt(cajanum.getText());
+            if(d.buscaPaciente("id_Pac", String.valueOf(pac)).getIdPaciente()==pac){
+                Paciente p = new Paciente(pac,nomb,ap1,ap2,col,calle,num,tel,estado,habit,gen);
+                if(d.ModificaPaciente(p)){
+                    JOptionPane.showMessageDialog(rootPane, "El registro se modifico correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "El registro NO se Modico", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+                }
+                actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
+                actualizarTabla("SELECT*FROM internos;",tablaInternos);
+                cajaNp.setText("");ap1p.setText("");ap2p.setText("");cajacalle.setText("");cajacol.setText("");
+                tel1.setText(""); tel2.setText("");tel3.setText("");comboEstad.setSelectedIndex(0);comboGen.setSelectedIndex(0);
+                cajaID.setText("");habitbox.setText("");cajanum.setText("");
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "El paciente no existe", "INFO", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch (NumberFormatException e2){
+            JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
         }
-        else{
-            evt.consume();
-        }
-    }//GEN-LAST:event_cajaID4KeyTyped
+    }//GEN-LAST:event_editPacActionPerformed
 
-    private void citasidDocKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_citasidDocKeyTyped
-        // TODO add your handling code here:
-        if(Character.isDigit(evt.getKeyChar()) || evt.getKeyChar() == '-'){
+    private void addPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPacienteActionPerformed
+        try{
+            String nomb, ap1, ap2, calle, col, tel,estado, gen;
+            int habit,pac, num;
+            PacienteDAO d = new PacienteDAO();
+            nomb=cajaNp.getText();ap1=ap1p.getText();ap2=ap2p.getText();calle=cajacalle.getText();col=cajacol.getText();
+            tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado=comboEstad.getSelectedItem().toString();gen=comboGen.getSelectedItem().toString();
+            pac=Integer.parseInt(cajaID.getText()); habit=Integer.parseInt(habitbox.getText());num=Integer.parseInt(cajanum.getText());
+            if(d.buscaPaciente("id_Pac", String.valueOf(pac)).getIdPaciente()!=pac && d.buscaPaciente("nombre", cajaNp.getText()).getNombre()!=cajaNp.getText()){
+                Paciente p = new Paciente(pac,nomb,ap1,ap2,col,calle,num,tel,estado,habit,gen);
+                if(d.agregaPaciente(p)){
+                    JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "El registro NO se añadio", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+                }
+                actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
+                actualizarTabla("SELECT*FROM internos;",tablaInternos);
+                cajaNp.setText("");ap1p.setText("");ap2p.setText("");cajacalle.setText("");cajacol.setText("");
+                tel1.setText(""); tel2.setText("");tel3.setText("");comboEstad.setSelectedIndex(0);comboGen.setSelectedIndex(0);
+                cajaID.setText("");habitbox.setText("");cajanum.setText("");
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Ya existe un registro con esos datos", "INFO", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch (NumberFormatException e2){
+            JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
         }
-        else{
-            evt.consume();
-        }
-    }//GEN-LAST:event_citasidDocKeyTyped
 
-    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1KeyTyped
-
-    private void cajaID2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaID2KeyTyped
-        // TODO add your handling code here:
-        if(Character.isDigit(evt.getKeyChar()) || evt.getKeyChar() == '-'){
-        }
-        else{
-            evt.consume();
-        }
-    }//GEN-LAST:event_cajaID2KeyTyped
+    }//GEN-LAST:event_addPacienteActionPerformed
     
     
     /**
@@ -1587,15 +1605,16 @@ citasidDoc.setText("");
     private javax.swing.JTable TablaPacientes;
     private javax.swing.JButton addMedico;
     private javax.swing.JButton addPaciente;
+    private javax.swing.JTextField adoc1;
+    private javax.swing.JTextField adoc2;
     private javax.swing.JComboBox<String> ampm;
-    private javax.swing.JTextField ap11citas2;
-    private javax.swing.JTextField ap12citas;
     private javax.swing.JTextField ap1p;
     private javax.swing.JTextField ap2p;
+    private javax.swing.JTextField apac1;
+    private javax.swing.JTextField apac2;
     private javax.swing.JTextField cajaAp1D1;
-    private javax.swing.JTextField cajaAp1D2;
-    private javax.swing.JTextField cajaAp2D1;
     private javax.swing.JTextField cajaAp2Dv;
+    private javax.swing.JTextField cajaEspeciali;
     private javax.swing.JTextField cajaID;
     private javax.swing.JTextField cajaID2;
     private javax.swing.JTextField cajaID3;
@@ -1609,6 +1628,7 @@ citasidDoc.setText("");
     private javax.swing.JTextField citasidDoc;
     private javax.swing.JComboBox<String> comboEstad;
     private javax.swing.JComboBox<String> comboGen;
+    private javax.swing.JComboBox<String> comoGne;
     private javax.swing.JTextField consultorio;
     private javax.swing.JButton crearCita;
     private javax.swing.JButton darAlta;
@@ -1621,7 +1641,6 @@ citasidDoc.setText("");
     private javax.swing.JTextField habitbox;
     private javax.swing.JComboBox<String> horas;
     private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1675,7 +1694,6 @@ citasidDoc.setText("");
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox<String> minutos;
     private javax.swing.JTextField nombreDoc;
     private javax.swing.JButton restablece;

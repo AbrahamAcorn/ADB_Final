@@ -28,7 +28,7 @@ public class CitasDAO {
         boolean finalizo;
         try {
             try (PreparedStatement pstm = ConexionBD.getConnection().prepareStatement
-                ("INSERT INTO Cita (`paciente`, `doctor`, `fecha`, `hora`) VALUES (?,?,?,?)")) {
+                ("INSERT INTO [dbo].[Citas]  ([Paciente] ,[Doctor] ,[Fecha],[Hora]) VALUES (?,?,?,?)")) {
                 pstm.setInt(1,c.getPaciente());
                 pstm.setInt(2, c.getDoctor());
                 pstm.setDate(3,java.sql.Date.valueOf(c.getFecha()));
@@ -38,7 +38,7 @@ public class CitasDAO {
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null,"ERROR" ,
-                    "N se pudo registrar",JOptionPane.ERROR_MESSAGE);
+                    "No se pudo registrar",JOptionPane.ERROR_MESSAGE);
             //e.printStackTrace();
             finalizo = false;
         }
@@ -97,8 +97,7 @@ public class CitasDAO {
             ps.setString(1, filtro);
             ps.setInt(2, Integer.parseInt(clave));
             rs = ps.executeQuery();
-            rs.afterLast();
-           System.out.println(rs.getInt(1));
+          
             while(rs.next()){
                 c = new Citas();
                 c.setPaciente(rs.getInt(1));
@@ -109,14 +108,16 @@ public class CitasDAO {
         }
         catch (SQLException e){
             //System.out.println("Errorsito aqui n.n  (¬_¬) / me lleva la verga ");
-            e.printStackTrace();           
+            e.printStackTrace();   
+             System.out.println("No hay registros u.u");
         }
         return c;
     }
        public static void main(String args[]) {
             CitasDAO p = new CitasDAO();
             
-            Citas c = new Citas(5,5,"2019-12-12","11:45:AM");
-            System.out.println(p.buscaCita("Id_Cita", "1"));
+            Citas c = new Citas(1,1,"2019-12-12","11:45:AM");
+            p.generaCita(c);
+           // System.out.println(p.buscaCita();
         }
 }

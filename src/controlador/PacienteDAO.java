@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -44,6 +45,8 @@ public class PacienteDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null,"ERROR" ,
+                    "No se pudo registrar",JOptionPane.ERROR_MESSAGE);
             finalizo = false;
         }
         return finalizo;
@@ -116,8 +119,8 @@ public class PacienteDAO {
         try {
             PreparedStatement preparedStatement = ConexionBD.getConnection().prepareStatement(sql);
             rs = preparedStatement.executeQuery();
-            rs.last();
-                p = new Paciente();
+            while (rs.next()) {
+                    p = new Paciente();
                 p.setIdPaciente(rs.getInt(1));
                 p.setNombre(rs.getString(2));
                 p.setPrimAp(rs.getString(3));
@@ -128,8 +131,8 @@ public class PacienteDAO {
                 p.setColonia(rs.getString(8)); 
                 p.setTelefono(rs.getString(9));
                 p.setEstado(rs.getString(10));
-                p.setHabitacion(rs.getInt(11));
-                
+                p.setHabitacion(rs.getInt(11)); 
+        }
                 preparedStatement.close();
         }
         catch (SQLException e){
@@ -197,8 +200,9 @@ public class PacienteDAO {
         public static void main(String args[]) {
             PacienteDAO p = new PacienteDAO();
             
-            Paciente n = new Paciente(1,"Juan", "perez", "Almaza", "tias", "abuelo", 24, "123-345-3456", "De Alta", 3, "Mujer");
-            System.out.println(p.buscaPaciente("Nombre", "Juan"));
+            Paciente n = new Paciente(1,"Ariana", "perez", "Almaza", "Limon", "cutre", 24, "123-345-3456", "De Alta", 3, "Mujer");
+            System.out.println(p.buscaPaciente("id_pac", "1"));
+            //p.agregaPaciente(n);
             //int idPaciente, String Nombre, String PrimAp, String SegAp, String Colonia, String Calle, int num, String telefono, String Estado, int habitacion, String genero
         }
 }
