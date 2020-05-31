@@ -45,13 +45,12 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         //setResizable(false);
         //setIconImage(Toolkit.getDefaultToolkit().getImage(InicioSesion.class.getResource("/Paciente.png")));
-      this.setSize(1300, 650);
         initComponents();
         DefaultPieDataset data = new DefaultPieDataset();
 ForGraphics fg=new ForGraphics();
-//        data.setValue("Internado", fg.Cuenta("select count(id_Pac) from paciente where Estado = 'Internado';"));
-    //    data.setValue("De Alta", fg.Cuenta("select count(id_Pac) from paciente where Estado = 'De Alta';"));
-        //data.setValue("Citado", fg.Cuenta("select count(id_Pac) from paciente where Estado= 'Citado';"));
+        data.setValue("Internado", fg.Cuenta("select count(id_Pac) from paciente where Estado = 'Internado';"));
+        data.setValue("De Alta", fg.Cuenta("select count(id_Pac) from paciente where Estado = 'De Alta';"));
+        data.setValue("Citado", fg.Cuenta("select count(id_Pac) from paciente where Estado= 'Citado';"));
 
  JFreeChart chart = ChartFactory.createPieChart(
          "Pacientes Registrados", 
@@ -132,6 +131,7 @@ ForGraphics fg=new ForGraphics();
         jLabel31 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         cajaAp2Dv = new javax.swing.JTextField();
         cajaAp1D1 = new javax.swing.JTextField();
@@ -204,10 +204,10 @@ ForGraphics fg=new ForGraphics();
         setBackground(new java.awt.Color(196, 226, 247));
         setBounds(new java.awt.Rectangle(0, 0, 100, 0));
         setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        setMinimumSize(new java.awt.Dimension(1300, 650));
-        setPreferredSize(new java.awt.Dimension(1300, 630));
+        setMinimumSize(new java.awt.Dimension(1400, 650));
+        setPreferredSize(new java.awt.Dimension(1400, 630));
         setResizable(false);
-        setSize(new java.awt.Dimension(1300, 650));
+        setSize(new java.awt.Dimension(1400, 650));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -474,6 +474,9 @@ ForGraphics fg=new ForGraphics();
         jPanel1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, -1));
         jPanel1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, -1));
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 30, -1, -1));
+
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 190, 250));
 
         jTabbedPane1.addTab("Pacientes", jPanel1);
 
@@ -884,8 +887,8 @@ ForGraphics fg=new ForGraphics();
 
         DefaultPieDataset data2 = new DefaultPieDataset();
         ForGraphics fg=new ForGraphics();
-        data2.setValue("Libre", fg.Cuenta(" select count(idHabitacion) from habitacion where Estado= 'Libre';"));
-        data2.setValue("Ocupado", fg.Cuenta("select count(idHabitacion) from habitacion where Estado='Ocupada';"));
+        data2.setValue("Libre", fg.Cuenta(" select count(id_Habitacion) from habitacion where Estado= 'Libre';"));
+        data2.setValue("Ocupado", fg.Cuenta("select count(id_Habitacion) from habitacion where Estado='Ocupada';"));
 
         JFreeChart chart2 = ChartFactory.createPieChart(
             "Ocupacion",
@@ -899,7 +902,7 @@ ForGraphics fg=new ForGraphics();
         jPanel8.setBackground(new java.awt.Color(204, 255, 255));
         jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 500, 370));
 
-        jTabbedPane1.addTab("+Estadistica+", jPanel4);
+        jTabbedPane1.addTab("Estadistica", jPanel4);
 
         JLabel lab = new javax.swing.JLabel("Pacientes");
         lab.setPreferredSize(new Dimension(150, 100));
@@ -915,6 +918,11 @@ ForGraphics fg=new ForGraphics();
         lab2.setPreferredSize(new Dimension(150, 100));
         lab2.setFont(new java.awt.Font("MS UI Gothic", 1, 24)); // NOI18N
         jTabbedPane1.setTabComponentAt(2, lab2);  // tab index, jLabel
+
+        JLabel lab3 = new javax.swing.JLabel("X");
+        lab3.setPreferredSize(new Dimension(150, 100));
+        lab3.setFont(new java.awt.Font("MS UI Gothic", 1, 24)); // NOI18N
+        jTabbedPane1.setTabComponentAt(3, lab3);  // tab index, jLabel
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 2170, 630));
 
@@ -1762,6 +1770,7 @@ ForGraphics fg=new ForGraphics();
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

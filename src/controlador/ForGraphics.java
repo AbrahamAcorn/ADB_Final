@@ -22,8 +22,10 @@ public class ForGraphics {
         try {
             PreparedStatement preparedStatement = ConexionBD.getConnection().prepareStatement(sql);
             rs = preparedStatement.executeQuery();
-            rs.last();
+            while(rs.next())
+            {
                 i=rs.getInt(1);
+            }
         }
         catch (SQLException e){
             //System.out.println("Errorsito aqui n.n  (¬_¬) / me lleva la verga ");

@@ -14,14 +14,14 @@
       <Font name="Arial" size="14" style="1"/>
     </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1300, 650]"/>
+      <Dimension value="[1400, 650]"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1300, 630]"/>
+      <Dimension value="[1400, 630]"/>
     </Property>
     <Property name="resizable" type="boolean" value="false"/>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1300, 650]"/>
+      <Dimension value="[1400, 650]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -62,7 +62,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="JLabel lab = new javax.swing.JLabel(&quot;Pacientes&quot;);&#xa;    lab.setPreferredSize(new Dimension(150, 100));&#xa;lab.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 24)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(0, lab);  // tab index, jLabel&#xa;&#xa;JLabel lab1 = new javax.swing.JLabel(&quot;Medicos&quot;);&#xa;    lab1.setPreferredSize(new Dimension(150, 100));&#xa;lab1.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 24)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(1, lab1);  // tab index, jLabel&#xa;&#xa;JLabel lab2 = new javax.swing.JLabel(&quot;Citas&quot;);&#xa;    lab2.setPreferredSize(new Dimension(150, 100));&#xa;lab2.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 24)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(2, lab2);  // tab index, jLabel"/>
+        <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="JLabel lab = new javax.swing.JLabel(&quot;Pacientes&quot;);&#xa;    lab.setPreferredSize(new Dimension(150, 100));&#xa;lab.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 24)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(0, lab);  // tab index, jLabel&#xa;&#xa;JLabel lab1 = new javax.swing.JLabel(&quot;Medicos&quot;);&#xa;    lab1.setPreferredSize(new Dimension(150, 100));&#xa;lab1.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 24)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(1, lab1);  // tab index, jLabel&#xa;&#xa;JLabel lab2 = new javax.swing.JLabel(&quot;Citas&quot;);&#xa;    lab2.setPreferredSize(new Dimension(150, 100));&#xa;lab2.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 24)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(2, lab2);  // tab index, jLabel&#xa;&#xa;JLabel lab3 = new javax.swing.JLabel(&quot;X&quot;);&#xa;    lab3.setPreferredSize(new Dimension(150, 100));&#xa;lab3.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 24)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(3, lab3);  // tab index, jLabel"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -705,6 +705,18 @@
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="730" y="30" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel40">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/logo.png"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="760" y="10" width="190" height="250"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1673,8 +1685,8 @@
         <Container class="javax.swing.JPanel" name="jPanel4">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="+Estadistica+">
-                <Property name="tabTitle" type="java.lang.String" value="+Estadistica+"/>
+              <JTabbedPaneConstraints tabName="Estadistica">
+                <Property name="tabTitle" type="java.lang.String" value="Estadistica"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -1736,7 +1748,7 @@
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="DefaultPieDataset data2 = new DefaultPieDataset();&#xa;ForGraphics fg=new ForGraphics();&#xa;        data2.setValue(&quot;Libre&quot;, fg.Cuenta(&quot; select count(idHabitacion) from habitacion where Estado= &apos;Libre&apos;;&quot;));&#xa;        data2.setValue(&quot;Ocupado&quot;, fg.Cuenta(&quot;select count(idHabitacion) from habitacion where Estado=&apos;Ocupada&apos;;&quot;));&#xa;&#xa; JFreeChart chart2 = ChartFactory.createPieChart(&#xa;         &quot;Ocupacion&quot;, &#xa;         data2, true, true, false);&#xa;        // Crear el Panel del Grafico con ChartPanel&#xa;        ChartPanel chartPanel2 = new ChartPanel(chart2);&#xa;        jPanel5.add(chartPanel2);"/>
+                <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="DefaultPieDataset data2 = new DefaultPieDataset();&#xa;ForGraphics fg=new ForGraphics();&#xa;        data2.setValue(&quot;Libre&quot;, fg.Cuenta(&quot; select count(id_Habitacion) from habitacion where Estado= &apos;Libre&apos;;&quot;));&#xa;        data2.setValue(&quot;Ocupado&quot;, fg.Cuenta(&quot;select count(id_Habitacion) from habitacion where Estado=&apos;Ocupada&apos;;&quot;));&#xa;&#xa; JFreeChart chart2 = ChartFactory.createPieChart(&#xa;         &quot;Ocupacion&quot;, &#xa;         data2, true, true, false);&#xa;        // Crear el Panel del Grafico con ChartPanel&#xa;        ChartPanel chartPanel2 = new ChartPanel(chart2);&#xa;        jPanel5.add(chartPanel2);"/>
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
