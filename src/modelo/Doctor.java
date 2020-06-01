@@ -10,9 +10,11 @@ public class Doctor {
   private int Consultorio ;
   private int Departamento;
   private String Genero;
+  private String cedula;
+ 
 
    public Doctor() {}
-    public Doctor(int IdDoctor, String Nombre, String Ap1, String Ap2, String Especializacion, int Consultorio, int Departamento, String Genero) {
+    public Doctor(int IdDoctor, String Nombre, String Ap1, String Ap2, String Especializacion, int Consultorio, int Departamento, String Genero, String cedula) {
         this.IdDoctor = IdDoctor;
         this.Nombre = Nombre;
         this.Ap1 = Ap1;
@@ -21,6 +23,7 @@ public class Doctor {
         this.Consultorio = Consultorio;
         this.Departamento = Departamento;
         this.Genero = Genero;
+        this.cedula = cedula;
     }
 
    
@@ -89,6 +92,14 @@ public class Doctor {
 
     public void setGenero(String Genero) {
         this.Genero = Genero;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
     @Override

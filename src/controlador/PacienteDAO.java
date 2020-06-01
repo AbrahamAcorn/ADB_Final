@@ -147,7 +147,7 @@ public class PacienteDAO {
           boolean actualizado;
           String sql = "UPDATE Paciente SET " +
                   " Estado = 'Citado' " +
-                  " WHERE idPaciente = ? ;";
+                  " WHERE id_Paciente = ? ;";
           try {
               PreparedStatement pstm = ConexionBD.getConnection().prepareStatement(sql);
               pstm.setInt(1,id);

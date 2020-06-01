@@ -28,6 +28,7 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 import java.sql.Connection;
+import java.time.Instant;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -132,6 +133,9 @@ ForGraphics fg=new ForGraphics();
         jLabel34 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         cajaAp2Dv = new javax.swing.JTextField();
         cajaAp1D1 = new javax.swing.JTextField();
@@ -157,6 +161,11 @@ ForGraphics fg=new ForGraphics();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        cedul = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         crearCita = new javax.swing.JButton();
         apac2 = new javax.swing.JTextField();
@@ -173,7 +182,6 @@ ForGraphics fg=new ForGraphics();
         citasNameDoc = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        cajaID3 = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -191,6 +199,11 @@ ForGraphics fg=new ForGraphics();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         fecha = new com.toedter.calendar.JDateChooser();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jButton7 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
@@ -212,6 +225,7 @@ ForGraphics fg=new ForGraphics();
 
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        jTabbedPane1.setToolTipText("Pacientes");
         jTabbedPane1.setAlignmentY(10.0F);
         jTabbedPane1.setFocusCycleRoot(true);
         jTabbedPane1.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
@@ -230,6 +244,7 @@ ForGraphics fg=new ForGraphics();
         comboEstad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "De Alta", "Internado", "Revision", "Citado" }));
         jPanel1.add(comboEstad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 130, -1));
 
+        addPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hospital.png"))); // NOI18N
         addPaciente.setText("Añade Paciente");
         addPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,6 +261,7 @@ ForGraphics fg=new ForGraphics();
         jLabel7.setText("Genero:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 60, 20));
 
+        editPac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editar.png"))); // NOI18N
         editPac.setText("Edita Paciente");
         editPac.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -274,6 +290,7 @@ ForGraphics fg=new ForGraphics();
         jLabel11.setText("-");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 10, 20));
 
+        cajacalle.setToolTipText("Calle");
         cajacalle.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 cajacalleKeyTyped(evt);
@@ -299,6 +316,7 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel1.add(cajaNp, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 130, -1));
 
+        cajacol.setToolTipText("Colonia");
         cajacol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cajacolActionPerformed(evt);
@@ -352,7 +370,9 @@ ForGraphics fg=new ForGraphics();
         jLabel4.setText("Estado:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 60, 20));
 
+        deletePac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/quitaMedico.png"))); // NOI18N
         deletePac.setText("Elimina Paciente");
+        deletePac.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/images/quitaMedico.png"))); // NOI18N
         deletePac.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deletePacActionPerformed(evt);
@@ -360,6 +380,7 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel1.add(deletePac, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 160, 40));
 
+        cajanum.setToolTipText("Numero");
         cajanum.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 cajanumKeyTyped(evt);
@@ -417,6 +438,7 @@ ForGraphics fg=new ForGraphics();
         jLabel2.setText("Direccion:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 80, 20));
 
+        darAlta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paciente_2.png"))); // NOI18N
         darAlta.setText("Dar de Alta");
         darAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -426,6 +448,7 @@ ForGraphics fg=new ForGraphics();
         jPanel1.add(darAlta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 160, 40));
 
         tabla_paciente.setBackground(new java.awt.Color(204, 204, 255));
+        tabla_paciente.setFont(new java.awt.Font("Eras Demi ITC", 0, 14)); // NOI18N
         tabla_paciente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -437,6 +460,7 @@ ForGraphics fg=new ForGraphics();
                 "idPaciente", "Nombre", "PrimAp", "SegAp", "Colonia", "Calle", "Num", "Telefono", "Estado", "Genero", "Sala"
             }
         ));
+        tabla_paciente.setShowGrid(true);
         tabla_paciente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 tabla_pacienteMouseReleased(evt);
@@ -448,6 +472,7 @@ ForGraphics fg=new ForGraphics();
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 1200, 160));
 
         tablaInternos.setBackground(new java.awt.Color(204, 204, 255));
+        tablaInternos.setFont(new java.awt.Font("Eras Demi ITC", 0, 14)); // NOI18N
         tablaInternos.setForeground(new java.awt.Color(0, 0, 0));
         tablaInternos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -460,10 +485,13 @@ ForGraphics fg=new ForGraphics();
                 "Nombre", "PrimAp", "SegAp", "Habitacion", "Sala", "NombreSala"
             }
         ));
+        tablaInternos.setCellSelectionEnabled(true);
+        tablaInternos.setName(""); // NOI18N
+        tablaInternos.setShowGrid(true);
         jScrollPane3.setViewportView(tablaInternos);
         actualizarTabla("SELECT*FROM internos",tablaInternos);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 610, 140));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 640, 140));
 
         jLabel30.setBackground(new java.awt.Color(0, 0, 0));
         jLabel30.setFont(new java.awt.Font("MS UI Gothic", 1, 36)); // NOI18N
@@ -478,8 +506,19 @@ ForGraphics fg=new ForGraphics();
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 190, 250));
 
-        jTabbedPane1.addTab("Pacientes", jPanel1);
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
+        jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, -1));
 
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
+        jPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
+
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
+        jPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
+
+        jTabbedPane1.addTab("Pacientes", new javax.swing.ImageIcon(getClass().getResource("/images/Paciente.png")), jPanel1); // NOI18N
+
+        jPanel2.setToolTipText("Medicos");
+        jPanel2.setEnabled(false);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cajaAp2Dv.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -537,8 +576,8 @@ ForGraphics fg=new ForGraphics();
         jPanel2.add(comoGne, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, 160, -1));
 
         jLabel18.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        jLabel18.setText("Consultorio:");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 120, 30));
+        jLabel18.setText("Cedula:");
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, 70, 30));
 
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Radiolgia", "Pediatria", "Urologia", "Cirugia", "Ginecologia", "Cardilogia", "Traumatologia", "Medicina General", "Farmacologia", "Terapia fisica", "Cuidados intensivos", "Psicologia" }));
         jComboBox6.addItemListener(new java.awt.event.ItemListener() {
@@ -572,6 +611,7 @@ ForGraphics fg=new ForGraphics();
 
         jScrollPane4.setAutoscrolls(true);
 
+        jTable2.setFont(new java.awt.Font("Eras Demi ITC", 0, 14)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
@@ -594,7 +634,7 @@ ForGraphics fg=new ForGraphics();
             jTable2.getColumnModel().getColumn(7).setResizable(false);
         }
 
-        jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 1020, 210));
+        jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 1120, 210));
 
         addMedico.setText("Añadir Medico");
         addMedico.addActionListener(new java.awt.event.ActionListener() {
@@ -602,7 +642,7 @@ ForGraphics fg=new ForGraphics();
                 addMedicoActionPerformed(evt);
             }
         });
-        jPanel2.add(addMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(888, 90, 170, -1));
+        jPanel2.add(addMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 90, 170, 40));
 
         deleteMedico.setText("Eliminar Medico");
         deleteMedico.addActionListener(new java.awt.event.ActionListener() {
@@ -610,7 +650,7 @@ ForGraphics fg=new ForGraphics();
                 deleteMedicoActionPerformed(evt);
             }
         });
-        jPanel2.add(deleteMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 210, 170, -1));
+        jPanel2.add(deleteMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 210, 170, 40));
 
         updateMedico.setText("Modificar Medico");
         updateMedico.addActionListener(new java.awt.event.ActionListener() {
@@ -618,7 +658,7 @@ ForGraphics fg=new ForGraphics();
                 updateMedicoActionPerformed(evt);
             }
         });
-        jPanel2.add(updateMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 150, -1, -1));
+        jPanel2.add(updateMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 150, 170, 40));
 
         cajaEspeciali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -634,6 +674,20 @@ ForGraphics fg=new ForGraphics();
         jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, -1));
         jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
         jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, -1, -1));
+
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
+        jPanel2.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
+
+        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
+        jPanel2.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, -1));
+
+        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
+        jPanel2.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, -1, -1));
+        jPanel2.add(cedul, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 304, 130, 30));
+
+        jLabel52.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        jLabel52.setText("Consultorio:");
+        jPanel2.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 120, 30));
 
         jTabbedPane1.addTab("Medicos", jPanel2);
 
@@ -743,13 +797,6 @@ ForGraphics fg=new ForGraphics();
         jLabel26.setText("Doctor:");
         jPanel3.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 60, 20));
 
-        cajaID3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajaID3ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(cajaID3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 60, 40, -1));
-
         jLabel28.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel28.setText("Apellidos:");
         jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 80, 20));
@@ -855,7 +902,22 @@ ForGraphics fg=new ForGraphics();
         jPanel3.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, -1, 90));
         jPanel3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
         jPanel3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, -1, -1));
-        jPanel3.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, -1, -1));
+        jPanel3.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 190, -1));
+
+        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
+        jPanel3.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, -1, -1));
+
+        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
+        jPanel3.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
+
+        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
+        jPanel3.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, -1, -1));
+
+        jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
+        jPanel3.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
+
+        jLabel51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
+        jPanel3.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, 40));
 
         jTabbedPane1.addTab("Citas", jPanel3);
 
@@ -905,24 +967,30 @@ ForGraphics fg=new ForGraphics();
         jTabbedPane1.addTab("Estadistica", jPanel4);
 
         JLabel lab = new javax.swing.JLabel("Pacientes");
-        lab.setPreferredSize(new Dimension(150, 100));
-        lab.setFont(new java.awt.Font("MS UI Gothic", 1, 24)); // NOI18N
+        lab.setPreferredSize(new Dimension(140, 120));
+        lab.setFont(new java.awt.Font("MS UI Gothic", 1, 20)); // NOI18N
+        lab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Paciente.png")));
         jTabbedPane1.setTabComponentAt(0, lab);  // tab index, jLabel
 
         JLabel lab1 = new javax.swing.JLabel("Medicos");
-        lab1.setPreferredSize(new Dimension(150, 100));
-        lab1.setFont(new java.awt.Font("MS UI Gothic", 1, 24)); // NOI18N
+        lab1.setPreferredSize(new Dimension(140, 120));
+        lab1.setFont(new java.awt.Font("MS UI Gothic", 1, 20)); // NOI18N
         jTabbedPane1.setTabComponentAt(1, lab1);  // tab index, jLabel
 
         JLabel lab2 = new javax.swing.JLabel("Citas");
-        lab2.setPreferredSize(new Dimension(150, 100));
-        lab2.setFont(new java.awt.Font("MS UI Gothic", 1, 24)); // NOI18N
+        lab2.setPreferredSize(new Dimension(140, 120));
+        lab2.setFont(new java.awt.Font("MS UI Gothic", 1, 20)); // NOI18N
         jTabbedPane1.setTabComponentAt(2, lab2);  // tab index, jLabel
 
         JLabel lab3 = new javax.swing.JLabel("X");
-        lab3.setPreferredSize(new Dimension(150, 100));
-        lab3.setFont(new java.awt.Font("MS UI Gothic", 1, 24)); // NOI18N
+        lab3.setPreferredSize(new Dimension(140, 120));
+        lab3.setFont(new java.awt.Font("MS UI Gothic", 1, 20)); // NOI18N
         jTabbedPane1.setTabComponentAt(3, lab3);  // tab index, jLabel
+
+        jTabbedPane1.setIconAt(3, new javax.swing.ImageIcon(getClass().getResource("/images/Paciente.png")));
+        jTabbedPane1.setIconAt(2, new javax.swing.ImageIcon(getClass().getResource("/images/Paciente.png")));
+        jTabbedPane1.setIconAt(1,new javax.swing.ImageIcon(getClass().getResource("/images/Paciente.png")));
+        jTabbedPane1.setIconAt(0, new javax.swing.ImageIcon(getClass().getResource("/images/Paciente.png")));
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 2170, 630));
 
@@ -994,11 +1062,6 @@ ForGraphics fg=new ForGraphics();
         adoc2.setText(jTable1.getModel().getValueAt(t, 5).toString());
 
     }//GEN-LAST:event_jTable1MouseReleased
-
-    private void cajaID3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaID3ActionPerformed
-        // TODO add your handling code here:
-        actualizarTabla("Select*From Paciente where idPaciente= "+cajaID.getText(),tabla_paciente);
-    }//GEN-LAST:event_cajaID3ActionPerformed
 
     private void citasNameDocKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_citasNameDocKeyTyped
         // TODO add your handling code here:
@@ -1154,9 +1217,10 @@ ForGraphics fg=new ForGraphics();
             pac=Integer.parseInt(cajaID4.getText());
             doc=Integer.parseInt(citasidDoc.getText());
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            System.out.println(fecha.getDate().toString());
             fech=  format.format(fecha.getDate());
             System.out.println(fech);
-            if(c.buscaCita("paciente", String.valueOf(pac)).getPaciente()!=pac){
+   
                 Citas ci = new Citas(pac,doc,fech,h);
                 if(c.generaCita(ci)){
                     p.CitaPaciente(pac);
@@ -1172,9 +1236,7 @@ ForGraphics fg=new ForGraphics();
                 horas.setSelectedIndex(0);
                 ampm.setSelectedIndex(0);
                 citasidDoc.setText("");
-            }else{
-                JOptionPane.showMessageDialog(rootPane, "Ya existe una cita con esos datos", "INFO", JOptionPane.INFORMATION_MESSAGE);
-            }
+          
         }catch(NumberFormatException e2){
             JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
         }
@@ -1198,12 +1260,13 @@ ForGraphics fg=new ForGraphics();
             String ap2 = cajaAp2Dv.getText();
             String esp = cajaEspeciali.getText();
             int con = Integer.parseInt(consultorio.getText());
+            String ced=cedul.getText();
             int dep = jComboBox6.getSelectedIndex();
             dep=dep+1;
             String gen = comoGne.getSelectedItem().toString();
             DoctorDAO d = new DoctorDAO();
             if(d.buscaDoctor("Id_Doc", String.valueOf(id)) == null && d.buscaDoctor("nombre", name)==null){
-                Doctor p = new Doctor(id,name,ap,ap2,esp,con,dep,gen);
+                Doctor p = new Doctor(id,name,ap,ap2,esp,con,dep,gen,ced);
                 if(d.ModificaDoctor(p)){
                     JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
                 }else{
@@ -1258,9 +1321,10 @@ ForGraphics fg=new ForGraphics();
             int con = Integer.parseInt(consultorio.getText());
             int dep = jComboBox6.getSelectedIndex()+1;
             String gen = comoGne.getSelectedItem().toString();
+            String cd=cedul.getText();
             DoctorDAO d = new DoctorDAO();
             if(d.buscaDoctor("Id_Doc", String.valueOf(id)) == null && d.buscaDoctor("nombre", name)==null){
-                Doctor p = new Doctor(id,name,ap,ap2,esp,con,dep,gen);
+                Doctor p = new Doctor(id,name,ap,ap2,esp,con,dep,gen,cd);
                 if(d.agregaDoctor(p)){
                     JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
                 }else{
@@ -1293,7 +1357,8 @@ ForGraphics fg=new ForGraphics();
         cajaAp2Dv.setText(jTable2.getModel().getValueAt(t,3).toString());
         cajaEspeciali.setText(jTable2.getModel().getValueAt(t,5).toString());
         consultorio.setText(jTable2.getModel().getValueAt(t,6).toString());
-        jComboBox6.setSelectedItem(jTable2.getModel().getValueAt(t,7).toString());
+        cedul.setText(jTable2.getModel().getValueAt(t, 7).toString());
+        jComboBox6.setSelectedItem(jTable2.getModel().getValueAt(t,8).toString());
         comoGne.setSelectedItem(jTable2.getModel().getValueAt(t,4).toString());
 
     }//GEN-LAST:event_jTable2MouseReleased
@@ -1340,7 +1405,7 @@ ForGraphics fg=new ForGraphics();
         else{
             evt.consume();
         }
-        actualizarTabla("Select*From docs_dept where Ap1 like '%"+adoc2.getText()+"%'",jTable2);
+        actualizarTabla("Select*From docs_dept where Apellido1 like '%"+cajaAp1D1.getText()+"%'",jTable2);
     }//GEN-LAST:event_cajaAp1D1KeyTyped
 
     private void cajaAp2DvKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaAp2DvKeyTyped
@@ -1350,7 +1415,7 @@ ForGraphics fg=new ForGraphics();
         else{
             evt.consume();
         }
-        actualizarTabla("Select*From docs_dept where Ap2 like '%"+cajaAp2Dv.getText()+"%'",jTable2);
+        actualizarTabla("Select*From docs_dept where Apellido2 like '%"+cajaAp2Dv.getText()+"%'",jTable2);
     }//GEN-LAST:event_cajaAp2DvKeyTyped
 
     private void tabla_pacienteMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabla_pacienteMouseReleased
@@ -1435,7 +1500,7 @@ ForGraphics fg=new ForGraphics();
         }
         else{
             evt.consume();
-            actualizarTabla("Select*From Paciente where idPaciente like '%"+cajaID.getText()+"%'",tabla_paciente);
+            actualizarTabla("Select*From Paciente where id_Pac like '%"+cajaID.getText()+"%'",tabla_paciente);
         }
 
     }//GEN-LAST:event_cajaIDKeyTyped
@@ -1707,12 +1772,12 @@ ForGraphics fg=new ForGraphics();
     private javax.swing.JTextField cajaEspeciali;
     private javax.swing.JTextField cajaID;
     private javax.swing.JTextField cajaID2;
-    private javax.swing.JTextField cajaID3;
     private javax.swing.JTextField cajaID4;
     private javax.swing.JTextField cajaNp;
     private javax.swing.JTextField cajacalle;
     private javax.swing.JTextField cajacol;
     private javax.swing.JTextField cajanum;
+    private javax.swing.JTextField cedul;
     private javax.swing.JTextField citasNameDoc;
     private javax.swing.JTextField citasNamePac;
     private javax.swing.JTextField citasidDoc;
@@ -1771,7 +1836,19 @@ ForGraphics fg=new ForGraphics();
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

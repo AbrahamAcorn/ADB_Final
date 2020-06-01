@@ -49,6 +49,7 @@
       <Properties>
         <Property name="tabLayoutPolicy" type="int" value="1"/>
         <Property name="tabPlacement" type="int" value="2"/>
+        <Property name="toolTipText" type="java.lang.String" value="Pacientes"/>
         <Property name="alignmentY" type="float" value="10.0"/>
         <Property name="focusCycleRoot" type="boolean" value="true"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -62,7 +63,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="JLabel lab = new javax.swing.JLabel(&quot;Pacientes&quot;);&#xa;    lab.setPreferredSize(new Dimension(150, 100));&#xa;lab.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 24)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(0, lab);  // tab index, jLabel&#xa;&#xa;JLabel lab1 = new javax.swing.JLabel(&quot;Medicos&quot;);&#xa;    lab1.setPreferredSize(new Dimension(150, 100));&#xa;lab1.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 24)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(1, lab1);  // tab index, jLabel&#xa;&#xa;JLabel lab2 = new javax.swing.JLabel(&quot;Citas&quot;);&#xa;    lab2.setPreferredSize(new Dimension(150, 100));&#xa;lab2.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 24)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(2, lab2);  // tab index, jLabel&#xa;&#xa;JLabel lab3 = new javax.swing.JLabel(&quot;X&quot;);&#xa;    lab3.setPreferredSize(new Dimension(150, 100));&#xa;lab3.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 24)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(3, lab3);  // tab index, jLabel"/>
+        <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="JLabel lab = new javax.swing.JLabel(&quot;Pacientes&quot;);&#xa;    lab.setPreferredSize(new Dimension(140, 120));&#xa;lab.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 20)); // NOI18N&#xa;lab.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/Paciente.png&quot;)));&#xa;    jTabbedPane1.setTabComponentAt(0, lab);  // tab index, jLabel&#xa;&#xa;JLabel lab1 = new javax.swing.JLabel(&quot;Medicos&quot;);&#xa;    lab1.setPreferredSize(new Dimension(140, 120));&#xa;lab1.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 20)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(1, lab1);  // tab index, jLabel&#xa;&#xa;JLabel lab2 = new javax.swing.JLabel(&quot;Citas&quot;);&#xa;    lab2.setPreferredSize(new Dimension(140, 120));&#xa;lab2.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 20)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(2, lab2);  // tab index, jLabel&#xa;&#xa;JLabel lab3 = new javax.swing.JLabel(&quot;X&quot;);&#xa;    lab3.setPreferredSize(new Dimension(140, 120));&#xa;lab3.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 20)); // NOI18N&#xa;    jTabbedPane1.setTabComponentAt(3, lab3);  // tab index, jLabel&#xa;&#xa;jTabbedPane1.setIconAt(3, new javax.swing.ImageIcon(getClass().getResource(&quot;/images/Paciente.png&quot;)));&#xa;jTabbedPane1.setIconAt(2, new javax.swing.ImageIcon(getClass().getResource(&quot;/images/Paciente.png&quot;)));&#xa;jTabbedPane1.setIconAt(1,new javax.swing.ImageIcon(getClass().getResource(&quot;/images/Paciente.png&quot;)));&#xa;jTabbedPane1.setIconAt(0, new javax.swing.ImageIcon(getClass().getResource(&quot;/images/Paciente.png&quot;)));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -85,6 +86,9 @@
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Pacientes">
                 <Property name="tabTitle" type="java.lang.String" value="Pacientes"/>
+                <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/Paciente.png"/>
+                </Property>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -131,6 +135,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="addPaciente">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/hospital.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="A&#xf1;ade Paciente"/>
               </Properties>
               <Events>
@@ -170,6 +177,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="editPac">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/editar.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Edita Paciente"/>
               </Properties>
               <Events>
@@ -219,6 +229,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="cajacalle">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Calle"/>
+              </Properties>
               <Events>
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cajacalleKeyTyped"/>
               </Events>
@@ -242,6 +255,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="cajacol">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Colonia"/>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cajacolActionPerformed"/>
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cajacolKeyTyped"/>
@@ -347,7 +363,13 @@
             </Component>
             <Component class="javax.swing.JButton" name="deletePac">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/quitaMedico.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Elimina Paciente"/>
+                <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/quitaMedico.png"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deletePacActionPerformed"/>
@@ -359,6 +381,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="cajanum">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Numero"/>
+              </Properties>
               <Events>
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cajanumKeyTyped"/>
               </Events>
@@ -474,6 +499,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="darAlta">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/paciente_2.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Dar de Alta"/>
               </Properties>
               <Events>
@@ -501,6 +529,9 @@
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="cc" red="cc" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Eras Demi ITC" size="14" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="11" rowCount="4">
@@ -576,6 +607,7 @@
                         </Column>
                       </TableColumnModel>
                     </Property>
+                    <Property name="showGrid" type="boolean" value="true"/>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
@@ -592,7 +624,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="590" y="300" width="610" height="140"/>
+                  <AbsoluteConstraints x="570" y="300" width="640" height="140"/>
                 </Constraint>
               </Constraints>
 
@@ -602,6 +634,9 @@
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="cc" red="cc" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Eras Demi ITC" size="14" style="0"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -616,6 +651,7 @@
                         <Column editable="true" title="NombreSala" type="java.lang.Object"/>
                       </Table>
                     </Property>
+                    <Property name="cellSelectionEnabled" type="boolean" value="true"/>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" preCode="actualizarTabla(&quot;SELECT*FROM internos&quot;,tablaInternos);">
                       <TableColumnModel selectionModel="0">
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
@@ -650,6 +686,8 @@
                         </Column>
                       </TableColumnModel>
                     </Property>
+                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="showGrid" type="boolean" value="true"/>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
@@ -720,9 +758,49 @@
                 </Constraint>
               </Constraints>
             </Component>
+            <Component class="javax.swing.JLabel" name="jLabel41">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/busca.png"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="350" y="110" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel42">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/busca.png"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="220" y="70" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel43">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/busca.png"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="210" y="110" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel2">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Medicos"/>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Medicos">
@@ -874,11 +952,11 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Lucida Sans" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Consultorio:"/>
+                <Property name="text" type="java.lang.String" value="Cedula:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="490" y="110" width="120" height="30"/>
+                  <AbsoluteConstraints x="430" y="300" width="70" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -950,7 +1028,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="40" y="350" width="1020" height="210"/>
+                  <AbsoluteConstraints x="40" y="350" width="1120" height="210"/>
                 </Constraint>
               </Constraints>
 
@@ -958,6 +1036,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="jTable2">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Eras Demi ITC" size="14" style="0"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="9" rowCount="4">
                         <Column editable="true" title="IdDoctor" type="java.lang.Object"/>
@@ -1039,7 +1120,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="888" y="90" width="170" height="-1"/>
+                  <AbsoluteConstraints x="950" y="90" width="170" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1052,7 +1133,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="890" y="210" width="170" height="-1"/>
+                  <AbsoluteConstraints x="950" y="210" width="170" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1065,7 +1146,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="890" y="150" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="950" y="150" width="170" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1098,6 +1179,62 @@
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="390" y="170" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel44">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/busca.png"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="240" y="110" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel45">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/busca.png"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="240" y="170" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel46">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/busca.png"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="390" y="170" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cedul">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="500" y="304" width="130" height="30"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel52">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Sans" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Consultorio:"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="490" y="110" width="120" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1292,16 +1429,6 @@
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="70" y="190" width="60" height="20"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JTextField" name="cajaID3">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cajaID3ActionPerformed"/>
-              </Events>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1190" y="60" width="40" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1676,7 +1803,67 @@
             <Component class="com.toedter.calendar.JDateChooser" name="fecha">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="180" y="330" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="180" y="330" width="190" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel47">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/busca.png"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="270" y="100" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel48">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/busca.png"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="280" y="50" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel49">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/busca.png"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="290" y="190" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel50">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/busca.png"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="410" y="240" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel51">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/busca.png"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="270" y="230" width="-1" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>

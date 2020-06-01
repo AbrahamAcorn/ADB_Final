@@ -90,20 +90,19 @@ public class CitasDAO {
        public Citas buscaCita(String filtro, String clave){
         Citas c = null;
         ResultSet rs;
-        sql="";
         sql="SELECT * FROM Citas WHERE ? = ?";
         try {
             PreparedStatement ps = ConexionBD.getConnection().prepareStatement(sql);
             ps.setString(1, filtro);
-            ps.setInt(2, Integer.parseInt(clave));
+            ps.setString(2,clave);
             rs = ps.executeQuery();
           
             while(rs.next()){
                 c = new Citas();
-                c.setPaciente(rs.getInt(1));
-                c.setDoctor(rs.getInt(2));
-                c.setFecha(rs.getDate(3).toString());
-                c.setHora(rs.getString(4));
+                c.setPaciente(rs.getInt(2));
+                c.setDoctor(rs.getInt(3));
+                c.setFecha(rs.getDate(4).toString());
+                c.setHora(rs.getString(5));
             }
         }
         catch (SQLException e){
@@ -117,7 +116,7 @@ public class CitasDAO {
             CitasDAO p = new CitasDAO();
             
             Citas c = new Citas(1,1,"2019-12-12","11:45:AM");
-            p.generaCita(c);
-           // System.out.println(p.buscaCita();
+            //p.generaCita(c);
+           System.out.println(p.buscaCita("id_pac","1"));
         }
 }
