@@ -92,6 +92,7 @@ ForGraphics fg=new ForGraphics();
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        jLabel55 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         comboEstad = new javax.swing.JComboBox<>();
         addPaciente = new javax.swing.JButton();
@@ -136,6 +137,7 @@ ForGraphics fg=new ForGraphics();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         cajaAp2Dv = new javax.swing.JTextField();
         cajaAp1D1 = new javax.swing.JTextField();
@@ -166,6 +168,7 @@ ForGraphics fg=new ForGraphics();
         jLabel46 = new javax.swing.JLabel();
         cedul = new javax.swing.JTextField();
         jLabel52 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         crearCita = new javax.swing.JButton();
         apac2 = new javax.swing.JTextField();
@@ -204,6 +207,7 @@ ForGraphics fg=new ForGraphics();
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jButton7 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
@@ -211,16 +215,17 @@ ForGraphics fg=new ForGraphics();
         jButton2 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
+        jLabel57 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hospital");
         setBackground(new java.awt.Color(196, 226, 247));
         setBounds(new java.awt.Rectangle(0, 0, 100, 0));
         setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        setMinimumSize(new java.awt.Dimension(1400, 650));
-        setPreferredSize(new java.awt.Dimension(1400, 630));
+        setMinimumSize(new java.awt.Dimension(1380, 650));
+        setPreferredSize(new java.awt.Dimension(1380, 630));
         setResizable(false);
-        setSize(new java.awt.Dimension(1400, 650));
+        setSize(new java.awt.Dimension(1380, 650));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -234,15 +239,14 @@ ForGraphics fg=new ForGraphics();
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/font1.jpg"))); // NOI18N
 
         jLabel20.setBackground(new java.awt.Color(0, 0, 0));
         jLabel20.setFont(new java.awt.Font("MS UI Gothic", 1, 36)); // NOI18N
         jLabel20.setText("Pacientes Internos");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 250, 330, -1));
 
         comboEstad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "De Alta", "Internado", "Revision", "Citado" }));
-        jPanel1.add(comboEstad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 130, -1));
 
         addPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hospital.png"))); // NOI18N
         addPaciente.setText("Añade Paciente");
@@ -251,15 +255,12 @@ ForGraphics fg=new ForGraphics();
                 addPacienteActionPerformed(evt);
             }
         });
-        jPanel1.add(addPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 160, 40));
 
         jLabel8.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel8.setText("Nombre:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
 
         jLabel7.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel7.setText("Genero:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 60, 20));
 
         editPac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editar.png"))); // NOI18N
         editPac.setText("Edita Paciente");
@@ -268,11 +269,9 @@ ForGraphics fg=new ForGraphics();
                 editPacActionPerformed(evt);
             }
         });
-        jPanel1.add(editPac, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 160, 40));
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel3.setText("-");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 10, 20));
 
         tel3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -284,11 +283,9 @@ ForGraphics fg=new ForGraphics();
                 tel3KeyTyped(evt);
             }
         });
-        jPanel1.add(tel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 50, -1));
 
         jLabel11.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel11.setText("-");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 10, 20));
 
         cajacalle.setToolTipText("Calle");
         cajacalle.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -296,7 +293,6 @@ ForGraphics fg=new ForGraphics();
                 cajacalleKeyTyped(evt);
             }
         });
-        jPanel1.add(cajacalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 80, -1));
 
         cajaNp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -314,7 +310,6 @@ ForGraphics fg=new ForGraphics();
                 cajaNpKeyTyped(evt);
             }
         });
-        jPanel1.add(cajaNp, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 130, -1));
 
         cajacol.setToolTipText("Colonia");
         cajacol.addActionListener(new java.awt.event.ActionListener() {
@@ -327,21 +322,17 @@ ForGraphics fg=new ForGraphics();
                 cajacolKeyTyped(evt);
             }
         });
-        jPanel1.add(cajacol, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 120, -1));
 
         jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel5.setText("Habitacion:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, -1, 20));
 
         tel2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tel2KeyTyped(evt);
             }
         });
-        jPanel1.add(tel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 40, -1));
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Emergencias", "Consultorios Seccion 1", "Laboratorios", "Sala de Partos", "Terapia Intensiva", "Consultorios Seccion 2", "Terapia Fisica" }));
-        jPanel1.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, 290, -1));
 
         tel1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -353,22 +344,18 @@ ForGraphics fg=new ForGraphics();
                 tel1KeyTyped(evt);
             }
         });
-        jPanel1.add(tel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 40, -1));
 
         habitbox.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 habitboxKeyTyped(evt);
             }
         });
-        jPanel1.add(habitbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 120, -1));
 
         jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel6.setText("ID Paciente");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 90, 20));
 
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel4.setText("Estado:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 60, 20));
 
         deletePac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/quitaMedico.png"))); // NOI18N
         deletePac.setText("Elimina Paciente");
@@ -378,7 +365,6 @@ ForGraphics fg=new ForGraphics();
                 deletePacActionPerformed(evt);
             }
         });
-        jPanel1.add(deletePac, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 160, 40));
 
         cajanum.setToolTipText("Numero");
         cajanum.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -386,15 +372,12 @@ ForGraphics fg=new ForGraphics();
                 cajanumKeyTyped(evt);
             }
         });
-        jPanel1.add(cajanum, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 50, -1));
 
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel1.setText("Apellidos:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 80, 20));
 
         jLabel9.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel9.setText("Sala:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 60, 20));
 
         comboGen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hombre", "Mujer" }));
         comboGen.addItemListener(new java.awt.event.ItemListener() {
@@ -402,7 +385,6 @@ ForGraphics fg=new ForGraphics();
                 comboGenItemStateChanged(evt);
             }
         });
-        jPanel1.add(comboGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 130, -1));
 
         cajaID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -414,29 +396,24 @@ ForGraphics fg=new ForGraphics();
                 cajaIDKeyTyped(evt);
             }
         });
-        jPanel1.add(cajaID, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 40, -1));
 
         ap2p.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 ap2pKeyTyped(evt);
             }
         });
-        jPanel1.add(ap2p, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 110, -1));
 
         ap1p.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 ap1pKeyTyped(evt);
             }
         });
-        jPanel1.add(ap1p, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 110, -1));
 
         jLabel10.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel10.setText("Telefono");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 80, 20));
 
         jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel2.setText("Direccion:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 80, 20));
 
         darAlta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paciente_2.png"))); // NOI18N
         darAlta.setText("Dar de Alta");
@@ -445,7 +422,6 @@ ForGraphics fg=new ForGraphics();
                 darAltaActionPerformed(evt);
             }
         });
-        jPanel1.add(darAlta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 160, 40));
 
         tabla_paciente.setBackground(new java.awt.Color(204, 204, 255));
         tabla_paciente.setFont(new java.awt.Font("Eras Demi ITC", 0, 14)); // NOI18N
@@ -469,8 +445,6 @@ ForGraphics fg=new ForGraphics();
         jScrollPane2.setViewportView(tabla_paciente);
         actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 1200, 160));
-
         tablaInternos.setBackground(new java.awt.Color(204, 204, 255));
         tablaInternos.setFont(new java.awt.Font("Eras Demi ITC", 0, 14)); // NOI18N
         tablaInternos.setForeground(new java.awt.Color(0, 0, 0));
@@ -491,29 +465,253 @@ ForGraphics fg=new ForGraphics();
         jScrollPane3.setViewportView(tablaInternos);
         actualizarTabla("SELECT*FROM internos",tablaInternos);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 640, 140));
-
         jLabel30.setBackground(new java.awt.Color(0, 0, 0));
         jLabel30.setFont(new java.awt.Font("MS UI Gothic", 1, 36)); // NOI18N
         jLabel30.setText("Pacientes");
-        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 220, -1));
-        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, -1));
-        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
-        jPanel1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, -1));
-        jPanel1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, -1));
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 30, -1, -1));
 
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
-        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 190, 250));
 
         jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
-        jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, -1));
 
         jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
-        jPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
 
         jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
-        jPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
+
+        jLabel53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/llamar.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(cajaNp, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(ap1p, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(30, 30, 30)
+                                        .addComponent(ap2p, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel43))
+                                .addComponent(jLabel41))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(cajacalle, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(cajanum, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(cajacol, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(tel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(tel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(tel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel53)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(120, 120, 120)
+                                .addComponent(jLabel27))
+                            .addComponent(addPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deletePac))
+                        .addGap(150, 150, 150)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5))
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comboEstad, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comboGen, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(habitbox, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(330, 330, 330)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(220, 220, 220)
+                        .addComponent(jLabel42))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(350, 350, 350)
+                        .addComponent(jLabel31))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(jLabel29))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(220, 220, 220)
+                        .addComponent(jLabel34))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(730, 730, 730)
+                        .addComponent(jLabel21))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(400, 400, 400)
+                        .addComponent(editPac, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(400, 400, 400)
+                        .addComponent(darAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(340, 340, 340)
+                        .addComponent(cajaID, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 1216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(811, 811, 811))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel30)
+                                .addGap(23, 23, 23)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cajaNp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(16, 16, 16)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel43)
+                                    .addComponent(jLabel41)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ap1p, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ap2p, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(36, 36, 36)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cajacalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cajanum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cajacol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel53)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel27)
+                                .addGap(60, 60, 60)
+                                .addComponent(addPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(120, 120, 120)
+                                .addComponent(deletePac, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(240, 240, 240)
+                                .addComponent(jLabel20)))
+                        .addGap(3, 3, 3)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(comboEstad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(34, 34, 34)
+                                .addComponent(comboGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(24, 24, 24)
+                                .addComponent(habitbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(40, 40, 40)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel42))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(440, 440, 440)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel31))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel29))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel34))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel21))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(editPac, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(320, 320, 320)
+                        .addComponent(darAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(440, 440, 440)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(cajaID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(290, 290, 290)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         jTabbedPane1.addTab("Pacientes", new javax.swing.ImageIcon(getClass().getResource("/images/Paciente.png")), jPanel1); // NOI18N
 
@@ -536,8 +734,9 @@ ForGraphics fg=new ForGraphics();
         jPanel2.add(cajaAp1D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 110, -1));
 
         jLabel12.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/igualdad-de-genero.png"))); // NOI18N
         jLabel12.setText("Genero:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 90, 30));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 110, 30));
 
         jLabel13.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel13.setText("ID Doctor:");
@@ -636,6 +835,7 @@ ForGraphics fg=new ForGraphics();
 
         jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 1120, 210));
 
+        addMedico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/doctor.png"))); // NOI18N
         addMedico.setText("Añadir Medico");
         addMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -644,6 +844,7 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel2.add(addMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 90, 170, 40));
 
+        deleteMedico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/quitaMedico.png"))); // NOI18N
         deleteMedico.setText("Eliminar Medico");
         deleteMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -652,6 +853,7 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel2.add(deleteMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 210, 170, 40));
 
+        updateMedico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
         updateMedico.setText("Modificar Medico");
         updateMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -688,6 +890,9 @@ ForGraphics fg=new ForGraphics();
         jLabel52.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel52.setText("Consultorio:");
         jPanel2.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 120, 30));
+
+        jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/font2.jpg"))); // NOI18N
+        jPanel2.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         jTabbedPane1.addTab("Medicos", jPanel2);
 
@@ -919,6 +1124,9 @@ ForGraphics fg=new ForGraphics();
         jLabel51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busca.png"))); // NOI18N
         jPanel3.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, 40));
 
+        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/font3.jpg"))); // NOI18N
+        jPanel3.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jTabbedPane1.addTab("Citas", jPanel3);
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -964,6 +1172,9 @@ ForGraphics fg=new ForGraphics();
         jPanel8.setBackground(new java.awt.Color(204, 255, 255));
         jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 500, 370));
 
+        jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/font4.jpg"))); // NOI18N
+        jPanel4.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, -1, 930));
+
         jTabbedPane1.addTab("Estadistica", jPanel4);
 
         JLabel lab = new javax.swing.JLabel("Pacientes");
@@ -975,22 +1186,20 @@ ForGraphics fg=new ForGraphics();
         JLabel lab1 = new javax.swing.JLabel("Medicos");
         lab1.setPreferredSize(new Dimension(140, 120));
         lab1.setFont(new java.awt.Font("MS UI Gothic", 1, 20)); // NOI18N
+        lab1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Hospital.png")));
         jTabbedPane1.setTabComponentAt(1, lab1);  // tab index, jLabel
 
         JLabel lab2 = new javax.swing.JLabel("Citas");
         lab2.setPreferredSize(new Dimension(140, 120));
         lab2.setFont(new java.awt.Font("MS UI Gothic", 1, 20)); // NOI18N
+        lab2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hospital_2.png")));
         jTabbedPane1.setTabComponentAt(2, lab2);  // tab index, jLabel
 
         JLabel lab3 = new javax.swing.JLabel("X");
         lab3.setPreferredSize(new Dimension(140, 120));
         lab3.setFont(new java.awt.Font("MS UI Gothic", 1, 20)); // NOI18N
+        lab3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/estadistic.png")));
         jTabbedPane1.setTabComponentAt(3, lab3);  // tab index, jLabel
-
-        jTabbedPane1.setIconAt(3, new javax.swing.ImageIcon(getClass().getResource("/images/Paciente.png")));
-        jTabbedPane1.setIconAt(2, new javax.swing.ImageIcon(getClass().getResource("/images/Paciente.png")));
-        jTabbedPane1.setIconAt(1,new javax.swing.ImageIcon(getClass().getResource("/images/Paciente.png")));
-        jTabbedPane1.setIconAt(0, new javax.swing.ImageIcon(getClass().getResource("/images/Paciente.png")));
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 2170, 630));
 
@@ -1323,7 +1532,7 @@ ForGraphics fg=new ForGraphics();
             String gen = comoGne.getSelectedItem().toString();
             String cd=cedul.getText();
             DoctorDAO d = new DoctorDAO();
-            if(d.buscaDoctor("Id_Doc", String.valueOf(id)) == null && d.buscaDoctor("nombre", name)==null){
+            if(d.buscaDoctor("Apellido1", String.valueOf(ap2)) == null && d.buscaDoctor("nombre", name)==null){
                 Doctor p = new Doctor(id,name,ap,ap2,esp,con,dep,gen,cd);
                 if(d.agregaDoctor(p)){
                     JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
@@ -1849,6 +2058,11 @@ ForGraphics fg=new ForGraphics();
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
