@@ -209,12 +209,13 @@ ForGraphics fg=new ForGraphics();
         jLabel51 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
         jLabel57 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -246,7 +247,12 @@ ForGraphics fg=new ForGraphics();
         jLabel20.setFont(new java.awt.Font("MS UI Gothic", 1, 36)); // NOI18N
         jLabel20.setText("Pacientes Internos");
 
-        comboEstad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "De Alta", "Internado", "Revision", "Citado" }));
+        comboEstad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Internado", "De Alta", "Revision", "Citado" }));
+        comboEstad.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboEstadItemStateChanged(evt);
+            }
+        });
 
         addPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hospital.png"))); // NOI18N
         addPaciente.setText("Añade Paciente");
@@ -898,6 +904,7 @@ ForGraphics fg=new ForGraphics();
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        crearCita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hospital_2.png"))); // NOI18N
         crearCita.setText("Crear Cita");
         crearCita.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -944,6 +951,7 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel3.add(citasidDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 40, -1));
 
+        guardarCita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
         guardarCita.setText("Guardar");
         guardarCita.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -952,6 +960,7 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel3.add(guardarCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, 170, -1));
 
+        restablece.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancelar.png"))); // NOI18N
         restablece.setText("Cancelar");
         restablece.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -960,6 +969,7 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel3.add(restablece, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, 170, -1));
 
+        eliminaCita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calendar.png"))); // NOI18N
         eliminaCita.setText("Eliminar");
         eliminaCita.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1131,27 +1141,14 @@ ForGraphics fg=new ForGraphics();
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton7.setText("Reporte Citas");
-        jPanel4.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 170, -1));
-
-        jButton10.setText("Reporte Doctores");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 170, -1));
-
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
         jButton11.setText("Reporte Pacientes");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 170, -1));
-
-        jButton2.setText("Reporte Internos");
-        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 170, -1));
+        jPanel4.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 180, -1));
 
         jPanel5.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -1171,6 +1168,42 @@ ForGraphics fg=new ForGraphics();
 
         jPanel8.setBackground(new java.awt.Color(204, 255, 255));
         jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 500, 370));
+
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
+        jButton12.setText("Reporte Citas");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 180, -1));
+
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
+        jButton13.setText("Reporte Salarios");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 480, 190, -1));
+
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
+        jButton14.setText("Reporte Medicos");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 480, 180, -1));
+
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
+        jButton15.setText("Reporte Trabajadores");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 480, 190, -1));
 
         jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/font4.jpg"))); // NOI18N
         jPanel4.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, -1, 930));
@@ -1354,15 +1387,16 @@ ForGraphics fg=new ForGraphics();
             pac=Integer.parseInt(cajaID4.getText());
             doc=Integer.parseInt(citasidDoc.getText());
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-            fech=  format.format(fecha.getDate()).toString();
+            System.out.println(fecha.getDate().toString());
+            fech=  format.format(fecha.getDate());
             System.out.println(fech);
-            if((c.buscaCita("paciente", String.valueOf(pac)).getPaciente()==pac && c.buscaCita("doctor", String.valueOf(doc)).getDoctor()==doc)){
+   
                 Citas ci = new Citas(pac,doc,fech,h);
-                if(c.ModificaCita(ci)){
+                if(c.generaCita(ci)){
                     p.CitaPaciente(pac);
-                    JOptionPane.showMessageDialog(rootPane, "El registro se Modifico correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
                 }else{
-                    JOptionPane.showMessageDialog(rootPane, "El registro NO se modifico", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(rootPane, "El registro NO se añadio", "ERROR", JOptionPane.INFORMATION_MESSAGE);
                 }
                 actualizarTabla("SELECT*FROM citas_full;",jTable1);
                 actualizarTabla("SELECT*FROM paciente;",tabla_paciente);
@@ -1372,9 +1406,7 @@ ForGraphics fg=new ForGraphics();
                 horas.setSelectedIndex(0);
                 ampm.setSelectedIndex(0);
                 citasidDoc.setText("");
-            }else{
-                JOptionPane.showMessageDialog(rootPane, "Ya existe una cita con esos datos", "INFO", JOptionPane.INFORMATION_MESSAGE);
-            }
+          
         }catch(NumberFormatException e2){
             JOptionPane.showMessageDialog(rootPane, " Revisa Los Campos", null, JOptionPane.INFORMATION_MESSAGE);
         }
@@ -1412,7 +1444,7 @@ ForGraphics fg=new ForGraphics();
             evt.consume();
         }
         actualizarTabla("Select*From citas_full where SegAp like '%"+apac2.getText()+"%'",jTable1);
-        actualizarTabla("SELECT idPaciente, nombre, primAp, segAp from paciente where primAp like '%"+apac2.getText()+"%'",TablaPacientes);
+        actualizarTabla("SELECT id_Pac, nombre, primAp, segAp from paciente where primAp like '%"+apac2.getText()+"%'",TablaPacientes);
     }//GEN-LAST:event_apac2KeyTyped
 
     private void crearCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCitaActionPerformed
@@ -1474,7 +1506,7 @@ ForGraphics fg=new ForGraphics();
             dep=dep+1;
             String gen = comoGne.getSelectedItem().toString();
             DoctorDAO d = new DoctorDAO();
-            if(d.buscaDoctor("Id_Doc", String.valueOf(id)) == null && d.buscaDoctor("nombre", name)==null){
+            if(d.buscaDoctor("nombre", name)==null || d.buscaDoctor("Apellido1", ap)==null ||d.buscaDoctor("Apellido2", ap2)== null){
                 Doctor p = new Doctor(id,name,ap,ap2,esp,con,dep,gen,ced);
                 if(d.ModificaDoctor(p)){
                     JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
@@ -1532,7 +1564,7 @@ ForGraphics fg=new ForGraphics();
             String gen = comoGne.getSelectedItem().toString();
             String cd=cedul.getText();
             DoctorDAO d = new DoctorDAO();
-            if(d.buscaDoctor("Apellido1", String.valueOf(ap2)) == null && d.buscaDoctor("nombre", name)==null){
+            if(d.buscaDoctor("Apellido1", ap) == null || d.buscaDoctor("Nombre", name)==null){
                 Doctor p = new Doctor(id,name,ap,ap2,esp,con,dep,gen,cd);
                 if(d.agregaDoctor(p)){
                     JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
@@ -1658,7 +1690,7 @@ ForGraphics fg=new ForGraphics();
             nomb=cajaNp.getText();ap1=ap1p.getText();ap2=ap2p.getText();calle=cajacalle.getText();col=cajacol.getText();
             tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado="De Alta";gen=comboGen.getSelectedItem().toString();
             pac=Integer.parseInt(cajaID.getText()); habit=Integer.parseInt(habitbox.getText());num=Integer.parseInt(cajanum.getText());
-            if(d.buscaPaciente("idPaciente", String.valueOf(pac)).getIdPaciente()==pac){
+            if(d.buscaPaciente("id_pac", String.valueOf(pac)).getIdPaciente()==pac){
                 Paciente p = new Paciente(pac,nomb,ap1,ap2,col,calle,num,tel,estado,habit,gen);
                 if(d.DarAlta(pac)){
                     hab.liberaHabitacion(habit);
@@ -1720,14 +1752,10 @@ ForGraphics fg=new ForGraphics();
 
     private void comboGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboGenItemStateChanged
         // TODO add your handling code here:
-        if("De Alta".equals(comboEstad.getSelectedItem().toString())){
-            actualizarTabla("SELECT*FROM Paciente where estado = 'De Alta';",tabla_paciente);
-        }else if ("Citado".equals(comboEstad.getSelectedItem().toString())){
-            actualizarTabla("SELECT*FROM Paciente where estado = 'Citado';",tabla_paciente);
-        }else if("Revision".equals(comboEstad.getSelectedItem().toString())){
-            actualizarTabla("SELECT*FROM Paciente where estado = 'Revision';",tabla_paciente);
-        }else if("Internado".equals(comboEstad.getSelectedItem().toString())){
-            actualizarTabla("SELECT*FROM Paciente where estado = 'Internado';",tabla_paciente);
+        if("Hombre".equals(comboEstad.getSelectedItem().toString())){
+            actualizarTabla("SELECT*FROM Paciente where Genero = 'Hombre'",tabla_paciente);
+        }else if ("Mujer".equals(comboEstad.getSelectedItem().toString())){
+            actualizarTabla("SELECT*FROM Paciente where Genero = 'Mujer'",tabla_paciente);
         }
     }//GEN-LAST:event_comboGenItemStateChanged
 
@@ -1745,7 +1773,7 @@ ForGraphics fg=new ForGraphics();
         PacienteDAO p = new PacienteDAO();
         try{
             String pac= cajaID.getText();
-            if(p.Elimina("idPaciente", pac, "paciente")){
+            if(p.Elimina("id_Pac", pac, "paciente")){
                 JOptionPane.showMessageDialog(rootPane, "Se elimino el registro", null, JOptionPane.INFORMATION_MESSAGE);
                 actualizarTabla("SELECT*FROM Paciente;",tabla_paciente);
                 actualizarTabla("SELECT*FROM internos;",tablaInternos);
@@ -1854,6 +1882,7 @@ ForGraphics fg=new ForGraphics();
         String nomb, ap1, ap2, calle, col, tel,estado, gen;
         int habit,pac, num;
         PacienteDAO d = new PacienteDAO();
+        HabitacionDAO hab=new HabitacionDAO();
         try{
             nomb=cajaNp.getText();ap1=ap1p.getText();ap2=ap2p.getText();calle=cajacalle.getText();col=cajacol.getText();
             tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado=comboEstad.getSelectedItem().toString();gen=comboGen.getSelectedItem().toString();
@@ -1861,6 +1890,11 @@ ForGraphics fg=new ForGraphics();
             if(d.buscaPaciente("id_Pac", String.valueOf(pac)).getIdPaciente()==pac){
                 Paciente p = new Paciente(pac,nomb,ap1,ap2,col,calle,num,tel,estado,habit,gen);
                 if(d.ModificaPaciente(p)){
+                     if(comboEstad.getSelectedIndex()==0){
+                        hab.OcupaHabitacion(habit);
+                    }else{
+                        hab.liberaHabitacion(habit);
+                    }
                     JOptionPane.showMessageDialog(rootPane, "El registro se modifico correctamente", null, JOptionPane.INFORMATION_MESSAGE);
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "El registro NO se Modico", "ERROR", JOptionPane.INFORMATION_MESSAGE);
@@ -1883,12 +1917,18 @@ ForGraphics fg=new ForGraphics();
             String nomb, ap1, ap2, calle, col, tel,estado, gen;
             int habit,pac, num;
             PacienteDAO d = new PacienteDAO();
+            HabitacionDAO hab= new HabitacionDAO();
             nomb=cajaNp.getText();ap1=ap1p.getText();ap2=ap2p.getText();calle=cajacalle.getText();col=cajacol.getText();
             tel=tel1.getText()+"-"+tel2.getText()+"-"+tel3.getText(); estado=comboEstad.getSelectedItem().toString();gen=comboGen.getSelectedItem().toString();
             pac=Integer.parseInt(cajaID.getText()); habit=Integer.parseInt(habitbox.getText());num=Integer.parseInt(cajanum.getText());
-            if(d.buscaPaciente("id_Pac", String.valueOf(pac)).getIdPaciente()!=pac && d.buscaPaciente("nombre", cajaNp.getText()).getNombre()!=cajaNp.getText()){
+            if(d.buscaPaciente("Nombre", nomb)==null ||d.buscaPaciente("PrimAp", ap1)==null || d.buscaPaciente("SegAp", ap2)==null){
                 Paciente p = new Paciente(pac,nomb,ap1,ap2,col,calle,num,tel,estado,habit,gen);
                 if(d.agregaPaciente(p)){
+                    if(comboEstad.getSelectedIndex()==0){
+                        hab.OcupaHabitacion(habit);
+                    }else{
+                        hab.liberaHabitacion(habit);
+                    }
                     JOptionPane.showMessageDialog(rootPane, "El registro se añadió correctamente", null, JOptionPane.INFORMATION_MESSAGE);
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "El registro NO se añadio", "ERROR", JOptionPane.INFORMATION_MESSAGE);
@@ -1908,10 +1948,6 @@ ForGraphics fg=new ForGraphics();
         // TODO add your handling code here:
     }//GEN-LAST:event_addPacienteActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
-
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         try {
             // TODO add your handling code here:
@@ -1927,6 +1963,60 @@ ForGraphics fg=new ForGraphics();
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        try {
+            // TODO add your handling code here:
+            Connection con = ConexionBD.getConnection();
+            JasperReport reporte = null;
+            String path = "src\\Reportes\\Citas.jasper";
+            reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
+            JasperPrint jprint = JasperFillManager.fillReport(path,null,con);
+            JasperViewer view = new JasperViewer(jprint,false);
+            view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            view.setVisible(true);
+        } catch (JRException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            Connection con = ConexionBD.getConnection();
+            JasperReport reporte = null;
+            String path = "src\\Reportes\\Medicos.jasper";
+            reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
+            JasperPrint jprint = JasperFillManager.fillReport(path,null,con);
+            JasperViewer view = new JasperViewer(jprint,false);
+            view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            view.setVisible(true);
+        } catch (JRException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void comboEstadItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboEstadItemStateChanged
+        // TODO add your handling code here:
+        if("De Alta".equals(comboEstad.getSelectedItem().toString())){
+            actualizarTabla("SELECT*FROM Paciente where estado = 'De Alta'",tabla_paciente);
+        }else if ("Internado".equals(comboEstad.getSelectedItem().toString())){
+            actualizarTabla("SELECT*FROM Paciente where estado = 'Internado'",tabla_paciente);
+        }else if ("Citado".equals(comboEstad.getSelectedItem().toString())){
+            actualizarTabla("SELECT*FROM Paciente where estado = 'Citado'",tabla_paciente);
+        }else if ("Revision".equals(comboEstad.getSelectedItem().toString())){
+            actualizarTabla("SELECT*FROM Paciente where estado = 'Revision'",tabla_paciente);
+        }
+    }//GEN-LAST:event_comboEstadItemStateChanged
     
     
     /**
@@ -2004,10 +2094,11 @@ ForGraphics fg=new ForGraphics();
     private javax.swing.JButton guardarCita;
     private javax.swing.JTextField habitbox;
     private javax.swing.JComboBox<String> horas;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel1;

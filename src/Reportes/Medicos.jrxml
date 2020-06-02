@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f53a5302-022f-4c1a-b409-a0800b42bafe">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[Select*from docs_dept]]>
+	</queryString>
+	<field name="Id_Doc" class="java.lang.Integer"/>
+	<field name="Nombre" class="java.lang.String"/>
+	<field name="Apellido1" class="java.lang.String"/>
+	<field name="Apellido2" class="java.lang.String"/>
+	<field name="Genero" class="java.lang.String"/>
+	<field name="Especialidad" class="java.lang.String"/>
+	<field name="Consultorio" class="java.lang.Integer"/>
+	<field name="Cedula_Prof" class="java.lang.String"/>
+	<field name="Nombre_Depto" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="108" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="118" height="108" uuid="d01a3051-6b8d-49e5-b49e-97c74c4bbff6"/>
+				<imageExpression><![CDATA["C:\\Users\\Abraham\\Documents\\NetBeansProjects\\ABD_FinalProject\\src\\images\\logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="81" height="20" uuid="aa6d462a-63a3-4fd2-a4a0-94c6ceb5a365"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="0" width="85" height="20" uuid="dc9f3a27-3749-4da3-89ef-ef32bb3b9cf2"/>
+				<text><![CDATA[Apellido1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="0" width="86" height="20" uuid="93a281d4-4d94-4b88-bc5e-bfb7552a8521"/>
+				<text><![CDATA[Apellido2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="107" y="31" width="100" height="20" uuid="813265f0-ff8e-4163-99bc-376db2d28063"/>
+				<text><![CDATA[Especialidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="207" y="31" width="100" height="20" uuid="a02ec108-696e-4e64-902c-66b8815cdbfa"/>
+				<text><![CDATA[Cedula_Prof]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="307" y="31" width="100" height="20" uuid="0bf6fda2-c98a-4f3d-8816-69240647ac85"/>
+				<text><![CDATA[Nombre_Depto]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="22" width="247" height="1" uuid="b65962a5-16ab-4a00-a21e-df22ba096269"/>
+			</line>
+			<line>
+				<reportElement x="107" y="53" width="300" height="1" uuid="190ad0dc-3356-465e-a00f-d3edc8febbcd"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="78" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="81" height="20" uuid="04d238b0-c599-4030-86a0-e3bacfb847b0"/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="0" width="85" height="20" uuid="b9010de8-a6ee-436e-9a4e-c7b1004927e0"/>
+				<textFieldExpression><![CDATA[$F{Apellido1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="166" y="0" width="81" height="20" uuid="dbc68440-4288-4fe0-9da1-062bc2d3f762"/>
+				<textFieldExpression><![CDATA[$F{Apellido2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="38" width="100" height="20" uuid="e8fe605a-e9a0-4ace-a5f0-713b1bf3650f"/>
+				<textFieldExpression><![CDATA[$F{Especialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="207" y="38" width="100" height="20" uuid="fd6e38f5-4ca9-44ef-91fc-5affcbfc66b1"/>
+				<textFieldExpression><![CDATA[$F{Cedula_Prof}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="38" width="100" height="20" uuid="f85a34e4-c119-4490-bd5b-3b6ed628a9bf"/>
+				<textFieldExpression><![CDATA[$F{Nombre_Depto}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="27" width="252" height="1" uuid="ecd8ad11-fe6e-4a95-81e8-6a2766db41d2"/>
+			</line>
+			<line>
+				<reportElement x="107" y="63" width="300" height="1" uuid="4371be07-2da1-441a-a956-6113caf74850"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

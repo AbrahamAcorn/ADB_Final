@@ -92,13 +92,12 @@ public class PacienteDAO {
     }
      
       public boolean Elimina(String filtro, String clave,String table){
-        sql = "DELETE FROM "+table+" WHERE "+filtro+" = '"+clave+"';";
+        sql = "DELETE FROM "+table+" WHERE  "+filtro+" = "+clave;
            boolean eliminado;
-	        try {
-	            PreparedStatement preparedStatement = ConexionBD.getConnection().prepareStatement(sql);
-	            //preparedStatement.execute();
-	            preparedStatement.executeUpdate(sql);
-                                preparedStatement.execute(sql);
+	try {
+            PreparedStatement preparedStatement = ConexionBD.getConnection().prepareStatement(sql);
+            preparedStatement.executeUpdate();
+            preparedStatement.execute();
 	            eliminado = true;
 	            preparedStatement.close();
 
@@ -115,7 +114,7 @@ public class PacienteDAO {
         Paciente p = null;
         ResultSet rs;
         sql="";
-        sql="SELECT * FROM Paciente WHERE  "+columna+" = "+""+clave+"";
+        sql="SELECT * FROM Paciente WHERE  "+columna+" = '"+""+clave+"'";
         try {
             PreparedStatement preparedStatement = ConexionBD.getConnection().prepareStatement(sql);
             rs = preparedStatement.executeQuery();
