@@ -63,7 +63,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="JLabel lab = new javax.swing.JLabel(&quot;Pacientes&quot;);&#xa;    lab.setPreferredSize(new Dimension(140, 120));&#xa;lab.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 20)); // NOI18N&#xa;lab.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/Paciente.png&quot;)));&#xa;    jTabbedPane1.setTabComponentAt(0, lab);  // tab index, jLabel&#xa;&#xa;JLabel lab1 = new javax.swing.JLabel(&quot;Medicos&quot;);&#xa;    lab1.setPreferredSize(new Dimension(140, 120));&#xa;lab1.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 20)); // NOI18N&#xa;lab1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/Hospital.png&quot;)));    &#xa;jTabbedPane1.setTabComponentAt(1, lab1);  // tab index, jLabel&#xa;&#xa;JLabel lab2 = new javax.swing.JLabel(&quot;Citas&quot;);&#xa;    lab2.setPreferredSize(new Dimension(140, 120));&#xa;lab2.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 20)); // NOI18N&#xa;lab2.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/hospital_2.png&quot;)));    &#xa;jTabbedPane1.setTabComponentAt(2, lab2);  // tab index, jLabel&#xa;&#xa;JLabel lab3 = new javax.swing.JLabel(&quot;X&quot;);&#xa;    lab3.setPreferredSize(new Dimension(140, 120));&#xa;lab3.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 20)); // NOI18N&#xa;lab3.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/estadistic.png&quot;)));&#xa;jTabbedPane1.setTabComponentAt(3, lab3);  // tab index, jLabel"/>
+        <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="JLabel lab = new javax.swing.JLabel(&quot;Pacientes&quot;);&#xa;    lab.setPreferredSize(new Dimension(140, 120));&#xa;lab.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 20)); // NOI18N&#xa;lab.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/Paciente.png&quot;)));&#xa;    jTabbedPane1.setTabComponentAt(0, lab);  // tab index, jLabel&#xa;&#xa;JLabel lab1 = new javax.swing.JLabel(&quot;Medicos&quot;);&#xa;    lab1.setPreferredSize(new Dimension(140, 120));&#xa;lab1.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 20)); // NOI18N&#xa;lab1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/Hospital.png&quot;)));    &#xa;jTabbedPane1.setTabComponentAt(1, lab1);  // tab index, jLabel&#xa;&#xa;JLabel lab2 = new javax.swing.JLabel(&quot;Citas&quot;);&#xa;    lab2.setPreferredSize(new Dimension(140, 120));&#xa;lab2.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 20)); // NOI18N&#xa;lab2.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/hospital_2.png&quot;)));    &#xa;jTabbedPane1.setTabComponentAt(2, lab2);  // tab index, jLabel&#xa;&#xa;JLabel lab3 = new javax.swing.JLabel(&quot;Estadistica&quot;);&#xa;    lab3.setPreferredSize(new Dimension(140, 120));&#xa;lab3.setFont(new java.awt.Font(&quot;MS UI Gothic&quot;, 1, 20)); // NOI18N&#xa;lab3.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/estadistic.png&quot;)));&#xa;jTabbedPane1.setTabComponentAt(3, lab3);  // tab index, jLabel"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2051,37 +2051,6 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Container class="javax.swing.JPanel" name="jPanel5">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="cc" type="rgb"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="DefaultPieDataset data2 = new DefaultPieDataset();&#xa;ForGraphics fg=new ForGraphics();&#xa;        data2.setValue(&quot;Libre&quot;, fg.Cuenta(&quot; select count(id_Habitacion) from habitacion where Estado= &apos;Libre&apos;;&quot;));&#xa;        data2.setValue(&quot;Ocupado&quot;, fg.Cuenta(&quot;select count(id_Habitacion) from habitacion where Estado=&apos;Ocupada&apos;;&quot;));&#xa;&#xa; JFreeChart chart2 = ChartFactory.createPieChart(&#xa;         &quot;Ocupacion&quot;, &#xa;         data2, true, true, false);&#xa;        // Crear el Panel del Grafico con ChartPanel&#xa;        ChartPanel chartPanel2 = new ChartPanel(chart2);&#xa;        jPanel5.add(chartPanel2);"/>
-              </AuxValues>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="610" y="10" width="500" height="370"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
-            </Container>
-            <Container class="javax.swing.JPanel" name="jPanel8">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="cc" type="rgb"/>
-                </Property>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="40" y="10" width="500" height="370"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
-            </Container>
             <Component class="javax.swing.JButton" name="jButton12">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -2146,6 +2115,54 @@
                 </Constraint>
               </Constraints>
             </Component>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/analisis.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Grafica Ocupacion"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="530" y="120" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton2">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/analisis.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Grafica Ocupacion"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+              </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="310" y="120" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton3">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/analisis.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Grafica por genero"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+              </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="90" y="120" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
             <Component class="javax.swing.JLabel" name="jLabel57">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -2154,7 +2171,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="-20" width="-1" height="930"/>
+                  <AbsoluteConstraints x="0" y="-10" width="-1" height="930"/>
                 </Constraint>
               </Constraints>
             </Component>

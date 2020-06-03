@@ -34,6 +34,7 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
+import org.jfree.chart.ChartFrame;
 /**
  *
  * @author Abraham
@@ -210,12 +211,13 @@ ForGraphics fg=new ForGraphics();
         jLabel56 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jButton11 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel57 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1150,25 +1152,6 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel4.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 180, -1));
 
-        jPanel5.setBackground(new java.awt.Color(204, 255, 255));
-
-        DefaultPieDataset data2 = new DefaultPieDataset();
-        ForGraphics fg=new ForGraphics();
-        data2.setValue("Libre", fg.Cuenta(" select count(id_Habitacion) from habitacion where Estado= 'Libre';"));
-        data2.setValue("Ocupado", fg.Cuenta("select count(id_Habitacion) from habitacion where Estado='Ocupada';"));
-
-        JFreeChart chart2 = ChartFactory.createPieChart(
-            "Ocupacion",
-            data2, true, true, false);
-        // Crear el Panel del Grafico con ChartPanel
-        ChartPanel chartPanel2 = new ChartPanel(chart2);
-        jPanel5.add(chartPanel2);
-
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 500, 370));
-
-        jPanel8.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 500, 370));
-
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
         jButton12.setText("Reporte Citas");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -1205,8 +1188,35 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel4.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 480, 190, -1));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/analisis.png"))); // NOI18N
+        jButton1.setText("Grafica Ocupacion");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, -1, -1));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/analisis.png"))); // NOI18N
+        jButton2.setText("Grafica Ocupacion");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/analisis.png"))); // NOI18N
+        jButton3.setText("Grafica por genero");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
+
         jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/font4.jpg"))); // NOI18N
-        jPanel4.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, -1, 930));
+        jPanel4.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 930));
 
         jTabbedPane1.addTab("Estadistica", jPanel4);
 
@@ -1228,7 +1238,7 @@ ForGraphics fg=new ForGraphics();
         lab2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hospital_2.png")));
         jTabbedPane1.setTabComponentAt(2, lab2);  // tab index, jLabel
 
-        JLabel lab3 = new javax.swing.JLabel("X");
+        JLabel lab3 = new javax.swing.JLabel("Estadistica");
         lab3.setPreferredSize(new Dimension(140, 120));
         lab3.setFont(new java.awt.Font("MS UI Gothic", 1, 20)); // NOI18N
         lab3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/estadistic.png")));
@@ -2017,6 +2027,54 @@ ForGraphics fg=new ForGraphics();
             actualizarTabla("SELECT*FROM Paciente where estado = 'Revision'",tabla_paciente);
         }
     }//GEN-LAST:event_comboEstadItemStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        DefaultPieDataset data2 = new DefaultPieDataset();
+ForGraphics fg=new ForGraphics();
+        data2.setValue("Libre", fg.Cuenta(" select count(id_Habitacion) from habitacion where Estado= 'Libre';"));
+        data2.setValue("Ocupado", fg.Cuenta("select count(id_Habitacion) from habitacion where Estado='Ocupada';"));
+
+ JFreeChart chart2 = ChartFactory.createPieChart(
+         "Ocupacion", 
+         data2, true, true, false);
+        
+  ChartFrame frame = new ChartFrame("Ocupacion", chart2);
+        frame.setSize(400, 350);
+        frame.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+              DefaultPieDataset data2 = new DefaultPieDataset();
+ForGraphics fg=new ForGraphics();
+        data2.setValue("Libre", fg.Cuenta(" select count(id_Habitacion) from habitacion where Estado= 'Libre';"));
+        data2.setValue("Ocupado", fg.Cuenta("select count(id_Habitacion) from habitacion where Estado='Ocupada';"));
+
+ JFreeChart chart2 = ChartFactory.createPieChart(
+         "Ocupacion", 
+         data2, true, true, false);
+        
+  ChartFrame frame = new ChartFrame("Ocupacion", chart2);
+        frame.setSize(400, 350);
+        frame.setVisible(true); 
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+                 DefaultPieDataset data2 = new DefaultPieDataset();
+ForGraphics fg=new ForGraphics();
+        data2.setValue("Hombres", fg.Cuenta(" select count(id_Pac) from paciente where genero= 'Hombre';"));
+        data2.setValue("Mujeres", fg.Cuenta("select count(id_Pac) from paciente where genero='Mujer';"));
+
+ JFreeChart chart2 = ChartFactory.createPieChart(
+         "Genero", 
+         data2, true, true, false);
+        
+  ChartFrame frame = new ChartFrame("Genero Pacientes", chart2);
+        frame.setSize(400, 350);
+        frame.setVisible(true); 
+    }//GEN-LAST:event_jButton3ActionPerformed
     
     
     /**
@@ -2094,11 +2152,14 @@ ForGraphics fg=new ForGraphics();
     private javax.swing.JButton guardarCita;
     private javax.swing.JTextField habitbox;
     private javax.swing.JComboBox<String> horas;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel1;
@@ -2162,8 +2223,6 @@ ForGraphics fg=new ForGraphics();
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

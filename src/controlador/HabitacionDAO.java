@@ -18,7 +18,7 @@ public class HabitacionDAO {
           boolean actualizado;
           String sql = "UPDATE habitacion SET " +
                   " Estado ='Libre'" +
-                  " WHERE idHabitacion = ?;";
+                  " WHERE id_Habitacion = ?";
           try {
               PreparedStatement pstm = ConexionBD.getConnection().prepareStatement(sql);
               pstm.setInt(1,id);
@@ -35,8 +35,8 @@ public class HabitacionDAO {
     public boolean OcupaHabitacion(int id){
           boolean actualizado;
           String sql = "UPDATE habitacion SET " +
-                  " Estado = Ocupada " +
-                  " WHERE idHabitacion = ?;";
+                  " Estado = 'Ocupada'" +
+                  " WHERE idHabitacion = ?";
           try {
               PreparedStatement pstm = ConexionBD.getConnection().prepareStatement(sql);
               pstm.setInt(1,id);
