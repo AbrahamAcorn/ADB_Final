@@ -147,7 +147,18 @@ public class InicioSesion extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String use=cajaUsuario.getText();
         String pwd=new String(cajaPasword.getPassword());
-        //System.out.println(pwd);
+        if(use.equals("pepe") && pwd.equals("pepe")){
+             JOptionPane.showMessageDialog(getParent(), "Bienvenido Usuario!");
+            java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Main().setVisible(true);
+            }
+        });
+        }else{
+           JOptionPane.showMessageDialog(getParent(), "Contraseña o usuario incoorrecto!!"); 
+              cajaPasword.setText("");
+              cajaUsuario.setText(""); 
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
