@@ -33,6 +33,33 @@ public class ResultSetTableModel extends AbstractTableModel{
     // determines number of rows
 
     public ResultSetTableModel() {}
+    
+     public ResultSetTableModel(String full, String query)  throws SQLException, ClassNotFoundException {
+     //
+
+        // connect to database
+     connection = DriverManager.getConnection(full);
+
+        // create Statement to query database
+
+        statement = connection.createStatement(
+
+                ResultSet.TYPE_SCROLL_INSENSITIVE,
+
+                ResultSet.CONCUR_READ_ONLY );
+
+        // update database connection status
+
+        connectedToDatabase = true;
+
+        // set query and execute it
+
+        setQuery( query );
+
+     
+     }
+     
+    
     public ResultSetTableModel( String driver, String url, String username, String password, String query )
             throws SQLException, ClassNotFoundException    {
         // load database driver class

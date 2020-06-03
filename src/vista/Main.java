@@ -62,8 +62,7 @@ ForGraphics fg=new ForGraphics();
     }
     public void actualizarTabla(String sql, javax.swing.JTable tab){
 
-        //final String tab = "Proveedor";//esto pede ser parametro
-
+ String full="jdbc:sqlserver://azurserv.database.windows.net:1433;database=Hospital;user=acorn@azurserv;password=WYRYKUTa2013';encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
         String url = "jdbc:sqlserver://DESKTOP-27K6QM8: 1433;databaseName=Hospital";
         String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
         String user = "pepe";
@@ -73,6 +72,7 @@ ForGraphics fg=new ForGraphics();
         ResultSetTableModel modelo = null;
         try {
             modelo = new ResultSetTableModel(driver, url, user, password, query);
+            //modelo = new ResultSetTableModel(full, query);
         }
         catch(ClassNotFoundException | SQLException e){
             System.out.println("no conecto");
