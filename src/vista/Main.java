@@ -99,6 +99,7 @@ ForGraphics fg=new ForGraphics();
         addPaciente = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         editPac = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         tel3 = new javax.swing.JTextField();
@@ -139,6 +140,8 @@ ForGraphics fg=new ForGraphics();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         cajaAp2Dv = new javax.swing.JTextField();
         cajaAp1D1 = new javax.swing.JTextField();
@@ -161,6 +164,7 @@ ForGraphics fg=new ForGraphics();
         deleteMedico = new javax.swing.JButton();
         updateMedico = new javax.swing.JButton();
         cajaEspeciali = new javax.swing.JTextField();
+        jButton14 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
@@ -184,6 +188,7 @@ ForGraphics fg=new ForGraphics();
         adoc2 = new javax.swing.JTextField();
         adoc1 = new javax.swing.JTextField();
         citasNameDoc = new javax.swing.JTextField();
+        jButton12 = new javax.swing.JButton();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -209,16 +214,6 @@ ForGraphics fg=new ForGraphics();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel57 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hospital");
@@ -269,6 +264,14 @@ ForGraphics fg=new ForGraphics();
 
         jLabel7.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel7.setText("Genero:");
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/analisis.png"))); // NOI18N
+        jButton3.setText("Grafica por genero");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         editPac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editar.png"))); // NOI18N
         editPac.setText("Edita Paciente");
@@ -487,6 +490,22 @@ ForGraphics fg=new ForGraphics();
 
         jLabel53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/llamar.png"))); // NOI18N
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/analisis.png"))); // NOI18N
+        jButton2.setText("Grafica Ocupacion");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
+        jButton11.setText("Reporte Pacientes");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -544,10 +563,25 @@ ForGraphics fg=new ForGraphics();
                             .addComponent(deletePac))
                         .addGap(150, 150, 150)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(50, 50, 50)
+                                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(20, 20, 20)
+                                        .addComponent(jLabel21)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(65, 65, 65)
+                                        .addComponent(jButton3))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(66, 66, 66)
+                                        .addComponent(jButton2))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(62, 62, 62)
+                                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -583,9 +617,6 @@ ForGraphics fg=new ForGraphics();
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(220, 220, 220)
                         .addComponent(jLabel34))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(730, 730, 730)
-                        .addComponent(jLabel21))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(400, 400, 400)
                         .addComponent(editPac, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -656,7 +687,13 @@ ForGraphics fg=new ForGraphics();
                                 .addComponent(deletePac, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(240, 240, 240)
+                                .addGap(5, 5, 5)
+                                .addComponent(jButton3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton11)
+                                .addGap(55, 55, 55)
                                 .addComponent(jLabel20)))
                         .addGap(3, 3, 3)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -881,6 +918,15 @@ ForGraphics fg=new ForGraphics();
             }
         });
         jPanel2.add(cajaEspeciali, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 240, 30));
+
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
+        jButton14.setText("Reporte Medicos");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 270, 170, 50));
         jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, -1));
         jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
         jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, -1, -1));
@@ -1006,6 +1052,15 @@ ForGraphics fg=new ForGraphics();
         });
         jPanel3.add(citasNameDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 130, -1));
 
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
+        jButton12.setText("Reporte Citas");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 390, 180, -1));
+
         jLabel25.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel25.setText("ID Doctor:");
         jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 90, 20));
@@ -1074,6 +1129,11 @@ ForGraphics fg=new ForGraphics();
         jPanel3.add(horas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, -1, -1));
 
         minutos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "15", "30", "45", " " }));
+        minutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                minutosActionPerformed(evt);
+            }
+        });
         jPanel3.add(minutos, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, -1, -1));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
@@ -1141,108 +1201,25 @@ ForGraphics fg=new ForGraphics();
 
         jTabbedPane1.addTab("Citas", jPanel3);
 
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
-        jButton11.setText("Reporte Pacientes");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 180, -1));
-
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
-        jButton12.setText("Reporte Citas");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 180, -1));
-
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
-        jButton13.setText("Reporte Salarios");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 480, 190, -1));
-
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
-        jButton14.setText("Reporte Medicos");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 480, 180, -1));
-
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
-        jButton15.setText("Reporte Trabajadores");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 480, 190, -1));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/analisis.png"))); // NOI18N
-        jButton1.setText("Grafica Ocupacion");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, -1, -1));
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/analisis.png"))); // NOI18N
-        jButton2.setText("Grafica Ocupacion");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/analisis.png"))); // NOI18N
-        jButton3.setText("Grafica por genero");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
-
-        jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/font4.jpg"))); // NOI18N
-        jPanel4.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 930));
-
-        jTabbedPane1.addTab("Estadistica", jPanel4);
-
         JLabel lab = new javax.swing.JLabel("Pacientes");
-        lab.setPreferredSize(new Dimension(140, 120));
+        lab.setPreferredSize(new Dimension(140, 150));
         lab.setFont(new java.awt.Font("MS UI Gothic", 1, 20)); // NOI18N
         lab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Paciente.png")));
         jTabbedPane1.setTabComponentAt(0, lab);  // tab index, jLabel
 
         JLabel lab1 = new javax.swing.JLabel("Medicos");
-        lab1.setPreferredSize(new Dimension(140, 120));
+        lab1.setPreferredSize(new Dimension(140, 150));
         lab1.setFont(new java.awt.Font("MS UI Gothic", 1, 20)); // NOI18N
         lab1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Hospital.png")));
         jTabbedPane1.setTabComponentAt(1, lab1);  // tab index, jLabel
 
         JLabel lab2 = new javax.swing.JLabel("Citas");
-        lab2.setPreferredSize(new Dimension(140, 120));
+        lab2.setPreferredSize(new Dimension(140, 150));
         lab2.setFont(new java.awt.Font("MS UI Gothic", 1, 20)); // NOI18N
         lab2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hospital_2.png")));
         jTabbedPane1.setTabComponentAt(2, lab2);  // tab index, jLabel
 
-        JLabel lab3 = new javax.swing.JLabel("Estadistica");
-        lab3.setPreferredSize(new Dimension(140, 120));
-        lab3.setFont(new java.awt.Font("MS UI Gothic", 1, 20)); // NOI18N
-        lab3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/estadistic.png")));
-        jTabbedPane1.setTabComponentAt(3, lab3);  // tab index, jLabel
+        // tab index, jLabel
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 2170, 630));
 
@@ -1990,10 +1967,6 @@ ForGraphics fg=new ForGraphics();
         }
     }//GEN-LAST:event_jButton12ActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
-
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
         try {
@@ -2011,10 +1984,6 @@ ForGraphics fg=new ForGraphics();
         }
     }//GEN-LAST:event_jButton14ActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
-
     private void comboEstadItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboEstadItemStateChanged
         // TODO add your handling code here:
         if("De Alta".equals(comboEstad.getSelectedItem().toString())){
@@ -2027,22 +1996,6 @@ ForGraphics fg=new ForGraphics();
             actualizarTabla("SELECT*FROM Paciente where estado = 'Revision'",tabla_paciente);
         }
     }//GEN-LAST:event_comboEstadItemStateChanged
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        DefaultPieDataset data2 = new DefaultPieDataset();
-ForGraphics fg=new ForGraphics();
-        data2.setValue("Libre", fg.Cuenta(" select count(id_Habitacion) from habitacion where Estado= 'Libre';"));
-        data2.setValue("Ocupado", fg.Cuenta("select count(id_Habitacion) from habitacion where Estado='Ocupada';"));
-
- JFreeChart chart2 = ChartFactory.createPieChart(
-         "Ocupacion", 
-         data2, true, true, false);
-        
-  ChartFrame frame = new ChartFrame("Ocupacion", chart2);
-        frame.setSize(400, 350);
-        frame.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -2075,6 +2028,10 @@ ForGraphics fg=new ForGraphics();
         frame.setSize(400, 350);
         frame.setVisible(true); 
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void minutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minutosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_minutosActionPerformed
     
     
     /**
@@ -2152,12 +2109,9 @@ ForGraphics fg=new ForGraphics();
     private javax.swing.JButton guardarCita;
     private javax.swing.JTextField habitbox;
     private javax.swing.JComboBox<String> horas;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -2214,7 +2168,6 @@ ForGraphics fg=new ForGraphics();
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -2222,7 +2175,6 @@ ForGraphics fg=new ForGraphics();
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
